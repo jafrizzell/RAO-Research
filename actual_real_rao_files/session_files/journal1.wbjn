@@ -1,0 +1,95 @@
+# encoding: utf-8
+# 2021 R1
+SetScriptVersion(Version="21.1.216")
+template1 = GetTemplate(
+    TemplateName="Hydrodynamic Diffraction",
+    Solver="AQWA")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+parameter1 = Parameters.GetParameter(Name="P1")
+designPoint1.SetParameterExpression(
+    Parameter=parameter1,
+    Expression="0.7 [m]")
+parameter2 = Parameters.GetParameter(Name="P2")
+designPoint1.SetParameterExpression(
+    Parameter=parameter2,
+    Expression="0.3 [m]")
+parameter3 = Parameters.GetParameter(Name="P3")
+designPoint1.SetParameterExpression(
+    Parameter=parameter3,
+    Expression="0.2 [m]")
+parameter4 = Parameters.GetParameter(Name="P4")
+designPoint1.SetParameterExpression(
+    Parameter=parameter4,
+    Expression="-P1/2")
+parameter5 = Parameters.GetParameter(Name="P5")
+designPoint1.SetParameterExpression(
+    Parameter=parameter5,
+    Expression="-P2/2")
+parameter6 = Parameters.GetParameter(Name="P6")
+designPoint1.SetParameterExpression(
+    Parameter=parameter6,
+    Expression="P7/(P8 * P1 * P2)")
+parameter7 = Parameters.GetParameter(Name="P7")
+designPoint1.SetParameterExpression(
+    Parameter=parameter7,
+    Expression="20 [kg]")
+parameter8 = Parameters.GetParameter(Name="P8")
+designPoint1.SetParameterExpression(
+    Parameter=parameter8,
+    Expression="1000 [kg/m^3]")
+designPoint1.SetParameterExpression(
+    Parameter=parameter6,
+    Expression="-P7/(P8 * P1 * P2)")
+geometry1.Exit()
+string1 = geometry1.GetGeometryFileAndSaveData()
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+geometryComponent1.Refresh()
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+parameter9 = Parameters.GetParameter(Name="P9")
+designPoint1.SetParameterExpression(
+    Parameter=parameter9,
+    Expression="P6 + 0.0254 [m]")
+designPoint1.SetParameterExpression(
+    Parameter=parameter7,
+    Expression="30 [kg]")
+designPoint1.SetParameterExpression(
+    Parameter=parameter3,
+    Expression="0.25 [m]")
+parameter10 = Parameters.GetParameter(Name="P10")
+designPoint1.SetParameterExpression(
+    Parameter=parameter10,
+    Expression="1/12 * P7 * (P2**2 + P3**2) + P7 * (P3/2 + P9)**2")
+parameter11 = Parameters.GetParameter(Name="P11")
+designPoint1.SetParameterExpression(
+    Parameter=parameter11,
+    Expression="1/12 * P7 * (P2**2 + P3**2) + P7 * (P3/2 + P9)**2")
+parameter12 = Parameters.GetParameter(Name="P12")
+designPoint1.SetParameterExpression(
+    Parameter=parameter12,
+    Expression="1/12 * P7 * (P2**2 + P3**2) + P7 * (P3/2 + P9)**2")
+designPoint1.SetParameterExpression(
+    Parameter=parameter12,
+    Expression="1/12 * P7 * (P2**2 + P1**2)")
+designPoint1.SetParameterExpression(
+    Parameter=parameter11,
+    Expression="1/12 * P7 * (P1**2 + P3**2) + P7 * (P3/2 + P9)**2")
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint1])
+Update()
+designPoint1.SetParameterExpression(
+    Parameter=parameter3,
+    Expression="0.2 [m]")
+backgroundSession2 = UpdateAllDesignPoints(DesignPoints=[designPoint1])
+Update()
+ExportReport(FilePath="Z:/Documents/GitHub/RAO-Research/wbnew_report.html")
+designPoint1.SetParameterExpression(
+    Parameter=parameter3,
+    Expression="0.22 [m]")
+backgroundSession3 = UpdateAllDesignPoints(DesignPoints=[designPoint1])
+Parameters.ExportAllDesignPointsData(FilePath="Z:/Documents/GitHub/RAO-Research/results.csv")
+Save(Overwrite=True)

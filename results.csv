@@ -1,0 +1,8 @@
+﻿# 
+# 10/08/2021 17:41:20
+# The parameters defined in the project are:
+# ,P1 - length [m],P2 - beam [m],P3 - moulded_draft [m],P4 - center_l [m],P5 - center_b [m],P6 - offset_d [m],P7 - load [kg],P8 - density [kg/m^3],P9 - Point Mass Z (Part) [m],P10 - Point Mass Ixx (Part) [kg m^2],P11 - Point Mass Iyy (Part) [kg m^2],P12 - Point Mass Izz (Part) [kg m^2],"P13 - Parameters vs Frequency Abscissa Position of Maximum (A5) (Line A: RAOs - Global Z, -180° (Part - Center of Gravity relative to Origin of Fixed Reference Axes (FRA))) [Hz]","P14 - Parameters vs Frequency Maximum Value (A5) (Line A: RAOs - Global Z, -180° (Part - Center of Gravity relative to Origin of Fixed Reference Axes (FRA))) [m m^-1]","P15 - Parameters vs Frequency Abscissa Position of Maximum (A5) (Line B: RAOs - Global RY, -180° (Part)) [Hz]","P16 - Parameters vs Frequency Maximum Value (A5) (Line B: RAOs - Global RY, -180° (Part)) [deg m^-1]"
+# 
+# The following header line defines the name of the columns by reference to the parameters.
+Name,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16
+DP 0,0.7,0.3,0.22,-0.35,-0.15,-0.14285714285714285,30,1000,-0.11745714285714284,0.34766826938775508,1.3476682693877551,1.45,0.88313989280608218,1.5063991546630859,1.0276773203822609,564.13018798828125
