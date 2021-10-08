@@ -1,0 +1,46 @@
+# encoding: utf-8
+# 2021 R1
+SetScriptVersion(Version="21.1.216")
+system1 = GetSystem(Name="AQW")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Refresh()
+string1 = geometry1.GetGeometryFileAndSaveData()
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+parameter1 = Parameters.GetParameter(Name="P23")
+designPoint1.SetParameterExpression(
+    Parameter=parameter1,
+    Expression="-1 * P6 + 0.05")
+designPoint1.SetParameterExpression(
+    Parameter=parameter1,
+    Expression="-1 * P6 + 0.05 [m]")
+parameter2 = Parameters.GetParameter(Name="P24")
+designPoint1.SetParameterExpression(
+    Parameter=parameter2,
+    Expression="1/12 * ")
+designPoint1.SetParameterExpression(
+    Parameter=parameter2,
+    Expression="1/12 * P8 * (P2**2 + P7**2) + P8 * P23**2")
+parameter3 = Parameters.GetParameter(Name="P25")
+designPoint1.SetParameterExpression(
+    Parameter=parameter3,
+    Expression="1/12 * P8 * (P2**2 + P7**2) + P8 * P23**2")
+parameter4 = Parameters.GetParameter(Name="P26")
+designPoint1.SetParameterExpression(
+    Parameter=parameter4,
+    Expression="1/12 * P8 * (P2**2 + P7**2) + P8 * P23**2")
+designPoint1.SetParameterExpression(
+    Parameter=parameter3,
+    Expression="1/12 * P8 * (P1**2 + P7**2) + P8 * P23**2")
+designPoint1.SetParameterExpression(
+    Parameter=parameter4,
+    Expression="1/12 * P8 * (P2**2 + P1**2) + P8 * P23**2")
+designPoint1.SetParameterExpression(
+    Parameter=parameter4,
+    Expression="1/12 * P8 * (P2**2 + P1**2)")
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint1])
+Save(Overwrite=True)

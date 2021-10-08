@@ -1,0 +1,30 @@
+# encoding: utf-8
+# 2021 R1
+SetScriptVersion(Version="21.1.216")
+system1 = GetSystem(Name="AQW")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Refresh()
+string1 = geometry1.GetGeometryFileAndSaveData()
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+designPoint1 = Parameters.GetDesignPoint(Name="0")
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint1])
+parameter1 = Parameters.GetParameter(Name="P8")
+designPoint1.SetParameterExpression(
+    Parameter=parameter1,
+    Expression="32.5 [kg]")
+geometry1.Edit()
+geometry1.Refresh()
+string2 = geometry1.GetGeometryFileAndSaveData()
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+geometryComponent1.Refresh()
+modelComponent1.Refresh()
+model1.Edit()
+designPoint2 = designPoint1.Duplicate()
+designPoint2.SetParameterExpression(
+    Parameter=parameter1,
+    Expression="30 [kg]")
+backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint1, designPoint2])
