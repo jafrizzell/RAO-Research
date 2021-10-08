@@ -1,0 +1,566 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Storage>
+  <Project Version="9.1">
+    <base-designpoint-name valType="String">1</base-designpoint-name>
+    <timestamp-max valType="Int64">2788</timestamp-max>
+    <framework-build-version valType="String">21.1.216.0</framework-build-version>
+    <external-version-string valType="String">2021 R1</external-version-string>
+    <last-saved-utc valType="String">10/08/2021 20:32:56</last-saved-utc>
+    <managed-categories valType="String">[report, misc, progress]</managed-categories>
+    <logHistory valType="StringArray">
+      <ArrayEntry Index="0">jafrizzell.22@COE-VM-GPUD-004:C:\Users\jafrizzell.22\AppData\Local\Temp\WorkbenchLogs\CoreEvents6448.log</ArrayEntry>
+    </logHistory>
+    <expression-scope-container valType="String">Parameters</expression-scope-container>
+    <project-type valType="String">WB2</project-type>
+    <ReferenceCache>
+      <ProjectReferenceList>
+        <ReferenceList valType="String">{
+"d5316669-df25-4778-8904-28692314aa2b": "/FileTypesContainer/FileType:project",
+"e55fc0ab-ddc0-4231-8206-b6567ebbc89d": "/FileTypesContainer/FileType:ACTDatabase",
+"26050479-cfdf-48ef-a8fb-0777485119f5": "/Schematic/Component:Geometry",
+"b8547ecb-751b-4807-8a81-eb3d6ab30f99": "/Schematic/Component:Model",
+"dc13cac6-5a0f-4760-9889-b74a5ba6b350": "/Schematic/Component:Setup",
+"0fcd6eb5-f235-4423-99c0-d36fe3e79f1a": "/Schematic/Component:Solution",
+"49aafa3a-503c-41cf-ac5b-7ac62bc07b67": "/Schematic/Component:Results",
+"154ac8c8-7e06-4f52-92ca-d11a35a323d0": "/Schematic/Template:Hydrodynamic Diffraction (AQWA)",
+"2461bbc9-faa3-41d6-91d7-4e34a7ad6f30": "/Schematic/Template:Fluid Flow (CFX)",
+"6a72fb57-b762-46d7-ae12-e977a493facd": "/Schematic/Template:Static Structural (ANSYS)",
+"289daa49-b7bf-48b0-87f9-e9901a76f6a0": "/Schematic/Template:Fluid Flow",
+"6ac53f20-6d5e-40c9-8f6e-de25da80cd2f": "/Schematic/Template:Steady-State Thermal (ANSYS)",
+"91d9b95b-1beb-45b8-9de6-50b908cd3fa8": "/Schematic/Template:Modal (ANSYS)",
+"3f53deff-a8a3-4ff0-a50d-ca5745aaccf2": "/Schematic/Template:Random Vibration (ANSYS)",
+"e8c446fd-44b3-4f58-aa0f-fc03e4ec111c": "/Schematic/Template:Response Spectrum (ANSYS)",
+"4990749e-0437-4e7f-9e5e-f3ac89e887c5": "/Schematic/ComponentTemplate:GeometryCellTemplate",
+"28699b87-cb52-4989-9e8d-6f61fa49d123": "/Schematic/System:AQW",
+"97f02337-4ed9-4d8d-9c2d-56e3c5bede17": "/Schematic/ComponentTemplate:AQWAModelCellTemplate",
+"d768fa05-175f-4ad2-b670-d799778ede9b": "/Schematic/ComponentTemplate:AQWASetupHDCellTemplate",
+"11b23d83-3e72-4516-8c74-6966333f5973": "/Schematic/ComponentTemplate:AQWAAnalysisCellTemplate",
+"8392bd74-ed02-427e-9168-f82fff01cbaa": "/Schematic/ComponentTemplate:AQWAResultsCellTemplate",
+"53eb2e5f-1cf8-4b84-8dff-4a7cb538d31e": "/FileTypesContainer/FileType:GeometryFileType",
+"8555d18f-a9fc-443f-8ffb-938c580caf0b": "/Parameters/Parameter:P1",
+"9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": "/Parameters/Parameter:P2",
+"744eda8c-ce35-45d4-8c9b-74bd100496bd": "/Parameters/Parameter:P3",
+"2f015bf4-6fa2-46ef-9fd5-853307d54558": "/Parameters/Parameter:P4",
+"e25865d5-17d1-44df-bf52-1894ebded5e8": "/Parameters/Parameter:P5",
+"22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": "/Parameters/Parameter:P6",
+"f9677820-e05a-42c3-a301-7b7ca1e276f4": "/Parameters/Parameter:P7",
+"594128f8-635b-44b0-9f3b-9dda4fb212b1": "/Parameters/Parameter:P8",
+"a781ec69-32da-4ee1-83bd-502d898b9b5f": "/Parameters/Parameter:P9",
+"5977ce3c-f7cd-431c-ab90-4f8c74227ce7": "/Parameters/Parameter:P10",
+"a0315b04-fde6-429b-969e-6daca195d746": "/Parameters/Parameter:P11",
+"7247fd58-8edc-41c5-997f-240a5f935f13": "/Parameters/Parameter:P12",
+"7a1c5ff5-7088-4d7e-969c-e4ff3003c0aa": "/Parameters/Parameter:P13",
+"18b62617-5815-4b67-accd-b9e1f15d8207": "/Parameters/Parameter:P14",
+"906590ab-e656-4f8f-9733-3da1be5bfd59": "/Parameters/Parameter:P15",
+"e0b2793d-84a1-4d0d-8a3a-9e118ffc84cd": "/Parameters/Parameter:P16",
+"9901a17e-862e-4b43-bd3c-50956439bf11": "/FileContainer/FileReference:F7",
+"4ff43852-8f9e-4e9e-bdcd-084c7dbe0afc": "/FileContainer/FileReference:F8",
+"2a4a8098-785a-4915-85de-0086177d072b": "/FileContainer/FileReference:F9",
+"91be6046-7557-4220-bfa7-5f67d375153f": "/FileTypesContainer/FileType:AQWAWBDatabase",
+"51da1ae4-a276-4569-ae79-d1ddfcf1915a": "/FileTypesContainer/FileType:default"
+}</ReferenceList>
+      </ProjectReferenceList>
+      <DesignPointReferenceListCollection>
+        <DesignPointReferenceList Name="0">
+          <ReferenceList valType="String">{
+"67c74f6c-86a6-4d1f-8b68-28e04cb50e6c": "/Geometry/Geometry:GeometryDataObject",
+"0ac7fdbb-3767-437b-9a42-a90c9e27cf2a": "/Geometry/ParameterAdapter1:DesignModelerParameter",
+"4dbb6c82-12ad-462e-8f2e-f742a655c4b2": "/Geometry/ParameterAdapter2:DesignModelerParameter",
+"21d1ec4d-d5b7-44f3-842f-5703d2fbc4c8": "/Geometry/ParameterAdapter3:DesignModelerParameter",
+"7d907250-63c1-46c1-afc6-9102f7d49305": "/Geometry/ParameterAdapter4:DesignModelerParameter",
+"fdf67536-f85f-468e-bed0-a5fb9f088cf9": "/Geometry/ParameterAdapter5:DesignModelerParameter",
+"e75e61c3-9500-473d-89c0-748a997aaf97": "/Geometry/ParameterAdapter6:DesignModelerParameter",
+"deef93df-8cf4-4f5c-a298-387aa462184d": "/Geometry/ParameterAdapter7:DesignModelerParameter",
+"03e6a5bc-1855-4203-9a4a-bf5545593c74": "/Geometry/ParameterAdapter8:DesignModelerParameter"
+}</ReferenceList>
+        </DesignPointReferenceList>
+        <DesignPointReferenceList Name="1">
+          <ReferenceList valType="String">{
+"67c74f6c-86a6-4d1f-8b68-28e04cb50e6c": "/Geometry/Geometry:GeometryDataObject",
+"0ac7fdbb-3767-437b-9a42-a90c9e27cf2a": "/Geometry/ParameterAdapter1:DesignModelerParameter",
+"4dbb6c82-12ad-462e-8f2e-f742a655c4b2": "/Geometry/ParameterAdapter2:DesignModelerParameter",
+"21d1ec4d-d5b7-44f3-842f-5703d2fbc4c8": "/Geometry/ParameterAdapter3:DesignModelerParameter",
+"7d907250-63c1-46c1-afc6-9102f7d49305": "/Geometry/ParameterAdapter4:DesignModelerParameter",
+"fdf67536-f85f-468e-bed0-a5fb9f088cf9": "/Geometry/ParameterAdapter5:DesignModelerParameter",
+"e75e61c3-9500-473d-89c0-748a997aaf97": "/Geometry/ParameterAdapter6:DesignModelerParameter",
+"deef93df-8cf4-4f5c-a298-387aa462184d": "/Geometry/ParameterAdapter7:DesignModelerParameter",
+"03e6a5bc-1855-4203-9a4a-bf5545593c74": "/Geometry/ParameterAdapter8:DesignModelerParameter",
+"7342a874-aa7e-4447-810d-b79168203211": "/Model/ParameterAdapter1:24aa8e2d-bf36-4ac3-af77-dcbd1df98faa",
+"fc7b1161-e420-42ca-ac8a-2aa84d597a28": "/Model/ParameterAdapter2:597dd142-7f10-4fcd-aeb3-b7244b69f7a0",
+"9312f01e-19b8-4557-bb84-1d12950a9001": "/Model/ParameterAdapter3:3a1c980e-6990-4e8d-965f-98e37f98fa63",
+"45438393-ca3e-4107-8a72-7e0857e60d0c": "/Model/ParameterAdapter4:08dfffa6-9397-48b4-b075-eda072b6d00b",
+"3669458e-81bd-4417-83c8-817f2f00700a": "/Solution/ParameterAdapter8:14835abe-5b0c-424a-87f8-6435996283da",
+"28577129-b9d1-4868-b77c-2682e57cefc2": "/Solution/ParameterAdapter7:0b48351d-99aa-4e0b-a268-faefd96d4440",
+"d6c7367d-673f-4783-9bcf-3d44e6386d1b": "/Solution/ParameterAdapter6:a8f94bb0-476a-48fc-8299-fe457e50709b",
+"cc9741a5-4c6c-4612-9886-afbd57ab1937": "/Solution/ParameterAdapter5:5751a06d-bb21-41b5-bc03-aa5913ef91d4"
+}</ReferenceList>
+        </DesignPointReferenceList>
+      </DesignPointReferenceListCollection>
+    </ReferenceCache>
+  </Project>
+  <Addins>
+    <addin-list valType="String">[Ansys.ParameterManager.ParameterManagerAddin, Ansys.ProjectSchematic.ProjectSchematicAddin, Ansys.ProjectReporting.Addin, Ansys.Graphics.GraphicsAddin, Ansys.Units.Commands.Addin, Ansys.ACT.WorkBench.Addin, Ansys.Dpdb.DpdbAddin]</addin-list>
+    <Addin Name="Ansys.ParameterManager.ParameterManagerAddin" Version="7.3" />
+    <Addin Name="Ansys.ProjectSchematic.ProjectSchematicAddin" Version="12.2" />
+    <Addin Name="Ansys.ProjectReporting.Addin" Version="6.0" />
+    <Addin Name="Ansys.Graphics.GraphicsAddin" Version="1.1" />
+    <Addin Name="Ansys.Units.Commands.Addin" Version="7.1" />
+    <Addin Name="Ansys.ACT.WorkBench.Addin" Version="4.2">
+      <ExtensionsLoaded valType="StringArray">
+        <ArrayEntry Index="0">1;LSDYNA;5f463412-bd3e-484b-87e7-cbc0a665e474;LSDYNA;wbex;2021;1</ArrayEntry>
+        <ArrayEntry Index="1">1;AqwaLoadMapping;4a217913-2035-4362-96b3-10d129d8ee46;AqwaLoadMapping;wbex;2021;1</ArrayEntry>
+      </ExtensionsLoaded>
+    </Addin>
+    <Addin Name="Ansys.Dpdb.DpdbAddin" Version="4.1">
+      <is-optional-on-resume valType="Boolean">true</is-optional-on-resume>
+    </Addin>
+  </Addins>
+  <Containers>
+    <container-map valType="String">{"FileContainer": Project:FileContainer, "Messages": Project:Messages, "Parameters": Ansys.ParameterManager.ParameterManagerAddin:parameters, "Schematic": Ansys.ProjectSchematic.ProjectSchematicAddin:Default, "ReportDataContainer": Ansys.ProjectReporting.Addin:ReportDataContainer, "Graphics": Ansys.Graphics.GraphicsAddin:graphics, "Units": Ansys.Units.Commands.Addin:Units, "DpdbContainer": Ansys.Dpdb.DpdbAddin:DpdbContainer}</container-map>
+    <static-container-ids valType="String">{"FileContainer": FileManager, "Parameters": Parameters, "Schematic": Schematic, "ReportDataContainer": ReportDataContainer, "Graphics": Graphics, "Units": Units, "DpdbContainer": DpdbContainer}</static-container-ids>
+    <Container Name="FileContainer" Version="1.0">
+      <container-type valType="String">Project:FileContainer</container-type>
+      <static-id valType="String">FileManager</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 2704, "Input": 1436, "Output": 1436}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/FileContainer/FileReference:F1" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F1</object-name>
+        <member-data valType="String">{"DisplayText": "git_rao.wbpj", "FileType": $$d5316669-df25-4778-8904-28692314aa2b, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": "$(ProjectName).wbpj", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F2" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F2</object-name>
+        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$e55fc0ab-ddc0-4231-8206-b6567ebbc89d, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 3}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F6" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F6</object-name>
+        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$e55fc0ab-ddc0-4231-8206-b6567ebbc89d, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp1\act.dat", "ReferenceCount": 7}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F7" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F7</object-name>
+        <member-data valType="String">{"DisplayText": "AQW.agdb", "FileType": $$53eb2e5f-1cf8-4b84-8dff-4a7cb538d31e, "DependentFiles": [], "ContainerAssociations": ["Geometry"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp1\AQW\DM\AQW.agdb", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F8" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F8</object-name>
+        <member-data valType="String">{"DisplayText": "AQW.aqdb", "FileType": $$91be6046-7557-4220-bfa7-5f67d375153f, "DependentFiles": [], "ContainerAssociations": ["Model"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp1\AQW\AQW\AQW.aqdb", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F9" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F9</object-name>
+        <member-data valType="String">{"DisplayText": "AQW.aqdb.mesh", "FileType": $$51da1ae4-a276-4569-ae79-d1ddfcf1915a, "DependentFiles": [], "ContainerAssociations": ["Model"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp1\AQW\AQW\AQW.aqdb.mesh", "ReferenceCount": 1}</member-data>
+      </Object>
+    </Container>
+    <Container Name="Messages" Version="1.0">
+      <container-type valType="String">Project:Messages</container-type>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 2785, "Input": 1437, "Output": 1437}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/Messages/StoredMessage:Message" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "The Solution component in Hydrodynamic Diffraction for Design Point 1 does not contain all entity types advertised in its component template, even after update", "Details": None, "Association": "", "DateTimeStamp": 10/08/2021 15:24:02, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$0fcd6eb5-f235-4423-99c0-d36fe3e79f1a, "AdditionalMessageData": None, "DesignPoint": "1"}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 1" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 1</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
+Z:\Documents\GitHub\RAO-Research\git_rao_files\dp1\AQW\AQW\AQW.aqdb""", "Details": None, "Association": "", "DateTimeStamp": 10/08/2021 15:32:40, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 2" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 2</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
+Z:\Documents\GitHub\RAO-Research\git_rao_files\dp1\AQW\AQW\AQW.aqdb.mesh""", "Details": None, "Association": "", "DateTimeStamp": 10/08/2021 15:32:40, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 3" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 3</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
+Z:\Documents\GitHub\RAO-Research\git_rao_files\dp1\AQW\AQW\AQ\Analysis\Analysis.dat""", "Details": None, "Association": "", "DateTimeStamp": 10/08/2021 15:32:40, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
+      </Object>
+    </Container>
+    <Container Name="Parameters" Version="1.0">
+      <container-type valType="String">Ansys.ParameterManager.ParameterManagerAddin:parameters</container-type>
+      <static-id valType="String">Parameters</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <maxUpdateOrder valType="Double">2</maxUpdateOrder>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 2786, "Input": 2781, "Output": 1440}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/Parameters/DesignPoint:0" Version="1.0">
+        <class-type valType="String">DesignPoint</class-type>
+        <object-name valType="String">0</object-name>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": None, "ValidRetainedData": ["Scopes"], "ErrorsOnLastUpdate": {"$$0fcd6eb5-f235-4423-99c0-d36fe3e79f1a": "The Solution component in Hydrodynamic Diffraction for Design Point 0 does not contain all entity types advertised in its component template, even after update"}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in AQW, Setup in AQW, Solution in AQW", "DidCompleteUpdate": "True"}, "Parameters": {"$$8555d18f-a9fc-443f-8ffb-938c580caf0b": "0.7 [m]", "$$9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": "0.3 [m]", "$$744eda8c-ce35-45d4-8c9b-74bd100496bd": "0.2 [m]", "$$2f015bf4-6fa2-46ef-9fd5-853307d54558": "-P1/2", "$$e25865d5-17d1-44df-bf52-1894ebded5e8": "-P2/2", "$$22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": "-P7/(P8 * P1 * P2)", "$$f9677820-e05a-42c3-a301-7b7ca1e276f4": "25 [kg]", "$$594128f8-635b-44b0-9f3b-9dda4fb212b1": "1000 [kg/m^3]", "$$a781ec69-32da-4ee1-83bd-502d898b9b5f": "P6 + 0.0254 [m]", "$$5977ce3c-f7cd-431c-ab90-4f8c74227ce7": "1/12 * P7 * (P2**2 + P3**2) + P7 * P9**2", "$$a0315b04-fde6-429b-969e-6daca195d746": "1/12 * P7 * (P1**2 + P3**2) + P7 * P9**2", "$$7247fd58-8edc-41c5-997f-240a5f935f13": "1/12 * P7 * (P2**2 + P1**2)"}, "ParameterErrors": {}, "CurrentValues": {"$$8555d18f-a9fc-443f-8ffb-938c580caf0b": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.7 [m]"}, "$$9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.3 [m]"}, "$$744eda8c-ce35-45d4-8c9b-74bd100496bd": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.2 [m]"}, "$$2f015bf4-6fa2-46ef-9fd5-853307d54558": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.35 [m]"}, "$$e25865d5-17d1-44df-bf52-1894ebded5e8": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.15 [m]"}, "$$22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.11904761904761904 [m]"}, "$$f9677820-e05a-42c3-a301-7b7ca1e276f4": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "25 [kg]"}, "$$594128f8-635b-44b0-9f3b-9dda4fb212b1": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1000 [kg/m^3]"}, "$$a781ec69-32da-4ee1-83bd-502d898b9b5f": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.093647619047619035 [m]"}, "$$5977ce3c-f7cd-431c-ab90-4f8c74227ce7": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.49008024716553278 [kg m^2]"}, "$$a0315b04-fde6-429b-969e-6daca195d746": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.3234135804988658 [kg m^2]"}, "$$7247fd58-8edc-41c5-997f-240a5f935f13": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.208333333333333 [kg m^2]"}, "$$e0b2793d-84a1-4d0d-8a3a-9e118ffc84cd": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [deg m^-1]"}, "$$906590ab-e656-4f8f-9733-3da1be5bfd59": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [Hz]"}, "$$18b62617-5815-4b67-accd-b9e1f15d8207": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [m m^-1]"}, "$$7a1c5ff5-7088-4d7e-969c-e4ff3003c0aa": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [Hz]"}}, "ParameterStatus": {"$$8555d18f-a9fc-443f-8ffb-938c580caf0b": "UpToDate", "$$9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": "UpToDate", "$$744eda8c-ce35-45d4-8c9b-74bd100496bd": "UpToDate", "$$2f015bf4-6fa2-46ef-9fd5-853307d54558": "UpToDate", "$$e25865d5-17d1-44df-bf52-1894ebded5e8": "UpToDate", "$$22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": "UpToDate", "$$f9677820-e05a-42c3-a301-7b7ca1e276f4": "UpToDate", "$$594128f8-635b-44b0-9f3b-9dda4fb212b1": "UpToDate", "$$a781ec69-32da-4ee1-83bd-502d898b9b5f": "UpToDate", "$$5977ce3c-f7cd-431c-ab90-4f8c74227ce7": "UpToDate", "$$a0315b04-fde6-429b-969e-6daca195d746": "UpToDate", "$$7247fd58-8edc-41c5-997f-240a5f935f13": "UpToDate", "$$e0b2793d-84a1-4d0d-8a3a-9e118ffc84cd": "NeverSolved", "$$906590ab-e656-4f8f-9733-3da1be5bfd59": "NeverSolved", "$$18b62617-5815-4b67-accd-b9e1f15d8207": "NeverSolved", "$$7a1c5ff5-7088-4d7e-969c-e4ff3003c0aa": "NeverSolved"}, "Note": None, "IsUpToDate": False, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": False, "HasRetainedData": True, "HasBeenSolved": False, "UpdateOrder": 1}</member-data>
+        <properties-setByUserFlag-data valType="String">["IsDataModelValid"]</properties-setByUserFlag-data>
+      </Object>
+      <Object Name="/Parameters/DesignPoint:1" Version="1.0">
+        <class-type valType="String">DesignPoint</class-type>
+        <object-name valType="String">1</object-name>
+        <member-data valType="String">{"DisplayText": "DP 1", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": ["Scopes", "Geometry", "Model", "Setup", "Solution", "Results"], "ErrorsOnLastUpdate": {"$$0fcd6eb5-f235-4423-99c0-d36fe3e79f1a": "The Solution component in Hydrodynamic Diffraction for Design Point 1 does not contain all entity types advertised in its component template, even after update"}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Setup in AQW, Solution in AQW", "DidCompleteUpdate": "True"}, "Parameters": {"$$8555d18f-a9fc-443f-8ffb-938c580caf0b": "0.7 [m]", "$$9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": "0.3 [m]", "$$744eda8c-ce35-45d4-8c9b-74bd100496bd": "0.2 [m]", "$$2f015bf4-6fa2-46ef-9fd5-853307d54558": "-P1/2", "$$e25865d5-17d1-44df-bf52-1894ebded5e8": "-P2/2", "$$22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": "-P7/(P8 * P1 * P2)", "$$f9677820-e05a-42c3-a301-7b7ca1e276f4": "25 [kg]", "$$594128f8-635b-44b0-9f3b-9dda4fb212b1": "1000 [kg/m^3]", "$$a781ec69-32da-4ee1-83bd-502d898b9b5f": "P6 + 0.0254 [m]", "$$5977ce3c-f7cd-431c-ab90-4f8c74227ce7": "1/12 * P7 * (P2**2 + P3**2) + P7 * P9**2", "$$a0315b04-fde6-429b-969e-6daca195d746": "1/12 * P7 * (P1**2 + P3**2) + P7 * P9**2", "$$7247fd58-8edc-41c5-997f-240a5f935f13": "1/12 * P7 * (P2**2 + P1**2)"}, "ParameterErrors": {}, "CurrentValues": {"$$8555d18f-a9fc-443f-8ffb-938c580caf0b": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.7 [m]"}, "$$9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.3 [m]"}, "$$744eda8c-ce35-45d4-8c9b-74bd100496bd": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.2 [m]"}, "$$2f015bf4-6fa2-46ef-9fd5-853307d54558": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.35 [m]"}, "$$e25865d5-17d1-44df-bf52-1894ebded5e8": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.15 [m]"}, "$$22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.11904761904761904 [m]"}, "$$f9677820-e05a-42c3-a301-7b7ca1e276f4": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "25 [kg]"}, "$$594128f8-635b-44b0-9f3b-9dda4fb212b1": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1000 [kg/m^3]"}, "$$a781ec69-32da-4ee1-83bd-502d898b9b5f": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.093647619047619035 [m]"}, "$$5977ce3c-f7cd-431c-ab90-4f8c74227ce7": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.49008024716553278 [kg m^2]"}, "$$a0315b04-fde6-429b-969e-6daca195d746": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.3234135804988658 [kg m^2]"}, "$$7247fd58-8edc-41c5-997f-240a5f935f13": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.208333333333333 [kg m^2]"}, "$$e0b2793d-84a1-4d0d-8a3a-9e118ffc84cd": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [deg m^-1]"}, "$$906590ab-e656-4f8f-9733-3da1be5bfd59": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [Hz]"}, "$$18b62617-5815-4b67-accd-b9e1f15d8207": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [m m^-1]"}, "$$7a1c5ff5-7088-4d7e-969c-e4ff3003c0aa": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [Hz]"}}, "ParameterStatus": {"$$8555d18f-a9fc-443f-8ffb-938c580caf0b": "UpToDate", "$$9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9": "UpToDate", "$$744eda8c-ce35-45d4-8c9b-74bd100496bd": "UpToDate", "$$2f015bf4-6fa2-46ef-9fd5-853307d54558": "UpToDate", "$$e25865d5-17d1-44df-bf52-1894ebded5e8": "UpToDate", "$$22dea1bf-c3fa-433a-9461-b8ba55ddf4d6": "UpToDate", "$$f9677820-e05a-42c3-a301-7b7ca1e276f4": "UpToDate", "$$594128f8-635b-44b0-9f3b-9dda4fb212b1": "UpToDate", "$$a781ec69-32da-4ee1-83bd-502d898b9b5f": "UpToDate", "$$5977ce3c-f7cd-431c-ab90-4f8c74227ce7": "UpToDate", "$$a0315b04-fde6-429b-969e-6daca195d746": "UpToDate", "$$7247fd58-8edc-41c5-997f-240a5f935f13": "UpToDate", "$$e0b2793d-84a1-4d0d-8a3a-9e118ffc84cd": "OutOfDate", "$$906590ab-e656-4f8f-9733-3da1be5bfd59": "OutOfDate", "$$18b62617-5815-4b67-accd-b9e1f15d8207": "OutOfDate", "$$7a1c5ff5-7088-4d7e-969c-e4ff3003c0aa": "OutOfDate"}, "Note": None, "IsUpToDate": False, "Exported": False, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 2}</member-data>
+        <properties-setByUserFlag-data valType="String">["IsDataModelValid"]</properties-setByUserFlag-data>
+      </Object>
+      <Object Name="/Parameters/DesignPointReportSetting:Design Points Report Setting" Version="1.0">
+        <class-type valType="String">DesignPointReportSetting</class-type>
+        <object-name valType="String">Design Points Report Setting</object-name>
+        <member-data valType="String">{"DisplayText": "Design Points Report Setting", "DesignPointReportImage": "None"}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P1" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P1</object-name>
+        <member-data valType="String">{"DisplayText": "length", "PersistedNamedValueEntityReference": None, "Expression": "0.7 [m]", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.7 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P2" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P2</object-name>
+        <member-data valType="String">{"DisplayText": "beam", "PersistedNamedValueEntityReference": None, "Expression": "0.3 [m]", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.3 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P3" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P3</object-name>
+        <member-data valType="String">{"DisplayText": "moulded_depth", "PersistedNamedValueEntityReference": None, "Expression": "0.2 [m]", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.2 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P4" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P4</object-name>
+        <member-data valType="String">{"DisplayText": "center_l", "PersistedNamedValueEntityReference": None, "Expression": "-P1/2", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.35 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P5" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P5</object-name>
+        <member-data valType="String">{"DisplayText": "center_b", "PersistedNamedValueEntityReference": None, "Expression": "-P2/2", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.15 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P6" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P6</object-name>
+        <member-data valType="String">{"DisplayText": "offset_d", "PersistedNamedValueEntityReference": None, "Expression": "-P7/(P8 * P1 * P2)", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.11904761904761904 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P7" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P7</object-name>
+        <member-data valType="String">{"DisplayText": "load", "PersistedNamedValueEntityReference": None, "Expression": "25 [kg]", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "25 [kg]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Mass"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P8" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P8</object-name>
+        <member-data valType="String">{"DisplayText": "density", "PersistedNamedValueEntityReference": None, "Expression": "1000 [kg/m^3]", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1000 [kg/m^3]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P9" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P9</object-name>
+        <member-data valType="String">{"DisplayText": "Point Mass Z (Part)", "PersistedNamedValueEntityReference": None, "Expression": "P6 + 0.0254 [m]", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "-0.093647619047619035 [m]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0 [m]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "Max": "1.7976931348623157E+308 [m]", "Min": "-1.7976931348623157E+308 [m]", "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Length"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P10" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P10</object-name>
+        <member-data valType="String">{"DisplayText": "Point Mass Ixx (Part)", "PersistedNamedValueEntityReference": None, "Expression": "1/12 * P7 * (P2**2 + P3**2) + P7 * P9**2", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "0.49008024716553278 [kg m^2]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0.4 [kg m^2]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "Max": "1.7976931348623157E+308 [kg m^2]", "Min": "0 [kg m^2]", "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Moment of Inertia of Mass"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P11" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P11</object-name>
+        <member-data valType="String">{"DisplayText": "Point Mass Iyy (Part)", "PersistedNamedValueEntityReference": None, "Expression": "1/12 * P7 * (P1**2 + P3**2) + P7 * P9**2", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.3234135804988658 [kg m^2]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0.6 [kg m^2]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "Max": "1.7976931348623157E+308 [kg m^2]", "Min": "0 [kg m^2]", "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Moment of Inertia of Mass"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P12" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P12</object-name>
+        <member-data valType="String">{"DisplayText": "Point Mass Izz (Part)", "PersistedNamedValueEntityReference": None, "Expression": "1/12 * P7 * (P2**2 + P1**2)", "Usage": "Input", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.208333333333333 [kg m^2]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "0.8 [kg m^2]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Input", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "Max": "1.7976931348623157E+308 [kg m^2]", "Min": "0 [kg m^2]", "UndefinedValue": "1.79769313486231E+308", "QuantityName": "Moment of Inertia of Mass"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P16" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P16</object-name>
+        <member-data valType="String">{"DisplayText": "Parameters vs Frequency Maximum Value (A5) (Line B: RAOs - Global RY, -180° (Part))", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [deg m^-1]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "2.2250738585072014E-308 [deg m^-1]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P15" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P15</object-name>
+        <member-data valType="String">{"DisplayText": "Parameters vs Frequency Abscissa Position of Maximum (A5) (Line B: RAOs - Global RY, -180° (Part))", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [Hz]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "2.2250738585072014E-308 [Hz]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P14" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P14</object-name>
+        <member-data valType="String">{"DisplayText": "Parameters vs Frequency Maximum Value (A5) (Line A: RAOs - Global Z, -180° (Part - Center of Gravity relative to Origin of Fixed Reference Axes (FRA)))", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [m m^-1]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "2.2250738585072014E-308 [m m^-1]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308"}}</member-data>
+      </Object>
+      <Object Name="/Parameters/Parameter:P13" Version="1.0">
+        <class-type valType="String">Parameter</class-type>
+        <object-name valType="String">P13</object-name>
+        <member-data valType="String">{"DisplayText": "Parameters vs Frequency Abscissa Position of Maximum (A5) (Line A: RAOs - Global Z, -180° (Part - Center of Gravity relative to Origin of Fixed Reference Axes (FRA)))", "PersistedNamedValueEntityReference": None, "Expression": None, "Usage": "DirectOutput", "IsParameter": True, "Scope": None, "SystemData": {}, "SerializedNamedExpression": None, "Description": None, "ErrorMessage": None, "HasRemovedLinksFromMigration": False, "Value": {"__FRAMEWORK_ANY_SPEC__": "Ansys.Core.DataSpecs.QuantitySpec", "value": "1.7976931348623157E+308 [Hz]"}, "ValueSpec": {"SpecType": "Ansys.Core.DataSpecs.QuantitySpec, Ans.Core", "Access": "UserWritable", "CanUndoPropertyChanges": True, "Default": "2.2250738585072014E-308 [Hz]", "Exposure": "AnyUser", "IsOptional": False, "IsPersistent": True, "IsReadOnly": False, "Usage": "Output", "IsDesignPointInvariant": False, "IsParameterizable": True, "ReuseJournalVariables": False, "UndefinedValue": "1.79769313486231E+308"}}</member-data>
+      </Object>
+      <ParameterToPropertyMap>
+        <Parameter Name="/Parameters/Parameter:P1">
+          <ParameterReference valType="String">8555d18f-a9fc-443f-8ffb-938c580caf0b</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">0ac7fdbb-3767-437b-9a42-a90c9e27cf2a</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P2">
+          <ParameterReference valType="String">9d4a5318-4aac-41d7-a0a1-1e6cb6c7c3f9</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">4dbb6c82-12ad-462e-8f2e-f742a655c4b2</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P3">
+          <ParameterReference valType="String">744eda8c-ce35-45d4-8c9b-74bd100496bd</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">21d1ec4d-d5b7-44f3-842f-5703d2fbc4c8</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P4">
+          <ParameterReference valType="String">2f015bf4-6fa2-46ef-9fd5-853307d54558</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">7d907250-63c1-46c1-afc6-9102f7d49305</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P5">
+          <ParameterReference valType="String">e25865d5-17d1-44df-bf52-1894ebded5e8</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">fdf67536-f85f-468e-bed0-a5fb9f088cf9</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P6">
+          <ParameterReference valType="String">22dea1bf-c3fa-433a-9461-b8ba55ddf4d6</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">e75e61c3-9500-473d-89c0-748a997aaf97</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P7">
+          <ParameterReference valType="String">f9677820-e05a-42c3-a301-7b7ca1e276f4</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">deef93df-8cf4-4f5c-a298-387aa462184d</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P8">
+          <ParameterReference valType="String">594128f8-635b-44b0-9f3b-9dda4fb212b1</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">03e6a5bc-1855-4203-9a4a-bf5545593c74</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P9">
+          <ParameterReference valType="String">a781ec69-32da-4ee1-83bd-502d898b9b5f</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">7342a874-aa7e-4447-810d-b79168203211</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P10">
+          <ParameterReference valType="String">5977ce3c-f7cd-431c-ab90-4f8c74227ce7</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">fc7b1161-e420-42ca-ac8a-2aa84d597a28</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P11">
+          <ParameterReference valType="String">a0315b04-fde6-429b-969e-6daca195d746</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">9312f01e-19b8-4557-bb84-1d12950a9001</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P12">
+          <ParameterReference valType="String">7247fd58-8edc-41c5-997f-240a5f935f13</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">45438393-ca3e-4107-8a72-7e0857e60d0c</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P16">
+          <ParameterReference valType="String">e0b2793d-84a1-4d0d-8a3a-9e118ffc84cd</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">3669458e-81bd-4417-83c8-817f2f00700a</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P15">
+          <ParameterReference valType="String">906590ab-e656-4f8f-9733-3da1be5bfd59</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">28577129-b9d1-4868-b77c-2682e57cefc2</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P14">
+          <ParameterReference valType="String">18b62617-5815-4b67-accd-b9e1f15d8207</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">d6c7367d-673f-4783-9bcf-3d44e6386d1b</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+        <Parameter Name="/Parameters/Parameter:P13">
+          <ParameterReference valType="String">7a1c5ff5-7088-4d7e-969c-e4ff3003c0aa</ParameterReference>
+          <LinkedEntityProperty>
+            <EntityReference valType="String">cc9741a5-4c6c-4612-9886-afbd57ab1937</EntityReference>
+            <Property valType="String">Value</Property>
+          </LinkedEntityProperty>
+        </Parameter>
+      </ParameterToPropertyMap>
+    </Container>
+    <Container Name="Schematic" Version="1.0">
+      <container-type valType="String">Ansys.ProjectSchematic.ProjectSchematicAddin:Default</container-type>
+      <static-id valType="String">Schematic</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 2720, "Input": 2498, "Output": 1443}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/Schematic/System:AQW" Version="1.0">
+        <class-type valType="String">System</class-type>
+        <object-name valType="String">AQW</object-name>
+        <member-data valType="String">{"DisplayText": "Hydrodynamic Diffraction", "Components": [$$26050479-cfdf-48ef-a8fb-0777485119f5, $$b8547ecb-751b-4807-8a81-eb3d6ab30f99, $$dc13cac6-5a0f-4760-9889-b74a5ba6b350, $$0fcd6eb5-f235-4423-99c0-d36fe3e79f1a, $$49aafa3a-503c-41cf-ac5b-7ac62bc07b67], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Modal", "AnalysisType": "Hydrodynamic Diffraction", "SolverType": "AQWA", "SolverTypeDisplayString": "AQWA", "PhysicsTypeDisplayString": "Modal", "AnalysisTypeDisplayString": "Hydrodynamic Diffraction", "SystemName": "Hydrodynamic Diffraction (AQWA)", "IsCreated": "True", "VOLATILE:SystemName": "AQW"}, "SystemType": "Hydrodynamic Diffraction (AQWA)", "HeaderText": "Hydrodynamic Diffraction", "SystemTypeAbbreviation": "AQW", "UniqueSystemDirectoryName": "AQW", "Physics": [], "AnalysisType": None, "SystemHelpId": "wb2sb_hdiffAN", "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$154ac8c8-7e06-4f52-92ca-d11a35a323d0, "Notes": None, "LayoutChildren": [], "LayoutIndex": 1}</member-data>
+      </Object>
+      <Object Name="/Schematic/SchematicSettings:Schematic Settings" Version="1.0">
+        <class-type valType="String">SchematicSettings</class-type>
+        <object-name valType="String">Schematic Settings</object-name>
+        <member-data valType="String">{"DisplayText": "Schematic Settings", "WireBundling": False, "ShowSystemCoordinates": True, "Notes": None, "SuspendCollectingRSMResult": False}</member-data>
+      </Object>
+      <Object Name="/Schematic/DesignPointSolveSettings:Design Points Update Settings" Version="1.0">
+        <class-type valType="String">DesignPointSolveSettings</class-type>
+        <object-name valType="String">Design Points Update Settings</object-name>
+        <member-data valType="String">{"DisplayText": "Design Points Update Settings", "UpdateOption": "Foreground", "RsmUserString": None, "ConfiguredQueue": {"OptionIcons": None, "OptionLabels": "Local", "Options": "Local", "ReadOnlyOptions": None, "OptionFeatureFlags": None, "OptionFilterFlags": None, "OptionLicenseFlags": None, "Value": "Local"}, "RsmJobName": "Workbench", "UpdateMethod": "Foreground", "UpdateOrder": "UpdateFromCurrentDesignPoint", "PreRSMUpdate": "Geometry", "PartialUpdate": "None", "RetainPartialUpdate": "None", "ComponentExecutionMode": "Serial", "NumberOfCoresPerJob": 2, "RetainFailedDesignPoints": False, "DesignPointRetainedOrExportedUpdate": "Parameters", "DesignPointUpdateTimeout": -1, "NumberOfJobsToBeCreated": 1, "NumberOfTasksToBeCreated": 1}</member-data>
+      </Object>
+      <Object Name="/Schematic/Bookkeeper:Schematic bookkeeper" Version="1.0">
+        <class-type valType="String">Bookkeeper</class-type>
+        <object-name valType="String">Schematic bookkeeper</object-name>
+        <member-data valType="String">{"DisplayText": "Schematic bookkeeper", "UpfrontLicenseCheckoutSelection": []}</member-data>
+      </Object>
+      <Object Name="/Schematic/CustomProjectTemplate:FSI: Fluid Flow (CFX) -&gt; Static Structural" Version="1.0">
+        <class-type valType="String">CustomProjectTemplate</class-type>
+        <object-name valType="String">FSI: Fluid Flow (CFX) -&gt; Static Structural</object-name>
+        <member-data valType="String">{"DisplayText": "FSI: Fluid Flow (CFX) -&gt; Static Structural", "SystemTemplates": [$$2461bbc9-faa3-41d6-91d7-4e34a7ad6f30, $$6a72fb57-b762-46d7-ae12-e977a493facd], "SystemNames": ["Fluid Flow (CFX)", "Static Structural (ANSYS)"], "ToolboxGroup": "Custom Systems", "AdditionalSystemHelpId": None, "PostCreationSteps": [["Share", "Fluid Flow (CFX):Geometry", "Static Structural (ANSYS):Geometry"], ["Connect", "Fluid Flow (CFX):Solution:CFXTransferResultsTemplate", "Static Structural (ANSYS):Setup"]], "LayoutIndices": {"Fluid Flow (CFX)": 1, "Static Structural (ANSYS)": 0}, "LayoutChildren": {"Fluid Flow (CFX)": ["Static Structural (ANSYS)"]}}</member-data>
+      </Object>
+      <Object Name="/Schematic/CustomProjectTemplate:FSI: Fluid Flow (FLUENT) -&gt; Static Structural" Version="1.0">
+        <class-type valType="String">CustomProjectTemplate</class-type>
+        <object-name valType="String">FSI: Fluid Flow (FLUENT) -&gt; Static Structural</object-name>
+        <member-data valType="String">{"DisplayText": "FSI: Fluid Flow (FLUENT) -&gt; Static Structural", "SystemTemplates": [$$289daa49-b7bf-48b0-87f9-e9901a76f6a0, $$6a72fb57-b762-46d7-ae12-e977a493facd], "SystemNames": ["Fluid Flow (FLUENT)", "Static Structural (ANSYS)"], "ToolboxGroup": "Custom Systems", "AdditionalSystemHelpId": None, "PostCreationSteps": [["Share", "Fluid Flow (FLUENT):Geometry", "Static Structural (ANSYS):Geometry"], ["Connect", "Fluid Flow (FLUENT):Solution", "Static Structural (ANSYS):Setup"]], "LayoutIndices": {"Fluid Flow (FLUENT)": 1, "Static Structural (ANSYS)": 0}, "LayoutChildren": {"Fluid Flow (FLUENT)": ["Static Structural (ANSYS)"]}}</member-data>
+      </Object>
+      <Object Name="/Schematic/CustomProjectTemplate:Thermal-Stress" Version="1.0">
+        <class-type valType="String">CustomProjectTemplate</class-type>
+        <object-name valType="String">Thermal-Stress</object-name>
+        <member-data valType="String">{"DisplayText": "Thermal-Stress", "SystemTemplates": [$$6ac53f20-6d5e-40c9-8f6e-de25da80cd2f, $$6a72fb57-b762-46d7-ae12-e977a493facd], "SystemNames": ["Steady-State Thermal (ANSYS)", "Static Structural (ANSYS)"], "ToolboxGroup": "Custom Systems", "AdditionalSystemHelpId": None, "PostCreationSteps": [["Share", "Steady-State Thermal (ANSYS):Engineering Data", "Static Structural (ANSYS):Engineering Data"], ["Share", "Steady-State Thermal (ANSYS):Geometry", "Static Structural (ANSYS):Geometry"], ["Share", "Steady-State Thermal (ANSYS):Model", "Static Structural (ANSYS):Model"], ["Connect", "Steady-State Thermal (ANSYS):Solution", "Static Structural (ANSYS):Setup"]], "LayoutIndices": {"Steady-State Thermal (ANSYS)": 1, "Static Structural (ANSYS)": 0}, "LayoutChildren": {"Steady-State Thermal (ANSYS)": ["Static Structural (ANSYS)"]}}</member-data>
+      </Object>
+      <Object Name="/Schematic/CustomProjectTemplate:Pre-Stress Modal" Version="1.0">
+        <class-type valType="String">CustomProjectTemplate</class-type>
+        <object-name valType="String">Pre-Stress Modal</object-name>
+        <member-data valType="String">{"DisplayText": "Pre-Stress Modal", "SystemTemplates": [$$6a72fb57-b762-46d7-ae12-e977a493facd, $$91d9b95b-1beb-45b8-9de6-50b908cd3fa8], "SystemNames": ["Static Structural (ANSYS)", "Modal (ANSYS)"], "ToolboxGroup": "Custom Systems", "AdditionalSystemHelpId": None, "PostCreationSteps": [["Share", "Static Structural (ANSYS):Engineering Data", "Modal (ANSYS):Engineering Data"], ["Share", "Static Structural (ANSYS):Geometry", "Modal (ANSYS):Geometry"], ["Share", "Static Structural (ANSYS):Model", "Modal (ANSYS):Model"], ["Connect", "Static Structural (ANSYS):Solution", "Modal (ANSYS):Setup"]], "LayoutIndices": {"Static Structural (ANSYS)": 1, "Modal (ANSYS)": 0}, "LayoutChildren": {"Static Structural (ANSYS)": ["Modal (ANSYS)"]}}</member-data>
+      </Object>
+      <Object Name="/Schematic/CustomProjectTemplate:Random Vibration" Version="1.0">
+        <class-type valType="String">CustomProjectTemplate</class-type>
+        <object-name valType="String">Random Vibration</object-name>
+        <member-data valType="String">{"DisplayText": "Random Vibration", "SystemTemplates": [$$91d9b95b-1beb-45b8-9de6-50b908cd3fa8, $$3f53deff-a8a3-4ff0-a50d-ca5745aaccf2], "SystemNames": ["Modal (ANSYS)", "Random Vibration (ANSYS)"], "ToolboxGroup": "Custom Systems", "AdditionalSystemHelpId": None, "PostCreationSteps": [["Share", "Modal (ANSYS):Engineering Data", "Random Vibration (ANSYS):Engineering Data"], ["Share", "Modal (ANSYS):Geometry", "Random Vibration (ANSYS):Geometry"], ["Share", "Modal (ANSYS):Model", "Random Vibration (ANSYS):Model"], ["Connect", "Modal (ANSYS):Solution", "Random Vibration (ANSYS):Setup"]], "LayoutIndices": {"Modal (ANSYS)": 1, "Random Vibration (ANSYS)": 0}, "LayoutChildren": {"Modal (ANSYS)": ["Random Vibration (ANSYS)"]}}</member-data>
+      </Object>
+      <Object Name="/Schematic/CustomProjectTemplate:Response Spectrum" Version="1.0">
+        <class-type valType="String">CustomProjectTemplate</class-type>
+        <object-name valType="String">Response Spectrum</object-name>
+        <member-data valType="String">{"DisplayText": "Response Spectrum", "SystemTemplates": [$$91d9b95b-1beb-45b8-9de6-50b908cd3fa8, $$e8c446fd-44b3-4f58-aa0f-fc03e4ec111c], "SystemNames": ["Modal (ANSYS)", "Response Spectrum (ANSYS)"], "ToolboxGroup": "Custom Systems", "AdditionalSystemHelpId": None, "PostCreationSteps": [["Share", "Modal (ANSYS):Engineering Data", "Response Spectrum (ANSYS):Engineering Data"], ["Share", "Modal (ANSYS):Geometry", "Response Spectrum (ANSYS):Geometry"], ["Share", "Modal (ANSYS):Model", "Response Spectrum (ANSYS):Model"], ["Connect", "Modal (ANSYS):Solution", "Response Spectrum (ANSYS):Setup"]], "LayoutIndices": {"Modal (ANSYS)": 1, "Response Spectrum (ANSYS)": 0}, "LayoutChildren": {"Modal (ANSYS)": ["Response Spectrum (ANSYS)"]}}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Geometry" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Geometry</object-name>
+        <member-data valType="String">{"DisplayText": "Geometry", "ImageName": "cad_designmodeler", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Geometry", "_overwrittenUpdatable": None, "Template": $$4990749e-0437-4e7f-9e5e-f3ac89e887c5, "InSystem": $$28699b87-cb52-4989-9e8d-6f61fa49d123, "MasterSources": {"Sources": []}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": None, "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Model" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Model</object-name>
+        <member-data valType="String">{"DisplayText": "Model", "ImageName": "model", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Model", "_overwrittenUpdatable": None, "Template": $$97f02337-4ed9-4d8d-9c2d-56e3c5bede17, "InSystem": $$28699b87-cb52-4989-9e8d-6f61fa49d123, "MasterSources": {"Sources": [[{"DataType": "Geometry", "Component": $$26050479-cfdf-48ef-a8fb-0777485119f5, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {}, "ActiveTransferComponents": [], "Solver": "", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Setup" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Setup</object-name>
+        <member-data valType="String">{"DisplayText": "Setup", "ImageName": "setup", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Setup", "_overwrittenUpdatable": None, "Template": $$d768fa05-175f-4ad2-b670-d799778ede9b, "InSystem": $$28699b87-cb52-4989-9e8d-6f61fa49d123, "MasterSources": {"Sources": [[{"DataType": "AqwaModel", "Component": $$b8547ecb-751b-4807-8a81-eb3d6ab30f99, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {}, "ActiveTransferComponents": [], "Solver": "AQWA", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Solution" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Solution</object-name>
+        <member-data valType="String">{"DisplayText": "Solution", "ImageName": "solution", "ComponentStateOnLastFailure": "Incomplete", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Solution", "_overwrittenUpdatable": None, "Template": $$11b23d83-3e72-4516-8c74-6966333f5973, "InSystem": $$28699b87-cb52-4989-9e8d-6f61fa49d123, "MasterSources": {"Sources": [[{"DataType": "AqwaSetup", "Component": $$dc13cac6-5a0f-4760-9889-b74a5ba6b350, "Transfer": None}]]}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": "AQWA", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Results" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Results</object-name>
+        <member-data valType="String">{"DisplayText": "Results", "ImageName": "results", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Results", "_overwrittenUpdatable": None, "Template": $$8392bd74-ed02-427e-9168-f82fff01cbaa, "InSystem": $$28699b87-cb52-4989-9e8d-6f61fa49d123, "MasterSources": {"Sources": [[{"DataType": "AqwaSolution", "Component": $$0fcd6eb5-f235-4423-99c0-d36fe3e79f1a, "Transfer": None}]]}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": "AQWA", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+    </Container>
+    <Container Name="ReportDataContainer" Version="1.0">
+      <container-type valType="String">Ansys.ProjectReporting.Addin:ReportDataContainer</container-type>
+      <static-id valType="String">ReportDataContainer</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 1853, "Input": 1844, "Output": 1844}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+    </Container>
+    <Container Name="Graphics" Version="1.0">
+      <container-type valType="String">Ansys.Graphics.GraphicsAddin:graphics</container-type>
+      <static-id valType="String">Graphics</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 1854, "Input": 1854, "Output": 1854}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+    </Container>
+    <Container Name="Units" Version="1.0">
+      <container-type valType="String">Ansys.Units.Commands.Addin:Units</container-type>
+      <static-id valType="String">Units</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 1855, "Input": 1984, "Output": 1855}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/Units/UnitSystemProjectSettings:UnitSystemProjectSettings" Version="1.0">
+        <class-type valType="String">UnitSystemProjectSettings</class-type>
+        <object-name valType="String">UnitSystemProjectSettings</object-name>
+        <member-data valType="String">{"DisplayText": "UnitSystemProjectSettings", "DataContainerUnitSystemRegistry": {"Geometry": "DesignModelerUnitSystem_m"}}</member-data>
+      </Object>
+      <Object Name="/Units/UnitSystem:UnitSys" Version="1.0">
+        <class-type valType="String">UnitSystem</class-type>
+        <object-name valType="String">UnitSys</object-name>
+        <member-data valType="String">{"DisplayText": "Metric (kg,m,s,°C,A,N,V)", "ChangedQuantityUnits": {"Temperature": "C", "Energy Source Coefficient": "W m^-3 C^-1", "Heat Transfer Coefficient": "W m^-2 C^-1", "InvTemp1": "C^-1", "InvTemp2": "C^-2", "InvTemp3": "C^-3", "InvTemp4": "C^-4", "Molar Entropy": "J mol^-1 C^-1", "Normalized Value": "m m^-1", "Seebeck Coefficient": "V C^-1", "Specific Entropy": "J kg^-1 C^-1", "Specific Heat Capacity": "J kg^-1 C^-1", "Temperature Gradient": "C m^-1", "Thermal Conductivity": "W m^-1 C^-1", "Thermal Expansivity": "C^-1", "Stress Per Temperature": "Pa C^-1", "Temperature Difference": "C", "Density Derivative wrt Temperature": "kg m^-3 C^-1", "Pressure Derivative wrt Temperature": "Pa C^-1", "Thermal Capacitance": "J C^-1", "Thermal Conductance": "W C^-1", "Thermal Contact Resistance": "W^-1 m^2 C", "Piezoelectric Strain Coefficient": "A s N^-1", "Piezoelectric Stress Coefficient": "A s m^-2"}, "UnitSystemName": "MKS_STANDARD", "BaseUnitSystemName": "SI", "IsProjectUnitSystem": True, "IsDefault": False}</member-data>
+      </Object>
+      <Object Name="/Units/UnitSystem:UnitSys 1" Version="1.0">
+        <class-type valType="String">UnitSystem</class-type>
+        <object-name valType="String">UnitSys 1</object-name>
+        <member-data valType="String">{"DisplayText": "DesignModeler Unit System (m, degree)", "ChangedQuantityUnits": {"Angle": "degree", "Temperature": "C", "Density Derivative wrt Temperature": "kg m^-3 C^-1", "Energy Source Coefficient": "W m^-3 C^-1", "Heat Transfer Coefficient": "W m^-2 C^-1", "Inverse Angle": "degree^-1", "Molar Entropy": "J mol^-1 C^-1", "Piezoelectric Strain Coefficient": "A s N^-1", "Piezoelectric Stress Coefficient": "A s m^-2", "Pressure Derivative wrt Temperature": "Pa C^-1", "Seebeck Coefficient": "V C^-1", "Specific Entropy": "J kg^-1 C^-1", "Specific Heat Capacity": "J kg^-1 C^-1", "Stress Per Temperature": "Pa C^-1", "Temperature Difference": "C", "Temperature Gradient": "C m^-1", "InvTemp1": "C^-1", "InvTemp2": "C^-2", "InvTemp3": "C^-3", "InvTemp4": "C^-4", "Thermal Capacitance": "J C^-1", "Thermal Conductance": "W C^-1", "Thermal Conductivity": "W m^-1 C^-1", "Thermal Contact Resistance": "W^-1 m^2 C", "Thermal Expansivity": "C^-1"}, "UnitSystemName": "DesignModelerUnitSystem_m", "BaseUnitSystemName": "SI", "IsProjectUnitSystem": False, "IsDefault": False}</member-data>
+      </Object>
+    </Container>
+    <Container Name="DpdbContainer" Version="1.0">
+      <container-type valType="String">Ansys.Dpdb.DpdbAddin:DpdbContainer</container-type>
+      <static-id valType="String">DpdbContainer</static-id>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 2409, "Input": 2422, "Output": 1858}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <contains-significant-data valType="Boolean">false</contains-significant-data>
+      <Object Name="/DpdbContainer/DpdbSettings:Dpdb Settings Entity" Version="1.0">
+        <class-type valType="String">DpdbSettings</class-type>
+        <object-name valType="String">Dpdb Settings Entity</object-name>
+        <member-data valType="String">{"DisplayText": "Dpdb Settings Entity", "ServerUrl": "https://localhost/dcs", "ServerUserName": "dcadmin", "ServerPassword": "dcadmin", "DatabaseName": None, "StartLocalEvaluatorOnUpdate": True, "ExecutionTime": 300, "UpdateDesignPointInSteps": False}</member-data>
+      </Object>
+      <Object Name="/DpdbContainer/ConnectionInfo:ConnectionInfo" Version="1.0">
+        <class-type valType="String">ConnectionInfo</class-type>
+        <object-name valType="String">ConnectionInfo</object-name>
+        <member-data valType="String">{"DisplayText": "ConnectionInfo", "IsConnected": False, "DbName": None, "LastSyncStateId": "00000000-0000-0000-0000-000000000000", "ConnectionSettingsModified": False, "DesignPointsBeingEvaluated": [], "ParameterToDpdbId": {}, "DpReferenceToDpdbDatabaseId": {}}</member-data>
+      </Object>
+    </Container>
+  </Containers>
+</Storage>
