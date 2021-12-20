@@ -1,6 +1,0 @@
-# encoding: utf-8
-# 2021 R1
-SetScriptVersion(Version="21.1.216")
-ClearMessages()
-Save(Overwrite=True)
-Open(FilePath="Y:/Documents/GitHub/RAO-Research/rao parametrix working.wbpj")

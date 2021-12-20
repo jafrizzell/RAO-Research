@@ -1,6 +1,0 @@
-﻿# encoding: utf-8
-# 2021 R1
-SetScriptVersion(Version="21.1.216")
-designPoint1 = Parameters.GetDesignPoint(Name="0")
-backgroundSession1 = UpdateAllDesignPoints(DesignPoints=[designPoint1])
-Parameters.ExportAllDesignPointsData(FilePath="Z:/Documents/GitHub/RAO-Research/results.csv")
