@@ -1,13 +1,8 @@
 import pandas as pd
-from sklearn.metrics import r2_score
 import tensorflow as tf
 import numpy as np
 from math import e
 from statistics import mean
-from tensorflow import keras
-from tensorflow.keras import layers
-from tensorflow.keras import models
-from tensorflow.keras.layers.experimental import preprocessing
 import matplotlib.pyplot as plt
 
 load_model = tf.keras.models.load_model("D:\IdeaProjects\PyCharm\TAMU_Work\OCEN 485/damped_spring_all_dir3")

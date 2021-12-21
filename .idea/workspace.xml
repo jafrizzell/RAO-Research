@@ -4,7 +4,8 @@
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="wow!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/working data/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/working data/damped_model_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/working data/damped_spring_all_dir3/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/working data/damped_spring_all_dir3/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/working data/damped_spring_all_dir3/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/working data/damped_spring_all_dir3/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/working data/damped_spring_all_dir3/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/working data/damped_spring_all_dir3/variables/variables.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/working data/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/working data/model_trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.damped_model_visualizer">
+  <component name="RunManager" selected="Python.model_trainer">
     <configuration name="PostSolve" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,8 +136,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.damped_model_visualizer" />
         <item itemvalue="Python.model_trainer" />
+        <item itemvalue="Python.damped_model_visualizer" />
         <item itemvalue="Python.rao_extractor" />
         <item itemvalue="Python.PostSolve" />
       </list>
@@ -158,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640039863186</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wow!">
+      <created>1640113309298</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640113309298</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
