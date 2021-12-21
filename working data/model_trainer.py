@@ -65,7 +65,7 @@ def build_and_compile_model(norm):
     # dense4 = layers.Dense(64, activation='relu')(dense3)
     # dense5 = layers.Dense(64, activation='relu')(dense4)
     # dense6 = layers.Dense(64, activation='relu')(dense5)
-    outputs = layers.Dense(6*(order+1))(dense2)
+    outputs = layers.Dense(6*(order))(dense2)
 
     model = keras.Model(inputs=inputs, outputs=outputs)
     model.compile(loss='mean_absolute_error',
