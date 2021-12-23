@@ -59,13 +59,13 @@ def plot_loss(history):
 def build_and_compile_model(norm):
     # Adjust the number of hidden layers and neurons per layer that results in best fit NN
     inputs = keras.Input(shape=(4,))
-    dense1 = layers.Dense(64, activation='elu')(inputs)
-    dense2 = layers.Dense(64, activation='elu')(dense1)
-    dense3 = layers.Dense(64, activation='relu')(dense2)
+    dense1 = layers.Dense(256, activation='elu')(inputs)
+    dense2 = layers.Dense(256, activation='elu')(dense1)
+    # dense3 = layers.Dense(64, activation='relu')(dense2)
     # dense4 = layers.Dense(64, activation='relu')(dense3)
     # dense5 = layers.Dense(64, activation='relu')(dense4)
     # dense6 = layers.Dense(64, activation='relu')(dense5)
-    outputs = layers.Dense(6*(order))(dense3)
+    outputs = layers.Dense(6*(order))(dense2)
 
     model = keras.Model(inputs=inputs, outputs=outputs)
     model.compile(loss='mean_absolute_error',
