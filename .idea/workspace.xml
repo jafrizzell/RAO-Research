@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Added Error Analysis">
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Fixed some aspects of the error analysis">
+      <change afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_angular_raw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_linear_raw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_angular_raw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_linear_raw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_rpd.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results3.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641930521665</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed some aspects of the error analysis">
+      <created>1641939701753</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641939701753</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,7 +255,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wow!" />
     <MESSAGE value="Added Error Analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Error Analysis" />
+    <MESSAGE value="Fixed some aspects of the error analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some aspects of the error analysis" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
