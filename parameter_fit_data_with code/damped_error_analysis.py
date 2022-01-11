@@ -10,16 +10,75 @@ rpd_errs = []
 raw_errs = []
 colors = []
 
-deg0_rpd = []
-deg45_rpd = []
-deg90_rpd = []
-deg135_rpd = []
-deg180_rpd = []
-deg0_raw = []
-deg45_raw = []
-deg90_raw = []
-deg135_raw = []
-deg180_raw = []
+deg0_rpd_x = []
+deg0_rpd_y = []
+deg0_rpd_z = []
+deg0_rpd_rx = []
+deg0_rpd_ry = []
+deg0_rpd_rz = []
+
+deg45_rpd_x = []
+deg45_rpd_y = []
+deg45_rpd_z = []
+deg45_rpd_rx = []
+deg45_rpd_ry = []
+deg45_rpd_rz = []
+
+deg90_rpd_x = []
+deg90_rpd_y = []
+deg90_rpd_z = []
+deg90_rpd_rx = []
+deg90_rpd_ry = []
+deg90_rpd_rz = []
+
+deg135_rpd_x = []
+deg135_rpd_y = []
+deg135_rpd_z = []
+deg135_rpd_rx = []
+deg135_rpd_ry = []
+deg135_rpd_rz = []
+
+deg180_rpd_x = []
+deg180_rpd_y = []
+deg180_rpd_z = []
+deg180_rpd_rx = []
+deg180_rpd_ry = []
+deg180_rpd_rz = []
+
+deg0_raw_x = []
+deg0_raw_y = []
+deg0_raw_z = []
+deg0_raw_rx = []
+deg0_raw_ry = []
+deg0_raw_rz = []
+
+deg45_raw_x = []
+deg45_raw_y = []
+deg45_raw_z = []
+deg45_raw_rx = []
+deg45_raw_ry = []
+deg45_raw_rz = []
+
+deg90_raw_x = []
+deg90_raw_y = []
+deg90_raw_z = []
+deg90_raw_rx = []
+deg90_raw_ry = []
+deg90_raw_rz = []
+
+deg135_raw_x = []
+deg135_raw_y = []
+deg135_raw_z = []
+deg135_raw_rx = []
+deg135_raw_ry = []
+deg135_raw_rz = []
+
+deg180_raw_x = []
+deg180_raw_y = []
+deg180_raw_z = []
+deg180_raw_rx = []
+deg180_raw_ry = []
+deg180_raw_rz = []
 
 avg_x_err_rpd = []
 avg_y_err_rpd = []
@@ -103,6 +162,13 @@ while count < 120:
     ry_err_rpd = abs(round(mean(200*np.subtract(orig_ry, pred_ry)/(np.add(np.absolute(orig_ry), np.absolute(pred_ry)))), 3))
     rz_err_rpd = abs(round(mean(200*np.subtract(orig_rz, pred_rz)/(np.add(np.absolute(orig_rz), np.absolute(pred_rz)))), 3))
 
+    x_err_raw = round(abs(mean(np.subtract(orig_x, pred_x))), 3)
+    y_err_raw = round(abs(mean(np.subtract(orig_y, pred_y))), 3)
+    z_err_raw = round(abs(mean(np.subtract(orig_z, pred_z))), 3)
+    rx_err_raw = round(abs(mean(np.subtract(orig_rx, pred_rx))), 3)
+    ry_err_raw = round(abs(mean(np.subtract(orig_ry, pred_ry))), 3)
+    rz_err_raw = round(abs(mean(np.subtract(orig_rz, pred_rz))), 3)
+
     avg_x_err_rpd.append(x_err_rpd)
     avg_y_err_rpd.append(y_err_rpd)
     avg_z_err_rpd.append(z_err_rpd)
@@ -111,12 +177,6 @@ while count < 120:
     avg_rz_err_rpd.append(rz_err_rpd)
     avg_err_rpd = mean([x_err_rpd, y_err_rpd, z_err_rpd, rx_err_rpd, ry_err_rpd, rz_err_rpd])
 
-    x_err_raw = round(abs(mean(np.subtract(orig_x, pred_x))), 3)
-    y_err_raw = round(abs(mean(np.subtract(orig_y, pred_y))), 3)
-    z_err_raw = round(abs(mean(np.subtract(orig_z, pred_z))), 3)
-    rx_err_raw = round(abs(mean(np.subtract(orig_rx, pred_rx))), 3)
-    ry_err_raw = round(abs(mean(np.subtract(orig_ry, pred_ry))), 3)
-    rz_err_raw = round(abs(mean(np.subtract(orig_rz, pred_rz))), 3)
     avg_x_err_raw.append(x_err_raw)
     avg_y_err_raw.append(y_err_raw)
     avg_z_err_raw.append(z_err_raw)
@@ -130,20 +190,70 @@ while count < 120:
     rpd_errs.append(avg_err_rpd)
     raw_errs.append(avg_err_raw)
     if abs(baseline_input[3]) == 0.0:
-        deg0_rpd.append((avg_err_rpd))
-        deg0_raw.append((avg_err_raw))
+        deg0_rpd_x.append(x_err_rpd)
+        deg0_rpd_y.append(y_err_rpd)
+        deg0_rpd_z.append(z_err_rpd)
+        deg0_rpd_rx.append(rx_err_rpd)
+        deg0_rpd_ry.append(ry_err_rpd)
+        deg0_rpd_rz.append(rz_err_rpd)
+        deg0_raw_x.append(x_err_raw)
+        deg0_raw_y.append(y_err_raw)
+        deg0_raw_z.append(z_err_raw)
+        deg0_raw_rx.append(rx_err_raw)
+        deg0_raw_ry.append(ry_err_raw)
+        deg0_raw_rz.append(rz_err_raw)
     if abs(baseline_input[3]) == 45.0:
-        deg45_rpd.append((avg_err_rpd))
-        deg45_raw.append((avg_err_raw))
+        deg45_rpd_x.append(x_err_rpd)
+        deg45_rpd_y.append(y_err_rpd)
+        deg45_rpd_z.append(z_err_rpd)
+        deg45_rpd_rx.append(rx_err_rpd)
+        deg45_rpd_ry.append(ry_err_rpd)
+        deg45_rpd_rz.append(rz_err_rpd)
+        deg45_raw_x.append(x_err_raw)
+        deg45_raw_y.append(y_err_raw)
+        deg45_raw_z.append(z_err_raw)
+        deg45_raw_rx.append(rx_err_raw)
+        deg45_raw_ry.append(ry_err_raw)
+        deg45_raw_rz.append(rz_err_raw)
     if abs(baseline_input[3]) == 90.0:
-        deg90_rpd.append((avg_err_rpd))
-        deg90_raw.append((avg_err_raw))
+        deg90_rpd_x.append(x_err_rpd)
+        deg90_rpd_y.append(y_err_rpd)
+        deg90_rpd_z.append(z_err_rpd)
+        deg90_rpd_rx.append(rx_err_rpd)
+        deg90_rpd_ry.append(ry_err_rpd)
+        deg90_rpd_rz.append(rz_err_rpd)
+        deg90_raw_x.append(x_err_raw)
+        deg90_raw_y.append(y_err_raw)
+        deg90_raw_z.append(z_err_raw)
+        deg90_raw_rx.append(rx_err_raw)
+        deg90_raw_ry.append(ry_err_raw)
+        deg90_raw_rz.append(rz_err_raw)
     if abs(baseline_input[3]) == 135.0:
-        deg135_rpd.append((avg_err_rpd))
-        deg135_raw.append((avg_err_raw))
+        deg135_rpd_x.append(x_err_rpd)
+        deg135_rpd_y.append(y_err_rpd)
+        deg135_rpd_z.append(z_err_rpd)
+        deg135_rpd_rx.append(rx_err_rpd)
+        deg135_rpd_ry.append(ry_err_rpd)
+        deg135_rpd_rz.append(rz_err_rpd)
+        deg135_raw_x.append(x_err_raw)
+        deg135_raw_y.append(y_err_raw)
+        deg135_raw_z.append(z_err_raw)
+        deg135_raw_rx.append(rx_err_raw)
+        deg135_raw_ry.append(ry_err_raw)
+        deg135_raw_rz.append(rz_err_raw)
     if abs(baseline_input[3]) == 180.0:
-        deg180_rpd.append((avg_err_rpd))
-        deg180_raw.append((avg_err_raw))
+        deg180_rpd_x.append(x_err_rpd)
+        deg180_rpd_y.append(y_err_rpd)
+        deg180_rpd_z.append(z_err_rpd)
+        deg180_rpd_rx.append(rx_err_rpd)
+        deg180_rpd_ry.append(ry_err_rpd)
+        deg180_rpd_rz.append(rz_err_rpd)
+        deg180_raw_x.append(x_err_raw)
+        deg180_raw_y.append(y_err_raw)
+        deg180_raw_z.append(z_err_raw)
+        deg180_raw_rx.append(rx_err_raw)
+        deg180_raw_ry.append(ry_err_raw)
+        deg180_raw_rz.append(rz_err_raw)
     count += 1
 
 # TODO: plot waterplane error variation
@@ -163,20 +273,51 @@ plt.colorbar().ax.set_ylabel('Wave Heading, degrees')
 plt.clf()
 
 # TODO: plot wave heading error variation
-rpd = [deg0_rpd, deg45_rpd, deg90_rpd, deg135_rpd, deg180_rpd]
-raw = [deg0_raw, deg45_raw, deg90_raw, deg135_raw, deg180_raw]
-plt.boxplot(rpd, positions=[0, 45, 90, 135, 180], widths=(30, 30, 30, 30, 30), showfliers=False)
+
+# x_dof = [deg0_rpd_x, deg45_rpd_x, deg90_rpd_x, deg135_rpd_x, deg180_rpd_x]
+# y_dof = [deg0_rpd_y, deg45_rpd_y, deg90_rpd_y, deg135_rpd_y, deg180_rpd_y]
+# z_dof = [deg0_rpd_z, deg45_rpd_z, deg90_rpd_z, deg135_rpd_z, deg180_rpd_z]
+# rx_dof = [deg0_rpd_rx, deg45_rpd_rx, deg90_rpd_rx, deg135_rpd_rx, deg180_rpd_rx]
+# ry_dof = [deg0_rpd_ry, deg45_rpd_ry, deg90_rpd_ry, deg135_rpd_ry, deg180_rpd_ry]
+# rz_dof = [deg0_rpd_rz, deg45_rpd_rz, deg90_rpd_rz, deg135_rpd_rz, deg180_rpd_rz]
+
+x_dof = [deg0_raw_x, deg45_raw_x, deg90_raw_x, deg135_raw_x, deg180_raw_x]
+y_dof = [deg0_raw_y, deg45_raw_y, deg90_raw_y, deg135_raw_y, deg180_raw_y]
+z_dof = [deg0_raw_z, deg45_raw_z, deg90_raw_z, deg135_raw_z, deg180_raw_z]
+rx_dof = [deg0_raw_rx, deg45_raw_rx, deg90_raw_rx, deg135_raw_rx, deg180_raw_rx]
+ry_dof = [deg0_raw_ry, deg45_raw_ry, deg90_raw_ry, deg135_raw_ry, deg180_raw_ry]
+rz_dof = [deg0_raw_rz, deg45_raw_rz, deg90_raw_rz, deg135_raw_rz, deg180_raw_rz]
+
+pos = [0, 45, 90, 135, 180]
+adj = np.array([6, 6, 6, 6, 6])
+
+
+# b1 = plt.boxplot(x_dof, positions=np.add(pos, -2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='red'))
+# b2 = plt.boxplot(y_dof, positions=np.add(pos, -1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='orange'))
+# b3 = plt.boxplot(z_dof, positions=np.add(pos, -0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='yellow'))
+b4 = plt.boxplot(rx_dof, positions=np.add(pos, 0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='green'))
+b5 = plt.boxplot(ry_dof, positions=np.add(pos, 1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='blue'))
+b6 = plt.boxplot(rz_dof, positions=np.add(pos, 2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='purple'))
+plt.xticks(pos, labels=[0, 45, 90, 135, 180], fontsize=25)
+# plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0]], ['Surge', 'Sway', 'Heave'], fontsize=25)
+plt.legend([b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]], ['Roll', 'Pitch', 'Yaw'], fontsize=25)
+# plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0], b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]],
+#            ['Surge', 'Sway', 'Heave', 'Roll', 'Pitch', 'Yaw'], fontsize=25, bbox_to_anchor=(0.66, 0.95), loc='upper left', borderaxespad=0)
+
+plt.rc('font', size=25)
+# plt.xlim(-20, 200)
+plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
+plt.yticks(fontsize=25)
+# plt.ylabel('RPD Error', fontsize=25)
+# plt.title('RPD Error Variation for Degrees of Freedom with Wave Heading')
+
+
 plt.xlim(-20, 200)
-plt.xlabel('Wave Heading Angle, degrees')
-plt.ylabel('RPD Error')
-plt.title('RPD Error Variation with Wave Heading')
-# plt.show()
-plt.boxplot(raw, positions=[0, 45, 90, 135, 180], widths=(30, 30, 30, 30, 30), showfliers=False)
-plt.xlim(-20, 200)
-plt.xlabel('Wave Heading Angle, degrees')
-plt.ylabel('Raw Error')
-plt.title('Raw Error Variation with Wave Heading')
-# plt.show()
+# plt.ylim(-20, 250)
+plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
+plt.ylabel('Raw Error, degree/m', fontsize=25)
+plt.title('Raw Error Variation for Angular Degrees of Freedom with Wave Heading')
+plt.show()
 plt.clf()
 
 # TODO: plot degree of freedom error variation
@@ -186,12 +327,14 @@ plt.boxplot(rpd, labels=('x', 'y', 'z', 'rx', 'ry', 'rz'), showfliers=False)
 plt.xlabel('Degree of Freedom')
 plt.ylabel('RPD Error')
 plt.title('RPD Error Variation with Degree of Freedom')
-plt.show()
-plt.boxplot(raw, labels=('x', 'y', 'z', 'rx', 'ry', 'rz'), showfliers=False)
+plt.clf()
+# plt.show()
+plt.boxplot(raw[:3], labels=('x', 'y', 'z'), showfliers=False)
 plt.xlabel('Degree of Freedom')
-plt.ylabel('Raw Error, m/m or deg/m')
-plt.title('Raw Error Variation with Degree of Freedom')
-plt.show()
+plt.ylabel('Raw Error, m/m')
+plt.title('Raw Error Variation with \n Linear Degrees of Freedom')
+plt.tight_layout()
+# plt.show()
 
 #
 
