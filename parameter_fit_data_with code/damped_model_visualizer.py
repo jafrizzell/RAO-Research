@@ -9,7 +9,7 @@ load_model = tf.keras.models.load_model("D:\IdeaProjects\PyCharm\TAMU_Work\OCEN 
 
 print(load_model.summary())
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
-print(raw_data.isna().sum())
+#print(raw_data.isna().sum())
 raw_data.dropna(axis=0, inplace=True)
 column1 = raw_data['Length (m)']
 column2 = raw_data['Beam (m)']
@@ -37,7 +37,9 @@ test_labels = np.asarray(test_features.drop(test_features.columns[list(range(4,6
 
 train_features = train_features.drop(train_features.columns[list(range(0,4))], axis=1, inplace=False)
 test_features = test_features.drop(test_features.columns[list(range(0,4))], axis=1, inplace=False)
-baseline = np.asarray(raw_data.sample(n=1))[0]
+
+# baseline = np.asarray(raw_data.sample(n=1))[0]
+baseline = np.asarray(raw_data.loc[751])
 baseline_input = baseline[0:4]
 baseline_prediction = baseline[4:]
 
@@ -82,12 +84,12 @@ for i in x_axis:
     pred_rz.append(func(i, *new_pred[5*order:5*order+order]))
 
 
-x_err_rpd = abs(round(mean(100*np.subtract(orig_x, pred_x)/(np.add(np.absolute(orig_x), np.absolute(pred_x)))), 3))
-y_err_rpd = abs(round(mean(100*np.subtract(orig_y, pred_y)/(np.add(np.absolute(orig_y), np.absolute(pred_y)))), 3))
-z_err_rpd = abs(round(mean(100*np.subtract(orig_z, pred_z)/(np.add(np.absolute(orig_z), np.absolute(pred_z)))), 3))
-rx_err_rpd = abs(round(mean(100*np.subtract(orig_rx, pred_rx)/(np.add(np.absolute(orig_rx), np.absolute(pred_rx)))), 3))
-ry_err_rpd = abs(round(mean(100*np.subtract(orig_ry, pred_ry)/(np.add(np.absolute(orig_ry), np.absolute(pred_ry)))), 3))
-rz_err_rpd = abs(round(mean(100*np.subtract(orig_rz, pred_rz)/(np.add(np.absolute(orig_rz), np.absolute(pred_rz)))), 3))
+x_err_rpd = abs(round(mean(200*np.subtract(orig_x, pred_x)/(np.add(np.absolute(orig_x), np.absolute(pred_x)))), 3))
+y_err_rpd = abs(round(mean(200*np.subtract(orig_y, pred_y)/(np.add(np.absolute(orig_y), np.absolute(pred_y)))), 3))
+z_err_rpd = abs(round(mean(200*np.subtract(orig_z, pred_z)/(np.add(np.absolute(orig_z), np.absolute(pred_z)))), 3))
+rx_err_rpd = abs(round(mean(200*np.subtract(orig_rx, pred_rx)/(np.add(np.absolute(orig_rx), np.absolute(pred_rx)))), 3))
+ry_err_rpd = abs(round(mean(200*np.subtract(orig_ry, pred_ry)/(np.add(np.absolute(orig_ry), np.absolute(pred_ry)))), 3))
+rz_err_rpd = abs(round(mean(200*np.subtract(orig_rz, pred_rz)/(np.add(np.absolute(orig_rz), np.absolute(pred_rz)))), 3))
 
 x_err_raw = round(abs(mean(np.subtract(orig_x, pred_x))), 3)
 y_err_raw = round(abs(mean(np.subtract(orig_y, pred_y))), 3)
@@ -96,26 +98,34 @@ rx_err_raw = round(abs(mean(np.subtract(orig_rx, pred_rx))), 3)
 ry_err_raw = round(abs(mean(np.subtract(orig_ry, pred_ry))), 3)
 rz_err_raw = round(abs(mean(np.subtract(orig_rz, pred_rz))), 3)
 
-plt.subplot(2, 3, 1)
-title = 'Barge Dimensions ' + str(baseline_input[0]) + ' m Length, ' + str(baseline_input[1]) + ' m Beam, ' + \
-    str(abs(baseline_input[2])) + ' m Draft  -  Waves Heading of: ' + str(baseline_input[3])
-plt.suptitle(title)
+# plt.subplot(2, 3, 1)
+plt.rc('font', size=25)
+# title = 'Barge Dimensions ' + str(baseline_input[0]) + ' m Length, ' + str(baseline_input[1]) + ' m Beam, ' + \
+   # str(abs(baseline_input[2])) + ' m Draft  -  Waves Heading of: ' + str(baseline_input[3])
+# plt.suptitle(title)
 plt.plot(x_axis, pred_x, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_x, color='blue', linestyle='-.', label='True RAO')
 plt.title('Surge RAO')
+plt.ylabel('Response (m/m)')
 plt.text(mean(x_axis), (mean(orig_x)+mean(pred_x))/2, "Relative % diff: "+ str(x_err_rpd)+'\n'+"Average raw diff: " + str(x_err_raw))
 plt.grid()
 # plt.ylim([-0.5, 1.5])
-plt.ylabel('Response (m/m)')
+plt.legend()
 
-plt.subplot(2, 3, 2)
+plt.show()
+# plt.subplot(2, 3, 2)
+plt.rc('font', size=25)
 plt.plot(x_axis, pred_y, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_y, color='blue', linestyle='-.', label='True RAO')
 plt.title('Sway RAO')
-plt.text(mean(x_axis), (mean(orig_y)+mean(pred_y))/2, "Relative % diff: "+ str(y_err_rpd)+'\n'+"Average raw diff: " + str(y_err_raw))
-plt.grid()
-# plt.ylim([-0.5, 1.5])
 
+plt.text(mean(x_axis), (mean(orig_y)+mean(pred_y))/2, "Relative % diff: "+ str(y_err_rpd)+'\n'+"Average raw diff: " + str(y_err_raw))
+
+plt.grid()
+plt.legend()
+# plt.rc('font', size=10)
+# plt.ylim([-0.5, 1.5])
+plt.show()
 plt.subplot(2, 3, 3)
 plt.plot(x_axis, pred_z, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_z, color='blue', linestyle='-.', label='True RAO')
