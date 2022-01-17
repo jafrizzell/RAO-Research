@@ -9,7 +9,6 @@ waterplanes = []
 rpd_errs = []
 raw_errs = []
 colors = []
-
 deg0_rpd_x = []
 deg0_rpd_y = []
 deg0_rpd_z = []
@@ -327,8 +326,8 @@ plt.boxplot(rpd, labels=('x', 'y', 'z', 'rx', 'ry', 'rz'), showfliers=False)
 plt.xlabel('Degree of Freedom')
 plt.ylabel('RPD Error')
 plt.title('RPD Error Variation with Degree of Freedom')
+plt.show()
 plt.clf()
-# plt.show()
 plt.boxplot(raw[:3], labels=('x', 'y', 'z'), showfliers=False)
 plt.xlabel('Degree of Freedom')
 plt.ylabel('Raw Error, m/m')

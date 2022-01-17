@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Fixed some aspects of the error analysis">
+      <change afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Symposium Files/frizzell_james_offshore_symposium_draft1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/frizzell_james_offshore_symposium_draft1.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_rpd.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_rpd.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1zNf8BUvHOhdkzZ4LLecD7AVEih" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,12 +37,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/parameter_fit_data_with code" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2155309" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -42,14 +53,14 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.damped_model_visualizer">
+  <component name="RunManager" selected="Python.damped_error_analysis">
     <configuration name="damped_error_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\IdeaProjects\PyCharm\TAMU_Work\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\jafri\Documents\GitHub\RAO-Research\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with code" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -177,9 +188,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.damped_model_visualizer" />
-        <item itemvalue="Python.damped_model_visualizer" />
         <item itemvalue="Python.damped_error_analysis" />
+        <item itemvalue="Python.damped_model_visualizer" />
+        <item itemvalue="Python.damped_model_visualizer" />
         <item itemvalue="Python.damped_model_visualizer" />
         <item itemvalue="Python.model_trainer" />
       </list>
@@ -249,7 +260,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wow!" />
