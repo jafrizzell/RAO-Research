@@ -5,7 +5,7 @@ beam = 22
 draft = 2.5
 heading = 180
 
-model_path = "D:\IdeaProjects\PyCharm\TAMU_Work\OCEN 485/damped_spring_all_dir3"
+model_path = "D:/IdeaProjects/PyCharm/TAMU_Work/OCEN 485/damped_spring_all_dir3"
 
 rao = RaoPrediction()
 
