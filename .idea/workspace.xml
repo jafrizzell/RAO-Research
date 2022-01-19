@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Fixed some aspects of the error analysis">
-      <change afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Symposium Files/frizzell_james_offshore_symposium_draft1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/frizzell_james_offshore_symposium_draft1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_rpd.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_rpd.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641940692856</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed some aspects of the error analysis">
+      <created>1642439891495</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642439891495</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
