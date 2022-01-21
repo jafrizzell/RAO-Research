@@ -256,12 +256,23 @@ while count < 120:
     count += 1
 
 # TODO: plot waterplane error variation
+markers = []
+to_see = [0, 45, 90, 135, 180]
+for i in range(len(waterplanes)):
+    if colors[i] == 0: plt.scatter(waterplanes[i], rpd_errs[i], color='black', marker='o', s=70, label=('0°', to_see.remove(0)) if 0 in to_see else '')
+    if colors[i] == 45: plt.scatter(waterplanes[i], rpd_errs[i], color='purple', marker='1', s=70, label=('45°', to_see.remove(45)) if 45 in to_see else '')
+    if colors[i] == 90: plt.scatter(waterplanes[i], rpd_errs[i], color='blue', marker='s', s=70, label=('90°', to_see.remove(90)) if 90 in to_see else '')
+    if colors[i] == 135: plt.scatter(waterplanes[i], rpd_errs[i], color='teal', marker='P', s=70, label=('135°', to_see.remove(135)) if 135 in to_see else '')
+    if colors[i] == 180: plt.scatter(waterplanes[i], rpd_errs[i], color='green', marker='X', s=70, label=('180°', to_see.remove(180)) if 180 in to_see else '')
 
-plt.scatter(waterplanes, rpd_errs, c=colors, cmap='rainbow')
+plt.rc('font', size=25)
+plt.yticks(fontsize=25)
+plt.xticks(fontsize=25)
 plt.title('RPD Error Variation with Waterplane Area')
-plt.xlabel('Waterplane Area ($m^2$)')
-plt.ylabel('Average RPD Error')
-plt.colorbar().ax.set_ylabel('Wave Heading, degrees')
+plt.xlabel('Waterplane Area ($m^2$)', fontsize=25)
+plt.ylabel('Average RPD Error', fontsize=25)
+plt.legend(markerscale=2)
+# plt.colorbar().ax.set_ylabel('Wave Heading, degrees')
 # plt.show()
 plt.scatter(waterplanes, raw_errs, c=colors, cmap='rainbow')
 plt.title('Raw Error Variation with Waterplane Area')
@@ -273,35 +284,35 @@ plt.clf()
 
 # TODO: plot wave heading error variation
 
-# x_dof = [deg0_rpd_x, deg45_rpd_x, deg90_rpd_x, deg135_rpd_x, deg180_rpd_x]
-# y_dof = [deg0_rpd_y, deg45_rpd_y, deg90_rpd_y, deg135_rpd_y, deg180_rpd_y]
-# z_dof = [deg0_rpd_z, deg45_rpd_z, deg90_rpd_z, deg135_rpd_z, deg180_rpd_z]
-# rx_dof = [deg0_rpd_rx, deg45_rpd_rx, deg90_rpd_rx, deg135_rpd_rx, deg180_rpd_rx]
-# ry_dof = [deg0_rpd_ry, deg45_rpd_ry, deg90_rpd_ry, deg135_rpd_ry, deg180_rpd_ry]
-# rz_dof = [deg0_rpd_rz, deg45_rpd_rz, deg90_rpd_rz, deg135_rpd_rz, deg180_rpd_rz]
+x_dof = [deg0_rpd_x, deg45_rpd_x, deg90_rpd_x, deg135_rpd_x, deg180_rpd_x]
+y_dof = [deg0_rpd_y, deg45_rpd_y, deg90_rpd_y, deg135_rpd_y, deg180_rpd_y]
+z_dof = [deg0_rpd_z, deg45_rpd_z, deg90_rpd_z, deg135_rpd_z, deg180_rpd_z]
+rx_dof = [deg0_rpd_rx, deg45_rpd_rx, deg90_rpd_rx, deg135_rpd_rx, deg180_rpd_rx]
+ry_dof = [deg0_rpd_ry, deg45_rpd_ry, deg90_rpd_ry, deg135_rpd_ry, deg180_rpd_ry]
+rz_dof = [deg0_rpd_rz, deg45_rpd_rz, deg90_rpd_rz, deg135_rpd_rz, deg180_rpd_rz]
 
-x_dof = [deg0_raw_x, deg45_raw_x, deg90_raw_x, deg135_raw_x, deg180_raw_x]
-y_dof = [deg0_raw_y, deg45_raw_y, deg90_raw_y, deg135_raw_y, deg180_raw_y]
-z_dof = [deg0_raw_z, deg45_raw_z, deg90_raw_z, deg135_raw_z, deg180_raw_z]
-rx_dof = [deg0_raw_rx, deg45_raw_rx, deg90_raw_rx, deg135_raw_rx, deg180_raw_rx]
-ry_dof = [deg0_raw_ry, deg45_raw_ry, deg90_raw_ry, deg135_raw_ry, deg180_raw_ry]
-rz_dof = [deg0_raw_rz, deg45_raw_rz, deg90_raw_rz, deg135_raw_rz, deg180_raw_rz]
+# x_dof = [deg0_raw_x, deg45_raw_x, deg90_raw_x, deg135_raw_x, deg180_raw_x]
+# y_dof = [deg0_raw_y, deg45_raw_y, deg90_raw_y, deg135_raw_y, deg180_raw_y]
+# z_dof = [deg0_raw_z, deg45_raw_z, deg90_raw_z, deg135_raw_z, deg180_raw_z]
+# rx_dof = [deg0_raw_rx, deg45_raw_rx, deg90_raw_rx, deg135_raw_rx, deg180_raw_rx]
+# ry_dof = [deg0_raw_ry, deg45_raw_ry, deg90_raw_ry, deg135_raw_ry, deg180_raw_ry]
+# rz_dof = [deg0_raw_rz, deg45_raw_rz, deg90_raw_rz, deg135_raw_rz, deg180_raw_rz]
 
 pos = [0, 45, 90, 135, 180]
 adj = np.array([6, 6, 6, 6, 6])
 
 
-# b1 = plt.boxplot(x_dof, positions=np.add(pos, -2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='red'))
-# b2 = plt.boxplot(y_dof, positions=np.add(pos, -1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='orange'))
-# b3 = plt.boxplot(z_dof, positions=np.add(pos, -0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='yellow'))
-b4 = plt.boxplot(rx_dof, positions=np.add(pos, 0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='green'))
-b5 = plt.boxplot(ry_dof, positions=np.add(pos, 1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='blue'))
-b6 = plt.boxplot(rz_dof, positions=np.add(pos, 2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='purple'))
+b1 = plt.boxplot(x_dof, positions=np.add(pos, -2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='red', hatch='+'))
+b2 = plt.boxplot(y_dof, positions=np.add(pos, -1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='orange', hatch='x'))
+b3 = plt.boxplot(z_dof, positions=np.add(pos, -0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='yellow', hatch='.'))
+b4 = plt.boxplot(rx_dof, positions=np.add(pos, 0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='green', hatch='/'))
+b5 = plt.boxplot(ry_dof, positions=np.add(pos, 1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='blue', hatch='-'))
+b6 = plt.boxplot(rz_dof, positions=np.add(pos, 2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='purple', hatch='O'))
 plt.xticks(pos, labels=[0, 45, 90, 135, 180], fontsize=25)
 # plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0]], ['Surge', 'Sway', 'Heave'], fontsize=25)
-plt.legend([b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]], ['Roll', 'Pitch', 'Yaw'], fontsize=25)
-# plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0], b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]],
-#            ['Surge', 'Sway', 'Heave', 'Roll', 'Pitch', 'Yaw'], fontsize=25, bbox_to_anchor=(0.66, 0.95), loc='upper left', borderaxespad=0)
+# plt.legend([b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]], ['Roll', 'Pitch', 'Yaw'], fontsize=25)
+plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0], b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]],
+           ['Surge', 'Sway', 'Heave', 'Roll', 'Pitch', 'Yaw'], fontsize=25, bbox_to_anchor=(0.66, 0.95), loc='upper left', borderaxespad=0)
 
 plt.rc('font', size=25)
 # plt.xlim(-20, 200)
@@ -314,9 +325,9 @@ plt.yticks(fontsize=25)
 plt.xlim(-20, 200)
 # plt.ylim(-20, 250)
 plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
-plt.ylabel('Raw Error, degree/m', fontsize=25)
-plt.title('Raw Error Variation for Angular Degrees of Freedom with Wave Heading')
-plt.show()
+plt.ylabel('RPD Error, degree/m', fontsize=25)
+plt.title('RPD Error Variation with Degrees of Freedom and Wave Heading')
+# plt.show()
 plt.clf()
 
 # TODO: plot degree of freedom error variation
@@ -328,7 +339,7 @@ plt.ylabel('RPD Error')
 plt.title('RPD Error Variation with Degree of Freedom')
 plt.show()
 plt.clf()
-plt.boxplot(raw[:3], labels=('x', 'y', 'z'), showfliers=False)
+plt.boxplot(raw[:3], labels=('x', 'y', 'z'), showfliers=False, patch_artist=True)
 plt.xlabel('Degree of Freedom')
 plt.ylabel('Raw Error, m/m')
 plt.title('Raw Error Variation with \n Linear Degrees of Freedom')

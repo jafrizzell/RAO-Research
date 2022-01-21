@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Added general MAIN.py program to allow for fast prediction of RAOs">
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Symposium Files/frizzell_james_offshore_symposium_draft3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/frizzell_james_offshore_symposium_draft3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_angular_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_angular_raw.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.MAIN">
+  <component name="RunManager" selected="Python.damped_error_analysis">
     <configuration name="MAIN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -203,10 +206,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.damped_error_analysis" />
         <item itemvalue="Python.MAIN" />
         <item itemvalue="Python.RaoPrediction_class" />
         <item itemvalue="Python.damped_model_visualizer (1)" />
-        <item itemvalue="Python.damped_error_analysis" />
         <item itemvalue="Python.damped_model_visualizer" />
       </list>
     </recent_temporary>
@@ -290,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642559195698</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Edited Paper">
+      <created>1642727062649</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642727062649</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,7 +319,8 @@
     <MESSAGE value="Added Error Analysis" />
     <MESSAGE value="Fixed some aspects of the error analysis" />
     <MESSAGE value="Added general MAIN.py program to allow for fast prediction of RAOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added general MAIN.py program to allow for fast prediction of RAOs" />
+    <MESSAGE value="Edited Paper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Paper" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
