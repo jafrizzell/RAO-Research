@@ -1,4 +1,5 @@
 from RaoPrediction_class import RaoPrediction
+import cProfile
 
 # Start inputs
 
@@ -17,8 +18,16 @@ n_points = 25  # Number of points to predict the RAOs at, higher = more resoluti
 
 # Initialize rao class structure and predict RAOs with given inputs
 
-rao = RaoPrediction()
 
-rao.dnn(model_path)
-rao.predict(length, beam, draft, heading)
-rao.visualize(low_freq, high_freq, n_points)
+def main():
+    rao = RaoPrediction()
+
+    rao.dnn(model_path)
+    rao.predict(length, beam, draft, heading)
+    rao.visualize(low_freq, high_freq, n_points)
+
+
+if __name__ == "__main__":
+    cProfile.run('main()')
+    # n=100
+    # print(timeit.timeit(stmt=main, number=n)/n)
