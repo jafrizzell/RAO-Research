@@ -4,9 +4,9 @@ import timeit
 
 # Start inputs
 
-length = 35  # Barge length
-beam = 18  # Barge beam
-draft = 1.23  # Barge draft
+length = .7  # Barge length
+beam = .3  # Barge beam
+draft = .2  # Barge draft
 heading = 180  # Wave heading, 0 degrees is head seas, 90 is beam
 
 model_path = "C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/"  # path the the trained NN model directory
