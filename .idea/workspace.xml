@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, committed draft versions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vmf2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vmf2.docx" afterDir="false" />
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, changed model architecture. Incoprated AIC analysis in parametric study">
       <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643763376437</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Edited Paper, changed model architecture. Incoprated AIC analysis in parametric study">
+      <created>1644696341558</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1644696341558</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,7 +328,8 @@
     <MESSAGE value="Edited Paper" />
     <MESSAGE value="Edited Paper, made figures b/w printer friendly" />
     <MESSAGE value="Edited Paper, committed draft versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited Paper, committed draft versions" />
+    <MESSAGE value="Edited Paper, changed model architecture. Incoprated AIC analysis in parametric study" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Paper, changed model architecture. Incoprated AIC analysis in parametric study" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
