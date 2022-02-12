@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 import pandas as pd
 from sklearn.metrics import r2_score
@@ -6,6 +8,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.layers.experimental import preprocessing
 import matplotlib.pyplot as plt
+import RegscorePy
+from itertools import product
 
 # Import data
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
@@ -26,23 +30,49 @@ raw_data.pop('r_squared_roll')
 raw_data.pop('r_squared_pitch')
 raw_data.pop('r_squared_yaw')
 
-
+# raw_data = raw_data[raw_data['Heading'] == (-180.0 or 0)]
 train_dataset = raw_data.sample(frac=0.8, random_state=0)
+
 test_dataset = raw_data.drop(train_dataset.index)
 
 
 train_features = train_dataset.copy()
 test_features = test_dataset.copy()
-
 order = 3  # Numbert of coefficients in the curve fit data
+num_dof = 6
+
 train_labels = np.asarray(train_features.drop(train_features.columns[list(range(4,6*(order)+4))], axis=1, inplace=False))
 test_labels = np.asarray(test_features.drop(test_features.columns[list(range(4,6*(order)+4))], axis=1, inplace=False))
 
+
+# train_features = train_features[['a_heave', 'b_heave', 'c_heave', 'a_pitch', 'b_pitch', 'c_pitch']]
+# test_features = test_features[['a_heave', 'b_heave', 'c_heave', 'a_pitch', 'b_pitch', 'c_pitch']]
+
+# train_features = train_features[['a_pitch', 'b_pitch', 'c_pitch']]
+# test_features = test_features[['a_pitch', 'b_pitch', 'c_pitch']]
 train_features = train_features.drop(train_features.columns[list(range(0,4))], axis=1, inplace=False)
 test_features = test_features.drop(test_features.columns[list(range(0,4))], axis=1, inplace=False)
 
 normalizer = preprocessing.Normalization(axis=-1)
 normalizer.adapt(np.array(train_features))
+
+
+def fit_and_evaluate(norm, architecture, dof):
+    dnn_model = build_and_compile_model(norm, architecture, dof)
+    dnn_model.summary()
+
+    history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=1000)
+    plot_loss(history)
+
+    test_results = dnn_model.evaluate(test_labels, test_features, verbose=0)
+    # print(test_results)
+    test_predictions = dnn_model.predict(test_labels).flatten()
+
+    r2 = r2_score(np.asarray(test_features).flatten(), test_predictions)
+
+    aic = RegscorePy.aic.aic(np.asarray(test_features, dtype=float).flatten(), np.asarray(test_predictions).astype(float), dof*3+2)
+
+    return dnn_model, aic, r2, test_predictions
 
 
 def plot_loss(history):
@@ -56,34 +86,75 @@ def plot_loss(history):
     plt.show()
 
 
-def build_and_compile_model(norm):
+def build_and_compile_model(norm, arch, dof):
     # Adjust the number of hidden layers and neurons per layer that results in best fit NN
     inputs = keras.Input(shape=(4,))
-    dense1 = layers.Dense(256, activation='elu')(inputs)
-    dense2 = layers.Dense(256, activation='elu')(dense1)
-    # dense3 = layers.Dense(64, activation='relu')(dense2)
-    # dense4 = layers.Dense(64, activation='relu')(dense3)
-    # dense5 = layers.Dense(64, activation='relu')(dense4)
-    # dense6 = layers.Dense(64, activation='relu')(dense5)
-    outputs = layers.Dense(6*(order))(dense2)
+    if arch[1] == 0.0:
+        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        # dense2 = layers.Dense(arch[1], activation='elu')(inputs)
+        dense3 = layers.Dense(arch[2], activation='relu')(dense1)
+        outputs = layers.Dense(dof*(order))(dense3)
+
+    elif arch[2] == 0.0:
+        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        dense2 = layers.Dense(arch[1], activation='elu')(dense1)
+        # dense3 = layers.Dense(arch[2], activation='relu')(dense1)
+        outputs = layers.Dense(dof*(order))(dense2)
+
+    elif arch[1] == 0.0 and arch[2] == 0.0:
+        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        # dense2 = layers.Dense(arch[1], activation='elu')(inputs)
+        # dense3 = layers.Dense(arch[2], activation='relu')(dense1)
+        outputs = layers.Dense(dof*(order))(dense1)
+
+    else:
+        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        dense2 = layers.Dense(arch[1], activation='elu')(dense1)
+        dense3 = layers.Dense(arch[2], activation='relu')(dense2)
+        outputs = layers.Dense(dof*(order))(dense3)
 
     model = keras.Model(inputs=inputs, outputs=outputs)
+
     model.compile(loss='mean_absolute_error',
                   optimizer=tf.keras.optimizers.Adam(0.001))
     return model
 
 
-dnn_model = build_and_compile_model(normalizer)
-dnn_model.summary()
+models = []
+aic_scores = []
+r2_scores = []
+l1 = np.linspace(32, 256, 8)
+l2 = np.linspace(0, 256, 9)
+l3 = np.linspace(0, 256, 9)
+# parametric_space = list(product(*[l1, l2, l3]))
+parametric_space = [[256, 160, 256]]
+print(parametric_space)
+start_t = time.time()
+c = 1
 
-history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=1000)
-plot_loss(history)
+for arch in parametric_space:
+    print('Progress: ' + str(c) + '/' + str(len(parametric_space)))
+    dnn_model, aic, r2, test_predictions = fit_and_evaluate(normalizer, arch, num_dof)
+    models.append(dnn_model)
+    aic_scores.append(aic)
+    r2_scores.append(r2)
 
-test_results = dnn_model.evaluate(test_labels, test_features, verbose=0)
+    curr_time = time.time()
+    diff_t = curr_time - start_t
+    t_per_model = diff_t / c
+    num_mods_rem = len(parametric_space) - c
+    t_rem = t_per_model * num_mods_rem
+    print("Estimated Time Remaining: " + time.strftime('%H:%M:%S', time.gmtime(t_rem)) + ' seconds')
+    c += 1
 
-test_predictions = dnn_model.predict(test_labels).flatten()
+parametric_space_t = np.asarray(parametric_space).transpose().tolist()
+output_data = [parametric_space_t[0], parametric_space_t[1], parametric_space_t[2], aic_scores, r2_scores]
+output_data = np.asarray(output_data).transpose().tolist()
+print(output_data)
+oput = pd.DataFrame(output_data, columns=['L1', 'L2', 'L3', 'AIC', 'R2'])
+print(oput)
+# oput.to_csv('Parametric_space_study.csv', index=False)
 
-print("R Squared results = ", r2_score(np.asarray(test_features).flatten(), test_predictions))
 
 a = plt.axes(aspect='equal')
 plt.scatter(test_features, test_predictions)
@@ -95,88 +166,88 @@ plt.ylim(lims)
 _ = plt.plot(lims, lims)
 plt.show()
 
-dnn_model.save('damped_spring_all_dir_parametric')
-
-baseline = np.asarray(test_dataset.sample(n=1))[0]
-baseline_input = baseline[0:4]
-baseline_prediction = baseline[4:]
-
-new_input = [baseline_input.tolist()]
-new_pred = dnn_model.predict(new_input)[0]
-orig_x = []
-orig_y = []
-orig_z = []
-orig_rx = []
-orig_ry = []
-orig_rz = []
-pred_x = []
-pred_y = []
-pred_z = []
-pred_rx = []
-pred_ry = []
-pred_rz = []
-
-
-print(baseline_input)
-print('\n\n')
-
-x_axis = np.linspace(0.1, 2.5, 60)
-for i in x_axis:
-    orig_x.append(np.polyval(baseline_prediction[0*order:0*order+order], i))
-    orig_y.append(np.polyval(baseline_prediction[1*order:1*order+order], i))
-    orig_z.append(np.polyval(baseline_prediction[2*order:2*order+order], i))
-    orig_rx.append(np.polyval(baseline_prediction[3*order:3*order+order], i))
-    orig_ry.append(np.polyval(baseline_prediction[4*order:4*order+order], i))
-    orig_rz.append(np.polyval(baseline_prediction[5*order:5*order+order], i))
-    pred_x.append(np.polyval(new_pred[0*order:0*order+order], i))
-    pred_y.append(np.polyval(new_pred[1*order:1*order+order], i))
-    pred_z.append(np.polyval(new_pred[2*order:2*order+order], i))
-    pred_rx.append(np.polyval(new_pred[3*order:3*order+order], i))
-    pred_ry.append(np.polyval(new_pred[4*order:4*order+order], i))
-    pred_rz.append(np.polyval(new_pred[5*order:5*order+order], i))
-
-plt.subplot(2, 3, 1)
-plt.suptitle(baseline_input)
-plt.plot(x_axis, pred_x, color='red', label='Predicted RAO')
-plt.plot(x_axis, orig_x, color='blue', label='True RAO')
-plt.title('Surge RAO')
-# plt.ylim([-0.5, 1.5])
-plt.ylabel('Response (m/m)')
-
-plt.subplot(2, 3, 2)
-plt.plot(x_axis, pred_y, color='red', label='Predicted RAO')
-plt.plot(x_axis, orig_y, color='blue', label='True RAO')
-plt.title('Sway RAO')
-# plt.ylim([-0.5, 1.5])
-
-plt.subplot(2, 3, 3)
-plt.plot(x_axis, pred_z, color='red', label='Predicted RAO')
-plt.plot(x_axis, orig_z, color='blue', label='True RAO')
-plt.title('Heave RAO')
-# plt.ylim([-0.5, 1.5])
-
-plt.subplot(2, 3, 4)
-plt.plot(x_axis, pred_rx, color='red', label='Predicted RAO')
-plt.plot(x_axis, orig_rx, color='blue', label='True RAO')
-plt.title('Roll RAO')
-# plt.ylim([-0.5, 1.5])
-plt.ylabel('Response (Deg/m)')
-plt.xlabel('Wave Frequency (rad/s)')
-
-plt.subplot(2, 3, 5)
-plt.plot(x_axis, pred_ry, color='red', label='Predicted RAO')
-plt.plot(x_axis, orig_ry, color='blue', label='True RAO')
-plt.title('Pitch RAO')
-# plt.ylim([-0.5, 50])
-plt.xlabel('Wave Frequency (rad/s)')
-
-plt.subplot(2, 3, 6)
-plt.plot(x_axis, pred_rz, color='red', label='Predicted RAO')
-plt.plot(x_axis, orig_rz, color='blue', label='True RAO')
-plt.title('Yaw RAO')
-# plt.ylim([-0.5, 1.5])
-plt.xlabel('Wave Frequency (rad/s)')
-
-plt.legend()
-plt.get_current_fig_manager().full_screen_toggle()
+dnn_model.save('damped_spring_1dof')
+#
+# baseline = np.asarray(test_dataset.sample(n=1))[0]
+# baseline_input = baseline[0:4]
+# baseline_prediction = baseline[4:]
+#
+# new_input = [baseline_input.tolist()]
+# new_pred = dnn_model.predict(new_input)[0]
+# orig_x = []
+# orig_y = []
+# orig_z = []
+# orig_rx = []
+# orig_ry = []
+# orig_rz = []
+# pred_x = []
+# pred_y = []
+# pred_z = []
+# pred_rx = []
+# pred_ry = []
+# pred_rz = []
+#
+#
+# print(baseline_input)
+# print('\n\n')
+#
+# x_axis = np.linspace(0.1, 2.5, 60)
+# for i in x_axis:
+#     orig_x.append(np.polyval(baseline_prediction[0*order:0*order+order], i))
+#     orig_y.append(np.polyval(baseline_prediction[1*order:1*order+order], i))
+#     orig_z.append(np.polyval(baseline_prediction[2*order:2*order+order], i))
+#     orig_rx.append(np.polyval(baseline_prediction[3*order:3*order+order], i))
+#     orig_ry.append(np.polyval(baseline_prediction[4*order:4*order+order], i))
+#     orig_rz.append(np.polyval(baseline_prediction[5*order:5*order+order], i))
+#     pred_x.append(np.polyval(new_pred[0*order:0*order+order], i))
+#     pred_y.append(np.polyval(new_pred[1*order:1*order+order], i))
+#     pred_z.append(np.polyval(new_pred[2*order:2*order+order], i))
+#     pred_rx.append(np.polyval(new_pred[3*order:3*order+order], i))
+#     pred_ry.append(np.polyval(new_pred[4*order:4*order+order], i))
+#     pred_rz.append(np.polyval(new_pred[5*order:5*order+order], i))
+#
+# plt.subplot(2, 3, 1)
+# plt.suptitle(baseline_input)
+# plt.plot(x_axis, pred_x, color='red', label='Predicted RAO')
+# plt.plot(x_axis, orig_x, color='blue', label='True RAO')
+# plt.title('Surge RAO')
+# # plt.ylim([-0.5, 1.5])
+# plt.ylabel('Response (m/m)')
+#
+# plt.subplot(2, 3, 2)
+# plt.plot(x_axis, pred_y, color='red', label='Predicted RAO')
+# plt.plot(x_axis, orig_y, color='blue', label='True RAO')
+# plt.title('Sway RAO')
+# # plt.ylim([-0.5, 1.5])
+#
+# plt.subplot(2, 3, 3)
+# plt.plot(x_axis, pred_z, color='red', label='Predicted RAO')
+# plt.plot(x_axis, orig_z, color='blue', label='True RAO')
+# plt.title('Heave RAO')
+# # plt.ylim([-0.5, 1.5])
+#
+# plt.subplot(2, 3, 4)
+# plt.plot(x_axis, pred_rx, color='red', label='Predicted RAO')
+# plt.plot(x_axis, orig_rx, color='blue', label='True RAO')
+# plt.title('Roll RAO')
+# # plt.ylim([-0.5, 1.5])
+# plt.ylabel('Response (Deg/m)')
+# plt.xlabel('Wave Frequency (rad/s)')
+#
+# plt.subplot(2, 3, 5)
+# plt.plot(x_axis, pred_ry, color='red', label='Predicted RAO')
+# plt.plot(x_axis, orig_ry, color='blue', label='True RAO')
+# plt.title('Pitch RAO')
+# # plt.ylim([-0.5, 50])
+# plt.xlabel('Wave Frequency (rad/s)')
+#
+# plt.subplot(2, 3, 6)
+# plt.plot(x_axis, pred_rz, color='red', label='Predicted RAO')
+# plt.plot(x_axis, orig_rz, color='blue', label='True RAO')
+# plt.title('Yaw RAO')
+# # plt.ylim([-0.5, 1.5])
+# plt.xlabel('Wave Frequency (rad/s)')
+#
+# plt.legend()
+# plt.get_current_fig_manager().full_screen_toggle()
 #plt.show()

@@ -93,7 +93,7 @@ avg_ry_err_raw = []
 avg_rz_err_raw = []
 
 
-load_model = tf.keras.models.load_model("D:\IdeaProjects\PyCharm\TAMU_Work\OCEN 485/damped_spring_all_dir3")
+load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/")
 
 print(load_model.summary())
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
@@ -273,7 +273,8 @@ plt.xlabel('Waterplane Area ($m^2$)', fontsize=25)
 plt.ylabel('Average RPD Error', fontsize=25)
 plt.legend(markerscale=2)
 # plt.colorbar().ax.set_ylabel('Wave Heading, degrees')
-plt.show()
+plt.clf()
+# plt.show()
 plt.scatter(waterplanes, raw_errs, c=colors, cmap='rainbow')
 plt.title('Raw Error Variation with Waterplane Area')
 plt.xlabel('Waterplane Area ($m^2$)')
@@ -318,15 +319,15 @@ plt.rc('font', size=25)
 # plt.xlim(-20, 200)
 plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
 plt.yticks(fontsize=25)
-# plt.ylabel('RPD Error', fontsize=25)
+plt.ylabel('RPD Error', fontsize=25)
 # plt.title('RPD Error Variation for Degrees of Freedom with Wave Heading')
 
 
 plt.xlim(-20, 200)
 # plt.ylim(-20, 250)
 plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
-plt.ylabel('RPD Error, degree/m', fontsize=25)
-plt.title('RPD Error Variation with Degrees of Freedom and Wave Heading')
+# plt.ylabel('Raw Error, deg/m', fontsize=25)
+plt.title('RPD Error Variation for Degrees of Freedom and Wave Heading')
 # plt.show()
 plt.clf()
 
@@ -339,12 +340,12 @@ plt.ylabel('RPD Error')
 plt.title('RPD Error Variation with Degree of Freedom')
 plt.show()
 plt.clf()
-plt.boxplot(raw[:3], labels=('x', 'y', 'z'), showfliers=False, patch_artist=True)
+plt.boxplot(raw[:3], labels=('rx', 'ry', 'rz'), showfliers=False, patch_artist=False)
 plt.xlabel('Degree of Freedom')
-plt.ylabel('Raw Error, m/m')
-plt.title('Raw Error Variation with \n Linear Degrees of Freedom')
+plt.ylabel('Raw Error, deg/m')
+plt.title('Raw Error Variation with \n Angular Degrees of Freedom')
 plt.tight_layout()
-# plt.show()
+plt.show()
 
 #
 

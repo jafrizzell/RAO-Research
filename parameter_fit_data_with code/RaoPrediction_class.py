@@ -28,6 +28,7 @@ class RaoPrediction:
         if heading > 0:
             heading = -1 * heading
         self.params = self.model.predict([[length, beam, draft, heading]])[0]
+        print(self.params)
 
     def visualize(self, low, high, n):
         self.x_points = np.linspace(low, high, n)
@@ -39,9 +40,10 @@ class RaoPrediction:
             self.roll.append(func(i, *self.params[3*order:3*order+order]))
             self.pitch.append(func(i, *self.params[4*order:4*order+order]))
             self.yaw.append(func(i, *self.params[5*order:5*order+order]))
+        print(self.surge)
         plt.subplot(2, 3, 1)
         plt.rc('axes', titlesize=25)
-        plt.rc('legend',fontsize=25)
+        plt.rc('legend', fontsize=25)
         # title = 'Barge Dimensions ' + str(baseline_input[0]) + ' m Length, ' + str(baseline_input[1]) + ' m Beam, ' + \
         # str(abs(baseline_input[2])) + ' m Draft  -  Waves Heading of: ' + str(baseline_input[3])
         # plt.suptitle(title)

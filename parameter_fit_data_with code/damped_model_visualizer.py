@@ -5,7 +5,7 @@ from math import e
 from statistics import mean
 import matplotlib.pyplot as plt
 
-load_model = tf.keras.models.load_model("D:\IdeaProjects\PyCharm\TAMU_Work\OCEN 485/damped_spring_all_dir3")
+load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/")
 
 print(load_model.summary())
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
@@ -44,6 +44,7 @@ baseline_input = baseline[0:4]
 baseline_prediction = baseline[4:]
 
 new_input = [baseline_input.tolist()]
+# new_input = [[35, 18, 16, 180]]
 new_pred = load_model.predict(new_input)[0]
 orig_x = []
 orig_y = []

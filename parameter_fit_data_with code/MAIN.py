@@ -5,10 +5,10 @@ import cProfile
 
 length = 35  # Barge length
 beam = 18  # Barge beam
-draft = 16  # Barge draft
+draft = 1.23  # Barge draft
 heading = 180  # Wave heading, 0 degrees is head seas, 90 is beam
 
-model_path = "D:/IdeaProjects/PyCharm/TAMU_Work/OCEN 485/damped_spring_all_dir3"  # path the the trained NN model directory
+model_path = "C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/"  # path the the trained NN model directory
 
 low_freq = 0.1  # lowest wave frequency to predict the RAOs at
 high_freq = 2.5  # highest wave frequency to predict the RAOs at
