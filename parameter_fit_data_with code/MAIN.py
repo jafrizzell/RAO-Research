@@ -4,9 +4,9 @@ import timeit
 
 # Start inputs
 
-length = 35  # Barge length
-beam = 18  # Barge beam
-draft = 1.23  # Barge draft
+length = 100  # Barge length
+beam = 35  # Barge beam
+draft = 6  # Barge draft
 heading = 180  # Wave heading, 0 degrees is head seas, 90 is beam
 
 model_path = "C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/"  # path the the trained NN model directory
@@ -30,5 +30,5 @@ def main():
 
 if __name__ == "__main__":
     cProfile.run('main()')
-    n = 100
-    print(timeit.timeit(stmt=main, number=n)/n)
+    # n = 100
+    # print(timeit.timeit(stmt=main, number=n)/n)
