@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper">
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, added todos in code">
+      <change afterPath="$PROJECT_DIR$/Symposium Files/~WRL1921.tmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vjf2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vjf2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results4.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Symposium Files/~$AME-OS-2022-MS-11-Final_vjf2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/~$AME-OS-2022-MS-11-Final_vjf2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,10 +181,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.MAIN" />
-      <item itemvalue="Python.damped_error_analysis" />
-      <item itemvalue="Python.model_trainer" />
-      <item itemvalue="Python.damped_model_visualizer" />
       <item itemvalue="Python.RaoPrediction_class" />
+      <item itemvalue="Python.damped_error_analysis" />
+      <item itemvalue="Python.damped_model_visualizer" />
+      <item itemvalue="Python.model_trainer" />
     </list>
     <recent_temporary>
       <list>
@@ -343,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644711633915</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Edited Paper and Presentation">
+      <created>1644870478114</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1644870478114</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,7 +375,9 @@
     <MESSAGE value="Edited Paper, committed draft versions" />
     <MESSAGE value="Edited Paper, changed model architecture. Incoprated AIC analysis in parametric study" />
     <MESSAGE value="Edited Paper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited Paper" />
+    <MESSAGE value="Edited Paper and Presentation" />
+    <MESSAGE value="Edited Paper, added todos in code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Paper, added todos in code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

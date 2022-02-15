@@ -146,6 +146,7 @@ while count < 120:
         orig_rx.append(func(i, *baseline_prediction[3*order:3*order+order]))
         orig_ry.append(func(i, *baseline_prediction[4*order:4*order+order]))
         orig_rz.append(func(i, *baseline_prediction[5*order:5*order+order]))
+        # TODO: cheat errors by forcing zero functions to be zero
         pred_x.append(func(i, *new_pred[0*order:0*order+order]))
         pred_y.append(func(i, *new_pred[1*order:1*order+order]))
         pred_z.append(func(i, *new_pred[2*order:2*order+order]))
@@ -154,6 +155,7 @@ while count < 120:
         pred_rz.append(func(i, *new_pred[5*order:5*order+order]))
 
 
+    # TODO: Change raw error to MAE error
     x_err_rpd = abs(round(mean(200*np.subtract(orig_x, pred_x)/(np.add(np.absolute(orig_x), np.absolute(pred_x)))), 3))
     y_err_rpd = abs(round(mean(200*np.subtract(orig_y, pred_y)/(np.add(np.absolute(orig_y), np.absolute(pred_y)))), 3))
     z_err_rpd = abs(round(mean(200*np.subtract(orig_z, pred_z)/(np.add(np.absolute(orig_z), np.absolute(pred_z)))), 3))

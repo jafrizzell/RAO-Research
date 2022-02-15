@@ -14,6 +14,8 @@ from itertools import product
 # Import data
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
 
+# TODO: Correlation between independent variables
+
 # Pre-process data, split into train and test datasets
 raw_data.dropna(axis=0, inplace=True)
 
@@ -31,6 +33,7 @@ raw_data.pop('r_squared_pitch')
 raw_data.pop('r_squared_yaw')
 
 # raw_data = raw_data[raw_data['Heading'] == (-180.0 or 0)]
+# TODO: K-Fold Validation instead of train/test
 train_dataset = raw_data.sample(frac=0.8, random_state=0)
 
 test_dataset = raw_data.drop(train_dataset.index)
