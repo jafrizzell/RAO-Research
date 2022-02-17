@@ -168,7 +168,7 @@ l1 = np.linspace(32, 256, 8)
 l2 = np.linspace(0, 256, 9)
 l3 = np.linspace(0, 256, 9)
 # parametric_space = list(product(*[l1, l2, l3]))
-parametric_space = [[10, 10, 10, 10, 10]] # TODO: Fix this
+parametric_space = [[512, 512, 512, 512, 512]] # TODO: Fix this
 print(parametric_space)
 start_t = time.time()
 c = 1
@@ -209,7 +209,7 @@ plt.ylim(lims)
 _ = plt.plot(lims, lims)
 plt.show()
 
-dnn_model.save('multi_eq_0.9')
+dnn_model.save('multi_eq_0.9.h5')
 
 
 # baseline = np.asarray(test_dataset.sample(n=1))[0]

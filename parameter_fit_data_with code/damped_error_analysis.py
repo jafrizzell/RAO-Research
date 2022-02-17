@@ -95,7 +95,7 @@ avg_ry_err_raw = []
 avg_rz_err_raw = []
 
 
-model = '/multi_eq_0.9/'
+model = '/multi_eq_0.9.h5'
 base = os.getcwd()
 model_path = base+model
 load_model = tf.keras.models.load_model(model_path)

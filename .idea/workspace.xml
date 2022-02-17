@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, added todos in code">
+      <change beforePath="$PROJECT_DIR$/.idea/RAO-Research.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_7_50_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_7_50_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1zNf8BUvHOhdkzZ4LLecD7AVEih" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,7 +53,7 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.model_trainer">
+  <component name="RunManager" selected="Python.MAIN">
     <configuration name="MAIN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,7 +61,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\jafri\Documents\GitHub\RAO-Research\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with code" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -189,10 +189,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MAIN" />
         <item itemvalue="Python.model_trainer" />
         <item itemvalue="Python.damped_error_analysis" />
         <item itemvalue="Python.damped_model_visualizer" />
-        <item itemvalue="Python.MAIN" />
         <item itemvalue="Python.damped_spring_extractor" />
       </list>
     </recent_temporary>

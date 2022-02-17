@@ -9,7 +9,7 @@ beam = 12.5  # Barge beam
 draft = 0.78  # Barge draft
 heading = 180  # Wave heading, 0 degrees is head seas, 90 is beam
 
-model = '/multi_eq_0.8/'
+model = '/multi_eq_0.9.h5'
 base = os.getcwd()
 model_path = base+model  # path the the trained NN model directory
 
