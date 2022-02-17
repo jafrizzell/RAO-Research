@@ -1,8 +1,10 @@
 import time
-
+import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
-from sklearn.metrics import r2_score, mean_absolute_error
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+from math import sqrt
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -12,7 +14,9 @@ import RegscorePy
 from itertools import product
 
 # Import data
-raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
+base = str(Path(os.getcwd()).parent)
+tail = '/new_fit/damped/damped_results_all_dir.csv'
+raw_data = pd.read_csv(base+tail, sep=',')
 
 # TODO: Correlation between independent variables
 
@@ -76,7 +80,7 @@ def fit_and_evaluate(norm, architecture, dof):
     dnn_model = build_and_compile_model(norm, architecture, dof)
     # dnn_model.summary()
 
-    history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=1000)
+    history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=75)
     plot_loss(history)
 
     test_results = dnn_model.evaluate(test_labels, test_features, verbose=0)
@@ -85,10 +89,9 @@ def fit_and_evaluate(norm, architecture, dof):
 
     r2 = r2_score(np.asarray(test_features).flatten(), test_predictions)
     mae = mean_absolute_error(np.asarray(test_features).flatten(), test_predictions)
-    print(mae)
     aic = RegscorePy.aic.aic(np.asarray(test_features, dtype=float).flatten(), np.asarray(test_predictions).astype(float), 4+2)
-
-    return dnn_model, aic, r2, test_predictions
+    rmse = sqrt(mean_squared_error(np.asarray(test_features).flatten(), test_predictions))
+    return dnn_model, aic, r2, mae, rmse, test_predictions
 
 
 def plot_loss(history):
@@ -132,7 +135,7 @@ def build_and_compile_model(norm, arch, dof):
         dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
         dense2 = layers.Dense(arch[1], activation='relu')(dense1)
         # norm_layer2 = layers.BatchNormalization()(dense2)
-        dense3 = layers.Dense(arch[2], activation='relu')(dense2)
+        dense3 = layers.Dense(arch[2], activation='relu')(dense2)# TODO: Fix this
         dense4 = layers.Dense(arch[3], activation='relu')(dense3)
         dense5 = layers.Dense(arch[4], activation='relu')(dense4)
         outputs = layers.Dense(dof*(order))(dense5)
@@ -159,21 +162,25 @@ def build_and_compile_model(norm, arch, dof):
 models = []
 aic_scores = []
 r2_scores = []
+maes = []
+rmses = []
 l1 = np.linspace(32, 256, 8)
 l2 = np.linspace(0, 256, 9)
 l3 = np.linspace(0, 256, 9)
 # parametric_space = list(product(*[l1, l2, l3]))
-parametric_space = [[512, 512, 512, 512, 512]]
+parametric_space = [[10, 10, 10, 10, 10]] # TODO: Fix this
 print(parametric_space)
 start_t = time.time()
 c = 1
 
 for arch in parametric_space:
     print('Progress: ' + str(c) + '/' + str(len(parametric_space)))
-    dnn_model, aic, r2, test_predictions = fit_and_evaluate(normalizer, arch, num_dof)
+    dnn_model, aic, r2, mae, rmse, test_predictions = fit_and_evaluate(normalizer, arch, num_dof)
     models.append(dnn_model)
     aic_scores.append(aic)
     r2_scores.append(r2)
+    maes.append(mae)
+    rmses.append(rmse)
 
     curr_time = time.time()
     diff_t = curr_time - start_t
@@ -184,10 +191,10 @@ for arch in parametric_space:
     c += 1
 
 parametric_space_t = np.asarray(parametric_space).transpose().tolist()
-output_data = [parametric_space_t[0], parametric_space_t[1], parametric_space_t[1], aic_scores, r2_scores]
+output_data = [parametric_space_t[0], parametric_space_t[1], parametric_space_t[1], aic_scores, maes, rmses, r2_scores]
 output_data = np.asarray(output_data).transpose().tolist()
 print(output_data)
-oput = pd.DataFrame(output_data, columns=['L1', 'L2', 'L3', 'AIC', 'R2'])
+oput = pd.DataFrame(output_data, columns=['L1', 'L2', 'L3', 'AIC', 'MAE', 'RMSE', 'R2'])
 print(oput)
 # oput.to_csv('Parametric_space_study.csv', index=False)
 
@@ -202,7 +209,7 @@ plt.ylim(lims)
 _ = plt.plot(lims, lims)
 plt.show()
 
-dnn_model.save('multi_eq_0.7')
+dnn_model.save('multi_eq_0.9')
 
 
 # baseline = np.asarray(test_dataset.sample(n=1))[0]

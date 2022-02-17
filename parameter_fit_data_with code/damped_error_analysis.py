@@ -1,5 +1,7 @@
 import pandas as pd
+import os
 import tensorflow as tf
+from pathlib import Path
 import numpy as np
 from math import e
 from statistics import mean
@@ -93,10 +95,15 @@ avg_ry_err_raw = []
 avg_rz_err_raw = []
 
 
-load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/multi_eq_0.6/")
+model = '/multi_eq_0.9/'
+base = os.getcwd()
+model_path = base+model
+load_model = tf.keras.models.load_model(model_path)
 
 print(load_model.summary())
-raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
+database = str(Path(os.getcwd()).parent)
+datatail = '/new_fit/damped/damped_results_all_dir.csv'
+raw_data = pd.read_csv(database+datatail, sep=',')
 # raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
 raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
 

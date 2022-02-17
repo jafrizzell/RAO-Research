@@ -96,7 +96,7 @@ class RaoPrediction:
 
         plt.subplot(2, 3, 5)
         plt.plot(self.x_points, self.pitch, color='blue')
-        plt.title('PitchO')
+        plt.title('Pitch')
         # plt.ylim([-0.5, 50])
         plt.grid()
         plt.xlabel('Wave Frequency (rad/s)')

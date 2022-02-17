@@ -1,14 +1,22 @@
 import pandas as pd
 import tensorflow as tf
+import os
+from pathlib import Path
 import numpy as np
 from math import e
 from statistics import mean
 import matplotlib.pyplot as plt
+from sklearn.metrics import mean_absolute_error
 
-load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/multi_eq_0.7/")
+model = '/multi_eq_0.9/'
+base = os.getcwd()
+model_path = base+model
+load_model = tf.keras.models.load_model(model_path)
 
 print(load_model.summary())
-raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
+database = str(Path(os.getcwd()).parent)
+datatail = '/new_fit/damped/damped_results_all_dir.csv'
+raw_data = pd.read_csv(database+datatail, sep=',')
 #print(raw_data.isna().sum())
 # raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
 raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
@@ -47,8 +55,9 @@ test_labels = np.asarray(test_features.drop(test_features.columns[list(range(4,6
 train_features = train_features.drop(train_features.columns[list(range(0,4))], axis=1, inplace=False)
 test_features = test_features.drop(test_features.columns[list(range(0,4))], axis=1, inplace=False)
 
-baseline = np.asarray(raw_data.sample(n=1))[0]
-# baseline = np.asarray(raw_data.loc[751])
+# baseline = np.asarray(raw_data.sample(n=1))[0]
+baseline = np.asarray(raw_data.loc[751])
+# baseline = np.asarray(raw_data.loc[757])
 baseline_input = baseline[0:4]
 baseline_prediction = baseline[4:]
 
@@ -110,19 +119,19 @@ for i in x_axis:
     pred_rz.append(gauss_func(i, *new_pred[5*order:5*order+order]))
 
 
-x_err_rpd = abs(round(mean(200*np.subtract(orig_x, pred_x)/(np.add(np.absolute(orig_x), np.absolute(pred_x)))), 3))
-y_err_rpd = abs(round(mean(200*np.subtract(orig_y, pred_y)/(np.add(np.absolute(orig_y), np.absolute(pred_y)))), 3))
-z_err_rpd = abs(round(mean(200*np.subtract(orig_z, pred_z)/(np.add(np.absolute(orig_z), np.absolute(pred_z)))), 3))
-rx_err_rpd = abs(round(mean(200*np.subtract(orig_rx, pred_rx)/(np.add(np.absolute(orig_rx), np.absolute(pred_rx)))), 3))
-ry_err_rpd = abs(round(mean(200*np.subtract(orig_ry, pred_ry)/(np.add(np.absolute(orig_ry), np.absolute(pred_ry)))), 3))
-rz_err_rpd = abs(round(mean(200*np.subtract(orig_rz, pred_rz)/(np.add(np.absolute(orig_rz), np.absolute(pred_rz)))), 3))
+x_err_rpd = abs(round(mean(200*np.subtract(orig_x, pred_x)/(np.add(orig_x, pred_x))), 3))
+y_err_rpd = abs(round(mean(200*np.subtract(orig_y, pred_y)/(np.add(orig_y, pred_y))), 3))
+z_err_rpd = abs(round(mean(200*np.subtract(orig_z, pred_z)/(np.add(orig_z, pred_z))), 3))
+rx_err_rpd = abs(round(mean(200*np.subtract(orig_rx, pred_rx)/(np.add(orig_rx, pred_rx))), 3))
+ry_err_rpd = abs(round(mean(200*np.subtract(orig_ry, pred_ry)/(np.add(orig_ry, pred_ry))), 3))
+rz_err_rpd = abs(round(mean(200*np.subtract(orig_rz, pred_rz)/(np.add(orig_rz, pred_rz))), 3))
 
-x_err_raw = round(abs(mean(np.subtract(orig_x, pred_x))), 3)
-y_err_raw = round(abs(mean(np.subtract(orig_y, pred_y))), 3)
-z_err_raw = round(abs(mean(np.subtract(orig_z, pred_z))), 3)
-rx_err_raw = round(abs(mean(np.subtract(orig_rx, pred_rx))), 3)
-ry_err_raw = round(abs(mean(np.subtract(orig_ry, pred_ry))), 3)
-rz_err_raw = round(abs(mean(np.subtract(orig_rz, pred_rz))), 3)
+x_err_raw = round(mean_absolute_error(orig_x, pred_x), 3)
+y_err_raw = round(mean_absolute_error(orig_y, pred_y), 3)
+z_err_raw = round(mean_absolute_error(orig_z, pred_z), 3)
+rx_err_raw = round(mean_absolute_error(orig_rx, pred_rx), 3)
+ry_err_raw = round(mean_absolute_error(orig_ry, pred_ry), 3)
+rz_err_raw = round(mean_absolute_error(orig_rz, pred_rz), 3)
 
 plt.subplot(2, 3, 1)
 plt.rc('axes', titlesize=25)
@@ -134,10 +143,10 @@ plt.plot(x_axis, pred_x, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_x, color='blue', linestyle='-.', label='True RAO')
 plt.title('Surge RAO')
 plt.ylabel('Response (m/m)')
-plt.text(mean(x_axis), (mean(orig_x)+mean(pred_x))/2, "Relative % diff: "+ str(x_err_rpd)+'\n'+"Average raw diff: " + str(x_err_raw))
+plt.text(mean(x_axis), (mean(orig_x)+mean(pred_x))/2, "Relative % diff: "+ str(x_err_rpd)+'\n'+"MAE: " + str(x_err_raw))
 plt.grid()
 # plt.ylim([-0.5, 1.5])
-plt.legend()
+# plt.legend()
 # plt.show()
 # plt.show()
 plt.subplot(2, 3, 2)
@@ -147,10 +156,10 @@ plt.plot(x_axis, orig_y, color='blue', linestyle='-.', label='True RAO')
 plt.title('Sway RAO')
 plt.ylabel('Response (m/m)')
 
-plt.text(mean(x_axis), (mean(orig_y)+mean(pred_y))/2, "Relative % diff: "+ str(y_err_rpd)+'\n'+"Average raw diff: " + str(y_err_raw))
+plt.text(mean(x_axis), (mean(orig_y)+mean(pred_y))/2, "Relative % diff: "+ str(y_err_rpd)+'\n'+"MAE: " + str(y_err_raw))
 
 plt.grid()
-plt.legend()
+# plt.legend()
 # plt.show()
 # plt.rc('font', size=10)
 # plt.ylim([-0.5, 1.5])
@@ -159,7 +168,7 @@ plt.subplot(2, 3, 3)
 plt.plot(x_axis, pred_z, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_z, color='blue', linestyle='-.', label='True RAO')
 plt.title('Heave RAO')
-plt.text(mean(x_axis), (mean(orig_z)+mean(pred_z))/2, "Relative % diff: "+ str(z_err_rpd)+'\n'+"Average raw diff: " + str(z_err_raw))
+plt.text(mean(x_axis), (mean(orig_z)+mean(pred_z))/2, "Relative % diff: "+ str(z_err_rpd)+'\n'+"MAE: " + str(z_err_raw))
 plt.grid()
 # plt.ylim([-0.5, 1.5])
 
@@ -167,7 +176,7 @@ plt.subplot(2, 3, 4)
 plt.plot(x_axis, pred_rx, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_rx, color='blue', linestyle='-.', label='True RAO')
 plt.title('Roll RAO')
-plt.text(mean(x_axis), (mean(orig_rx)+mean(pred_rx))/2, "Relative % diff: "+ str(rx_err_rpd)+'\n'+"Average raw diff: " + str(rx_err_raw))
+plt.text(mean(x_axis), (mean(orig_rx)+mean(pred_rx))/2, "Relative % diff: "+ str(rx_err_rpd)+'\n'+"MAE: " + str(rx_err_raw))
 # plt.ylim([-0.5, 1.5])
 plt.ylabel('Response (Deg/m)')
 plt.xlabel('Wave Frequency (rad/s)')
@@ -177,7 +186,7 @@ plt.subplot(2, 3, 5)
 plt.plot(x_axis, pred_ry, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_ry, color='blue', linestyle='-.', label='True RAO')
 plt.title('Pitch RAO')
-plt.text(mean(x_axis), (mean(orig_ry)+mean(pred_ry))/2, "Relative % diff: "+ str(ry_err_rpd)+'\n'+"Average raw diff: " + str(ry_err_raw))
+plt.text(mean(x_axis), (mean(orig_ry)+mean(pred_ry))/2, "Relative % diff: "+ str(ry_err_rpd)+'\n'+"MAE: " + str(ry_err_raw))
 # plt.ylim([-0.5, 50])
 plt.grid()
 plt.xlabel('Wave Frequency (rad/s)')
@@ -186,11 +195,11 @@ plt.subplot(2, 3, 6)
 plt.plot(x_axis, pred_rz, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_rz, color='blue', linestyle='-.', label='True RAO')
 plt.title('Yaw RAO')
-plt.text(mean(x_axis), (mean(orig_rz)+mean(pred_rz))/2, "Relative % diff: "+ str(rz_err_rpd)+'\n'+"Average raw diff: " + str(rz_err_raw))
+plt.text(mean(x_axis), (mean(orig_rz)+mean(pred_rz))/2, "Relative % diff: "+ str(rz_err_rpd)+'\n'+"MAE: " + str(rz_err_raw))
 # plt.ylim([-0.5, 1.5])
 plt.grid()
 plt.xlabel('Wave Frequency (rad/s)')
                                                                 
-plt.legend()
+# plt.legend()
 # plt.get_current_fig_manager().full_screen_toggle()
 plt.show()

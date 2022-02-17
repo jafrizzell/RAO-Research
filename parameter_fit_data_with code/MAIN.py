@@ -1,15 +1,17 @@
 from RaoPrediction_class import RaoPrediction
 import cProfile
 import timeit
-
+import os
 # Start inputs
 
-length = 100  # Barge length
-beam = 35  # Barge beam
-draft = 6  # Barge draft
+length = 23.8  # Barge length
+beam = 12.5  # Barge beam
+draft = 0.78  # Barge draft
 heading = 180  # Wave heading, 0 degrees is head seas, 90 is beam
 
-model_path = "C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/"  # path the the trained NN model directory
+model = '/multi_eq_0.8/'
+base = os.getcwd()
+model_path = base+model  # path the the trained NN model directory
 
 low_freq = 0.1  # lowest wave frequency to predict the RAOs at
 high_freq = 2.5  # highest wave frequency to predict the RAOs at
