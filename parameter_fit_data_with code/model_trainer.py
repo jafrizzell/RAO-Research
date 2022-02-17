@@ -2,7 +2,7 @@ import time
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, mean_absolute_error
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -17,20 +17,28 @@ raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/dam
 # TODO: Correlation between independent variables
 
 # Pre-process data, split into train and test datasets
-raw_data.dropna(axis=0, inplace=True)
-
+print(raw_data.isna().sum())
 raw_data = raw_data.apply(pd.to_numeric)
+raw_data = raw_data.drop(index=list(range(362)))
+raw_data.dropna(axis=0, inplace=True)
+print(raw_data.shape)
 column1 = raw_data['Length (m)']
 column2 = raw_data['Beam (m)']
 column3 = raw_data['Draft (m)']
 column4 = raw_data['Heading']
 
-raw_data.pop('r_squared_surge')
-raw_data.pop('r_squared_sway')
-raw_data.pop('r_squared_heave')
-raw_data.pop('r_squared_roll')
-raw_data.pop('r_squared_pitch')
-raw_data.pop('r_squared_yaw')
+raw_data.pop('R2surge')
+raw_data.pop('R2sway')
+raw_data.pop('R2heave')
+raw_data.pop('R2roll')
+raw_data.pop('R2pitch')
+raw_data.pop('R2yaw')
+raw_data.pop('MAEsurge')
+raw_data.pop('MAEsway')
+raw_data.pop('MAEheave')
+raw_data.pop('MAEroll')
+raw_data.pop('MAEpitch')
+raw_data.pop('MAEyaw')
 
 # raw_data = raw_data[raw_data['Heading'] == (-180.0 or 0)]
 # TODO: K-Fold Validation instead of train/test
@@ -41,28 +49,31 @@ test_dataset = raw_data.drop(train_dataset.index)
 
 train_features = train_dataset.copy()
 test_features = test_dataset.copy()
-order = 3  # Numbert of coefficients in the curve fit data
+order = 3  # Number of coefficients in the curve fit data
 num_dof = 6
 
 train_labels = np.asarray(train_features.drop(train_features.columns[list(range(4,6*(order)+4))], axis=1, inplace=False))
 test_labels = np.asarray(test_features.drop(test_features.columns[list(range(4,6*(order)+4))], axis=1, inplace=False))
 
-
-# train_features = train_features[['a_heave', 'b_heave', 'c_heave', 'a_pitch', 'b_pitch', 'c_pitch']]
-# test_features = test_features[['a_heave', 'b_heave', 'c_heave', 'a_pitch', 'b_pitch', 'c_pitch']]
-
-# train_features = train_features[['a_pitch', 'b_pitch', 'c_pitch']]
-# test_features = test_features[['a_pitch', 'b_pitch', 'c_pitch']]
 train_features = train_features.drop(train_features.columns[list(range(0,4))], axis=1, inplace=False)
 test_features = test_features.drop(test_features.columns[list(range(0,4))], axis=1, inplace=False)
 
+# print(train_labels)
+
+# train_features = train_features[['Aheave', 'Bheave', 'Cheave', 'Apitch', 'Bpitch', 'Cpitch']]
+# test_features = test_features[['Aheave', 'Bheave', 'Cheave', 'Apitch', 'Bpitch', 'Cpitch']]
+
+# train_features = train_features[['Apitch', 'Bpitch', 'Cpitch']]
+# test_features = test_features[['Apitch', 'Bpitch', 'Cpitch']]
+
+print(train_features.shape)
 normalizer = preprocessing.Normalization(axis=-1)
 normalizer.adapt(np.array(train_features))
 
 
 def fit_and_evaluate(norm, architecture, dof):
     dnn_model = build_and_compile_model(norm, architecture, dof)
-    dnn_model.summary()
+    # dnn_model.summary()
 
     history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=1000)
     plot_loss(history)
@@ -72,8 +83,9 @@ def fit_and_evaluate(norm, architecture, dof):
     test_predictions = dnn_model.predict(test_labels).flatten()
 
     r2 = r2_score(np.asarray(test_features).flatten(), test_predictions)
-
-    aic = RegscorePy.aic.aic(np.asarray(test_features, dtype=float).flatten(), np.asarray(test_predictions).astype(float), dof*3+2)
+    mae = mean_absolute_error(np.asarray(test_features).flatten(), test_predictions)
+    print(mae)
+    aic = RegscorePy.aic.aic(np.asarray(test_features, dtype=float).flatten(), np.asarray(test_predictions).astype(float), 4+2)
 
     return dnn_model, aic, r2, test_predictions
 
@@ -87,40 +99,60 @@ def plot_loss(history):
     plt.legend()
     plt.grid(True)
     plt.show()
+    # pass
 
 
 def build_and_compile_model(norm, arch, dof):
     # Adjust the number of hidden layers and neurons per layer that results in best fit NN
     inputs = keras.Input(shape=(4,))
     if arch[1] == 0.0:
-        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        norm_layer = layers.BatchNormalization()(inputs)
+        dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
         # dense2 = layers.Dense(arch[1], activation='elu')(inputs)
         dense3 = layers.Dense(arch[2], activation='relu')(dense1)
         outputs = layers.Dense(dof*(order))(dense3)
 
     elif arch[2] == 0.0:
-        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        norm_layer = layers.BatchNormalization()(inputs)
+        dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
         dense2 = layers.Dense(arch[1], activation='elu')(dense1)
         # dense3 = layers.Dense(arch[2], activation='relu')(dense1)
         outputs = layers.Dense(dof*(order))(dense2)
 
     elif arch[1] == 0.0 and arch[2] == 0.0:
-        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
+        norm_layer = layers.BatchNormalization()(inputs)
+        dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
         # dense2 = layers.Dense(arch[1], activation='elu')(inputs)
         # dense3 = layers.Dense(arch[2], activation='relu')(dense1)
         outputs = layers.Dense(dof*(order))(dense1)
 
     else:
-        dense1 = layers.Dense(arch[0], activation='elu')(inputs)
-        dense2 = layers.Dense(arch[1], activation='elu')(dense1)
+        norm_layer = layers.BatchNormalization()(inputs)
+        dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
+        dense2 = layers.Dense(arch[1], activation='relu')(dense1)
+        # norm_layer2 = layers.BatchNormalization()(dense2)
         dense3 = layers.Dense(arch[2], activation='relu')(dense2)
-        outputs = layers.Dense(dof*(order))(dense3)
+        dense4 = layers.Dense(arch[3], activation='relu')(dense3)
+        dense5 = layers.Dense(arch[4], activation='relu')(dense4)
+        outputs = layers.Dense(dof*(order))(dense5)
 
     model = keras.Model(inputs=inputs, outputs=outputs)
 
     model.compile(loss='mean_absolute_error',
                   optimizer=tf.keras.optimizers.Adam(0.001))
     return model
+
+
+# tuner = kt.Hyperband(build_and_compile_model,
+#                      objective='val_accuracy',
+#                      max_epochs=10,
+#                      factor=3,
+#                      directory='my_dir',
+#                      project_name='intro_to_kt')
+#
+# stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
+# tuner.search(train_features, train_labels, epochs=50, validation_split=0.2, callbacks=[stop_early])
+# best_hps=tuner.get_best_hyperparameters(num_trials=1)[0]
 
 
 models = []
@@ -130,7 +162,7 @@ l1 = np.linspace(32, 256, 8)
 l2 = np.linspace(0, 256, 9)
 l3 = np.linspace(0, 256, 9)
 # parametric_space = list(product(*[l1, l2, l3]))
-parametric_space = [[256, 160, 256]]
+parametric_space = [[512, 512, 512, 512, 512]]
 print(parametric_space)
 start_t = time.time()
 c = 1
@@ -151,7 +183,7 @@ for arch in parametric_space:
     c += 1
 
 parametric_space_t = np.asarray(parametric_space).transpose().tolist()
-output_data = [parametric_space_t[0], parametric_space_t[1], parametric_space_t[2], aic_scores, r2_scores]
+output_data = [parametric_space_t[0], parametric_space_t[1], parametric_space_t[1], aic_scores, r2_scores]
 output_data = np.asarray(output_data).transpose().tolist()
 print(output_data)
 oput = pd.DataFrame(output_data, columns=['L1', 'L2', 'L3', 'AIC', 'R2'])
@@ -160,7 +192,7 @@ print(oput)
 
 
 a = plt.axes(aspect='equal')
-plt.scatter(test_features, test_predictions)
+plt.scatter(test_features, test_predictions, s=0.8)
 plt.xlabel('True Values')
 plt.ylabel('Predictions')
 lims = [0, 35]
@@ -169,8 +201,9 @@ plt.ylim(lims)
 _ = plt.plot(lims, lims)
 plt.show()
 
-dnn_model.save('damped_spring_1dof')
-#
+dnn_model.save('multi_eq_0.6')
+
+
 # baseline = np.asarray(test_dataset.sample(n=1))[0]
 # baseline_input = baseline[0:4]
 # baseline_prediction = baseline[4:]
@@ -201,7 +234,7 @@ dnn_model.save('damped_spring_1dof')
 #     orig_z.append(np.polyval(baseline_prediction[2*order:2*order+order], i))
 #     orig_rx.append(np.polyval(baseline_prediction[3*order:3*order+order], i))
 #     orig_ry.append(np.polyval(baseline_prediction[4*order:4*order+order], i))
-#     orig_rz.append(np.polyval(baseline_prediction[5*order:5*order+order], i))
+    # orig_rz.append(np.polyval(baseline_prediction[5*order:5*order+order], i))
 #     pred_x.append(np.polyval(new_pred[0*order:0*order+order], i))
 #     pred_y.append(np.polyval(new_pred[1*order:1*order+order], i))
 #     pred_z.append(np.polyval(new_pred[2*order:2*order+order], i))

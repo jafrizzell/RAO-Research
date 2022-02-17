@@ -93,18 +93,25 @@ avg_ry_err_raw = []
 avg_rz_err_raw = []
 
 
-load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/")
+load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/multi_eq_0.6/")
 
 print(load_model.summary())
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
+raw_data = raw_data.drop(index=list(range(362)))
 raw_data.dropna(axis=0, inplace=True)
 
-raw_data.pop('r_squared_surge')
-raw_data.pop('r_squared_sway')
-raw_data.pop('r_squared_heave')
-raw_data.pop('r_squared_roll')
-raw_data.pop('r_squared_pitch')
-raw_data.pop('r_squared_yaw')
+raw_data.pop('R2surge')
+raw_data.pop('R2sway')
+raw_data.pop('R2heave')
+raw_data.pop('R2roll')
+raw_data.pop('R2pitch')
+raw_data.pop('R2yaw')
+raw_data.pop('MAEsurge')
+raw_data.pop('MAEsway')
+raw_data.pop('MAEheave')
+raw_data.pop('MAEroll')
+raw_data.pop('MAEpitch')
+raw_data.pop('MAEyaw')
 count = 0
 
 while count < 120:
@@ -129,8 +136,24 @@ while count < 120:
     pred_rz = []
 
 
-    def func(x, a, b, c):
+    def damped_func(x, a, b, c):
+        # Motion of a critically-damped harmonic motion system
+        # Change this function to change the shape of the initial data, to better fit it.
         y = c * e**-(a*x) + b*x*e**-(a*x)
+        return y
+
+
+    def gauss_func(x, a, b, c):
+        # Motion of a critically-damped harmonic motion system
+        # Change this function to change the shape of the initial data, to better fit it.
+        y = a * e**-((x-b)**2/c)
+        return y
+
+
+    def arctan_func(x, a, b, c):
+        # Motion of a critically-damped harmonic motion system
+        # Change this function to change the shape of the initial data, to better fit it.
+        y = a * np.arctan((x * b + c)) + 0.5
         return y
 
 
@@ -140,19 +163,19 @@ while count < 120:
 
     x_axis = np.linspace(0.1, 2.5, 60)
     for i in x_axis:
-        orig_x.append(func(i, *baseline_prediction[0*order:0*order+order]))
-        orig_y.append(func(i, *baseline_prediction[1*order:1*order+order]))
-        orig_z.append(func(i, *baseline_prediction[2*order:2*order+order]))
-        orig_rx.append(func(i, *baseline_prediction[3*order:3*order+order]))
-        orig_ry.append(func(i, *baseline_prediction[4*order:4*order+order]))
-        orig_rz.append(func(i, *baseline_prediction[5*order:5*order+order]))
+        orig_x.append(damped_func(i, *baseline_prediction[0*order:0*order+order]))
+        orig_y.append(damped_func(i, *baseline_prediction[1*order:1*order+order]))
+        orig_z.append(arctan_func(i, *baseline_prediction[2*order:2*order+order]))
+        orig_rx.append(gauss_func(i, *baseline_prediction[3*order:3*order+order]))
+        orig_ry.append(gauss_func(i, *baseline_prediction[4*order:4*order+order]))
+        orig_rz.append(gauss_func(i, *baseline_prediction[5*order:5*order+order]))
         # TODO: cheat errors by forcing zero functions to be zero
-        pred_x.append(func(i, *new_pred[0*order:0*order+order]))
-        pred_y.append(func(i, *new_pred[1*order:1*order+order]))
-        pred_z.append(func(i, *new_pred[2*order:2*order+order]))
-        pred_rx.append(func(i, *new_pred[3*order:3*order+order]))
-        pred_ry.append(func(i, *new_pred[4*order:4*order+order]))
-        pred_rz.append(func(i, *new_pred[5*order:5*order+order]))
+        pred_x.append(damped_func(i, *new_pred[0*order:0*order+order]))
+        pred_y.append(damped_func(i, *new_pred[1*order:1*order+order]))
+        pred_z.append(arctan_func(i, *new_pred[2*order:2*order+order]))
+        pred_rx.append(gauss_func(i, *new_pred[3*order:3*order+order]))
+        pred_ry.append(gauss_func(i, *new_pred[4*order:4*order+order]))
+        pred_rz.append(gauss_func(i, *new_pred[5*order:5*order+order]))
 
 
     # TODO: Change raw error to MAE error
@@ -275,8 +298,8 @@ plt.xlabel('Waterplane Area ($m^2$)', fontsize=25)
 plt.ylabel('Average RPD Error', fontsize=25)
 plt.legend(markerscale=2)
 # plt.colorbar().ax.set_ylabel('Wave Heading, degrees')
-plt.clf()
-# plt.show()
+# plt.clf()
+plt.show()
 plt.scatter(waterplanes, raw_errs, c=colors, cmap='rainbow')
 plt.title('Raw Error Variation with Waterplane Area')
 plt.xlabel('Waterplane Area ($m^2$)')
@@ -287,19 +310,19 @@ plt.clf()
 
 # TODO: plot wave heading error variation
 
-x_dof = [deg0_rpd_x, deg45_rpd_x, deg90_rpd_x, deg135_rpd_x, deg180_rpd_x]
-y_dof = [deg0_rpd_y, deg45_rpd_y, deg90_rpd_y, deg135_rpd_y, deg180_rpd_y]
-z_dof = [deg0_rpd_z, deg45_rpd_z, deg90_rpd_z, deg135_rpd_z, deg180_rpd_z]
-rx_dof = [deg0_rpd_rx, deg45_rpd_rx, deg90_rpd_rx, deg135_rpd_rx, deg180_rpd_rx]
-ry_dof = [deg0_rpd_ry, deg45_rpd_ry, deg90_rpd_ry, deg135_rpd_ry, deg180_rpd_ry]
-rz_dof = [deg0_rpd_rz, deg45_rpd_rz, deg90_rpd_rz, deg135_rpd_rz, deg180_rpd_rz]
+# x_dof = [deg0_rpd_x, deg45_rpd_x, deg90_rpd_x, deg135_rpd_x, deg180_rpd_x]
+# y_dof = [deg0_rpd_y, deg45_rpd_y, deg90_rpd_y, deg135_rpd_y, deg180_rpd_y]
+# z_dof = [deg0_rpd_z, deg45_rpd_z, deg90_rpd_z, deg135_rpd_z, deg180_rpd_z]
+# rx_dof = [deg0_rpd_rx, deg45_rpd_rx, deg90_rpd_rx, deg135_rpd_rx, deg180_rpd_rx]
+# ry_dof = [deg0_rpd_ry, deg45_rpd_ry, deg90_rpd_ry, deg135_rpd_ry, deg180_rpd_ry]
+# rz_dof = [deg0_rpd_rz, deg45_rpd_rz, deg90_rpd_rz, deg135_rpd_rz, deg180_rpd_rz]
 
-# x_dof = [deg0_raw_x, deg45_raw_x, deg90_raw_x, deg135_raw_x, deg180_raw_x]
-# y_dof = [deg0_raw_y, deg45_raw_y, deg90_raw_y, deg135_raw_y, deg180_raw_y]
-# z_dof = [deg0_raw_z, deg45_raw_z, deg90_raw_z, deg135_raw_z, deg180_raw_z]
-# rx_dof = [deg0_raw_rx, deg45_raw_rx, deg90_raw_rx, deg135_raw_rx, deg180_raw_rx]
-# ry_dof = [deg0_raw_ry, deg45_raw_ry, deg90_raw_ry, deg135_raw_ry, deg180_raw_ry]
-# rz_dof = [deg0_raw_rz, deg45_raw_rz, deg90_raw_rz, deg135_raw_rz, deg180_raw_rz]
+x_dof = [deg0_raw_x, deg45_raw_x, deg90_raw_x, deg135_raw_x, deg180_raw_x]
+y_dof = [deg0_raw_y, deg45_raw_y, deg90_raw_y, deg135_raw_y, deg180_raw_y]
+z_dof = [deg0_raw_z, deg45_raw_z, deg90_raw_z, deg135_raw_z, deg180_raw_z]
+rx_dof = [deg0_raw_rx, deg45_raw_rx, deg90_raw_rx, deg135_raw_rx, deg180_raw_rx]
+ry_dof = [deg0_raw_ry, deg45_raw_ry, deg90_raw_ry, deg135_raw_ry, deg180_raw_ry]
+rz_dof = [deg0_raw_rz, deg45_raw_rz, deg90_raw_rz, deg135_raw_rz, deg180_raw_rz]
 
 pos = [0, 45, 90, 135, 180]
 adj = np.array([6, 6, 6, 6, 6])
@@ -308,29 +331,29 @@ adj = np.array([6, 6, 6, 6, 6])
 b1 = plt.boxplot(x_dof, positions=np.add(pos, -2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='red', hatch='+'))
 b2 = plt.boxplot(y_dof, positions=np.add(pos, -1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='orange', hatch='x'))
 b3 = plt.boxplot(z_dof, positions=np.add(pos, -0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='yellow', hatch='.'))
-b4 = plt.boxplot(rx_dof, positions=np.add(pos, 0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='green', hatch='/'))
-b5 = plt.boxplot(ry_dof, positions=np.add(pos, 1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='blue', hatch='-'))
-b6 = plt.boxplot(rz_dof, positions=np.add(pos, 2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='purple', hatch='O'))
+# b4 = plt.boxplot(rx_dof, positions=np.add(pos, 0.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='green', hatch='/'))
+# b5 = plt.boxplot(ry_dof, positions=np.add(pos, 1.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='blue', hatch='-'))
+# b6 = plt.boxplot(rz_dof, positions=np.add(pos, 2.5*adj), patch_artist=True, widths=(5, 5, 5, 5, 5), showfliers=False, boxprops=dict(facecolor='purple', hatch='O'))
 plt.xticks(pos, labels=[0, 45, 90, 135, 180], fontsize=25)
-# plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0]], ['Surge', 'Sway', 'Heave'], fontsize=25)
+plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0]], ['Surge', 'Sway', 'Heave'], fontsize=25)
 # plt.legend([b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]], ['Roll', 'Pitch', 'Yaw'], fontsize=25)
-plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0], b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]],
-           ['Surge', 'Sway', 'Heave', 'Roll', 'Pitch', 'Yaw'], fontsize=25, bbox_to_anchor=(0.66, 0.95), loc='upper left', borderaxespad=0)
+# plt.legend([b1['boxes'][0], b2['boxes'][0], b3['boxes'][0], b4['boxes'][0], b5['boxes'][0], b6['boxes'][0]],
+#            ['Surge', 'Sway', 'Heave', 'Roll', 'Pitch', 'Yaw'], fontsize=25, bbox_to_anchor=(0.66, 0.95), loc='upper left', borderaxespad=0)
 
 plt.rc('font', size=25)
 # plt.xlim(-20, 200)
 plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
 plt.yticks(fontsize=25)
-plt.ylabel('RPD Error', fontsize=25)
+# plt.ylabel('RPD Error', fontsize=25)
+plt.ylabel('Raw Error, deg/m', fontsize=25)
 # plt.title('RPD Error Variation for Degrees of Freedom with Wave Heading')
 
 
 plt.xlim(-20, 200)
 # plt.ylim(-20, 250)
-plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
-# plt.ylabel('Raw Error, deg/m', fontsize=25)
+
 plt.title('RPD Error Variation for Degrees of Freedom and Wave Heading')
-# plt.show()
+plt.show()
 plt.clf()
 
 # TODO: plot degree of freedom error variation

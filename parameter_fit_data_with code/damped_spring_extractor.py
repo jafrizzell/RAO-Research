@@ -1,23 +1,37 @@
 import pandas as pd
 import numpy as np
 import os
-from math import e, sqrt
+from math import e
 from scipy.optimize import curve_fit
 from statistics import mean
 
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score, mean_absolute_error
 
-base_path = 'D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/med_barge/'
+base_path = 'D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/small_barge/'
 
-output_file = pd.read_csv("D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/mid_size_barges.csv", sep=',')
+output_file = pd.read_csv("D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/small_barge_data.csv", sep=',')
 writer = []
 writer_data = pd.DataFrame()
 
 
-def func(x, a, b, c):
+def damped_func(x, a, b, c):
     # Motion of a critically-damped harmonic motion system
     # Change this function to change the shape of the initial data, to better fit it.
     y = c * e**-(a*x) + b*x*e**-(a*x)
+    return y
+
+
+def gauss_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
+    y = a * e**-((x-b)**2/c)
+    return y
+
+
+def arctan_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
+    y = a * np.arctan((x * b + c)) + 0.5
     return y
 
 
@@ -63,14 +77,34 @@ for subdirs, dirs, files in os.walk(base_path):
                     for i in range(6):
                         print('Fitting DoF ', i+1)
                         try:
-                            coeffs, cov = curve_fit(func, data[1], data[2+2*i])
-                            predicted = func(data[1], *coeffs)
-                            rmse = [float(sqrt(mean_squared_error(data[2+2*i], predicted)))]
-                            m = [float(mean(predicted))]
-                            coeffs = list(coeffs)
-                            coeffs.extend(rmse)
-                            coeffs.extend(m)
-                            line.extend(coeffs)
+                            if i  in [0, 1]:
+                                coeffs, cov = curve_fit(damped_func, data[1], data[2+2*i], bounds=((0, -0.5, 0), (1, 0.5, 1.5)))
+                                predicted = damped_func(data[1], *coeffs)
+                                r2 = [float(r2_score(data[2+2*i], predicted))]
+                                mae = [float(mean_absolute_error(data[2+2*i], predicted))]
+                                coeffs = list(coeffs)
+                                coeffs.extend(r2)
+                                coeffs.extend(mae)
+                                line.extend(coeffs)
+                            elif i == 2:
+                                coeffs, cov = curve_fit(arctan_func, data[1], data[2+2*i], p0=[-0.5, 0.5, -5],
+                                                        bounds=((-2, 0, -10), (0, 2, 0)))
+                                predicted = arctan_func(data[1], *coeffs)
+                                r2 = [float(r2_score(data[2+2*i], predicted))]
+                                mae = [float(mean_absolute_error(data[2+2*i], predicted))]
+                                coeffs = list(coeffs)
+                                coeffs.extend(r2)
+                                coeffs.extend(mae)
+                                line.extend(coeffs)
+                            elif i in [3, 4, 5]:
+                                coeffs, cov = curve_fit(gauss_func, data[1], data[2+2*i])
+                                predicted = gauss_func(data[1], *coeffs)
+                                r2 = [float(r2_score(data[2+2*i], predicted))]
+                                mae = [float(mean_absolute_error(data[2+2*i], predicted))]
+                                coeffs = list(coeffs)
+                                coeffs.extend(r2)
+                                coeffs.extend(mae)
+                                line.extend(coeffs)
                         except RuntimeError:
                             line.extend(['na', 'na', 'na', 'na', 'na'])
                 except ValueError:
@@ -83,12 +117,13 @@ for subdirs, dirs, files in os.walk(base_path):
     writer_data = pd.DataFrame(writer)
 
 col = ['Length', 'Beam', 'Draft', 'Heading',
-           'Asurge', 'Bsurge', 'Csurge', 'RMSEsurge', 'Msurge',
-           'Asway', 'Bsway', 'Csway', 'RMSEsway', 'Msway',
-           'Aheave', 'Bheave', 'Cheave', 'RMSEheave', 'Mheave',
-           'Aroll', 'Broll', 'Croll', 'RMSEroll', 'Mroll',
-           'Apitch', 'Bpitch', 'Cpitch', 'RMSEpitch', 'Mpitch',
-           'Ayaw', 'Byaw', 'Cyaw', 'RMSEyaw', 'Myaw']
+           'Asurge', 'Bsurge', 'Csurge', 'R2surge', 'MAEsurge',
+           'Asway', 'Bsway', 'Csway', 'R2sway', 'MAEsway',
+           'Aheave', 'Bheave', 'Cheave', 'R2heave', 'MAEheave',
+           'Aroll', 'Broll', 'Croll', 'R2roll', 'MAEroll',
+           'Apitch', 'Bpitch', 'Cpitch', 'R2pitch', 'MAEpitch',
+           'Ayaw', 'Byaw', 'Cyaw', 'R2yaw', 'MAEyaw']
+
 
 writer_data.columns = col
-writer_data.to_csv(base_path+'mid_data8.csv', index=False)
+writer_data.to_csv(base_path+'small_data9.csv', index=False)

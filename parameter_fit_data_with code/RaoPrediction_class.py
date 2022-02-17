@@ -4,8 +4,24 @@ from math import e
 from matplotlib import pyplot as plt
 
 
-def func(x, a, b, c):
+def damped_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
     y = c * e**-(a*x) + b*x*e**-(a*x)
+    return y
+
+
+def gauss_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
+    y = a * e**-((x-b)**2/c)
+    return y
+
+
+def arctan_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
+    y = a * np.arctan((x * b + c)) + 0.5
     return y
 
 
@@ -33,12 +49,12 @@ class RaoPrediction:
         self.x_points = np.linspace(low, high, n)
         order = 3
         for i in self.x_points:
-            self.surge.append(func(i, *self.params[0*order:0*order+order]))
-            self.sway.append(func(i, *self.params[1*order:1*order+order]))
-            self.heave.append(func(i, *self.params[2*order:2*order+order]))
-            self.roll.append(func(i, *self.params[3*order:3*order+order]))
-            self.pitch.append(func(i, *self.params[4*order:4*order+order]))
-            self.yaw.append(func(i, *self.params[5*order:5*order+order]))
+            self.surge.append(damped_func(i, *self.params[0*order:0*order+order]))
+            self.sway.append(damped_func(i, *self.params[1*order:1*order+order]))
+            self.heave.append(arctan_func(i, *self.params[2*order:2*order+order]))
+            self.roll.append(gauss_func(i, *self.params[3*order:3*order+order]))
+            self.pitch.append(gauss_func(i, *self.params[4*order:4*order+order]))
+            self.yaw.append(gauss_func(i, *self.params[5*order:5*order+order]))
         plt.subplot(2, 3, 1)
         plt.rc('axes', titlesize=25)
         plt.rc('legend', fontsize=25)

@@ -5,23 +5,31 @@ from math import e
 from statistics import mean
 import matplotlib.pyplot as plt
 
-load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/damped_spring_1dof/")
+load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/multi_eq_0.6/")
 
 print(load_model.summary())
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
 #print(raw_data.isna().sum())
+raw_data = raw_data.drop(index=list(range(362)))
+print(raw_data.head())
 raw_data.dropna(axis=0, inplace=True)
 column1 = raw_data['Length (m)']
 column2 = raw_data['Beam (m)']
 column3 = raw_data['Draft (m)']
 column4 = raw_data['Heading']
 
-raw_data.pop('r_squared_surge')
-raw_data.pop('r_squared_sway')
-raw_data.pop('r_squared_heave')
-raw_data.pop('r_squared_roll')
-raw_data.pop('r_squared_pitch')
-raw_data.pop('r_squared_yaw')
+raw_data.pop('R2surge')
+raw_data.pop('R2sway')
+raw_data.pop('R2heave')
+raw_data.pop('R2roll')
+raw_data.pop('R2pitch')
+raw_data.pop('R2yaw')
+raw_data.pop('MAEsurge')
+raw_data.pop('MAEsway')
+raw_data.pop('MAEheave')
+raw_data.pop('MAEroll')
+raw_data.pop('MAEpitch')
+raw_data.pop('MAEyaw')
 
 
 train_dataset = raw_data.sample(frac=0.8, random_state=0)
@@ -38,8 +46,8 @@ test_labels = np.asarray(test_features.drop(test_features.columns[list(range(4,6
 train_features = train_features.drop(train_features.columns[list(range(0,4))], axis=1, inplace=False)
 test_features = test_features.drop(test_features.columns[list(range(0,4))], axis=1, inplace=False)
 
-# baseline = np.asarray(raw_data.sample(n=1))[0]
-baseline = np.asarray(raw_data.loc[751])
+baseline = np.asarray(raw_data.sample(n=1))[0]
+# baseline = np.asarray(raw_data.loc[751])
 baseline_input = baseline[0:4]
 baseline_prediction = baseline[4:]
 
@@ -60,8 +68,24 @@ pred_ry = []
 pred_rz = []
 
 
-def func(x, a, b, c):
+def damped_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
     y = c * e**-(a*x) + b*x*e**-(a*x)
+    return y
+
+
+def gauss_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
+    y = a * e**-((x-b)**2/c)
+    return y
+
+
+def arctan_func(x, a, b, c):
+    # Motion of a critically-damped harmonic motion system
+    # Change this function to change the shape of the initial data, to better fit it.
+    y = a * np.arctan((x * b + c)) + 0.5
     return y
 
 
@@ -71,18 +95,18 @@ print('\n\n')
 
 x_axis = np.linspace(0.1, 2.5, 60)
 for i in x_axis:
-    orig_x.append(func(i, *baseline_prediction[0*order:0*order+order]))
-    orig_y.append(func(i, *baseline_prediction[1*order:1*order+order]))
-    orig_z.append(func(i, *baseline_prediction[2*order:2*order+order]))
-    orig_rx.append(func(i, *baseline_prediction[3*order:3*order+order]))
-    orig_ry.append(func(i, *baseline_prediction[4*order:4*order+order]))
-    orig_rz.append(func(i, *baseline_prediction[5*order:5*order+order]))
-    pred_x.append(func(i, *new_pred[0*order:0*order+order]))
-    pred_y.append(func(i, *new_pred[1*order:1*order+order]))
-    pred_z.append(func(i, *new_pred[2*order:2*order+order]))
-    pred_rx.append(func(i, *new_pred[3*order:3*order+order]))
-    pred_ry.append(func(i, *new_pred[4*order:4*order+order]))
-    pred_rz.append(func(i, *new_pred[5*order:5*order+order]))
+    orig_x.append(damped_func(i, *baseline_prediction[0*order:0*order+order]))
+    orig_y.append(damped_func(i, *baseline_prediction[1*order:1*order+order]))
+    orig_z.append(arctan_func(i, *baseline_prediction[2*order:2*order+order]))
+    orig_rx.append(gauss_func(i, *baseline_prediction[3*order:3*order+order]))
+    orig_ry.append(gauss_func(i, *baseline_prediction[4*order:4*order+order]))
+    orig_rz.append(gauss_func(i, *baseline_prediction[5*order:5*order+order]))
+    pred_x.append(damped_func(i, *new_pred[0*order:0*order+order]))
+    pred_y.append(damped_func(i, *new_pred[1*order:1*order+order]))
+    pred_z.append(arctan_func(i, *new_pred[2*order:2*order+order]))
+    pred_rx.append(gauss_func(i, *new_pred[3*order:3*order+order]))
+    pred_ry.append(gauss_func(i, *new_pred[4*order:4*order+order]))
+    pred_rz.append(gauss_func(i, *new_pred[5*order:5*order+order]))
 
 
 x_err_rpd = abs(round(mean(200*np.subtract(orig_x, pred_x)/(np.add(np.absolute(orig_x), np.absolute(pred_x)))), 3))
@@ -99,7 +123,7 @@ rx_err_raw = round(abs(mean(np.subtract(orig_rx, pred_rx))), 3)
 ry_err_raw = round(abs(mean(np.subtract(orig_ry, pred_ry))), 3)
 rz_err_raw = round(abs(mean(np.subtract(orig_rz, pred_rz))), 3)
 
-# plt.subplot(2, 3, 1)
+plt.subplot(2, 3, 1)
 plt.rc('axes', titlesize=25)
 plt.rc('legend',fontsize=25)
 # title = 'Barge Dimensions ' + str(baseline_input[0]) + ' m Length, ' + str(baseline_input[1]) + ' m Beam, ' + \
@@ -115,7 +139,7 @@ plt.grid()
 plt.legend()
 # plt.show()
 # plt.show()
-# plt.subplot(2, 3, 2)
+plt.subplot(2, 3, 2)
 # plt.rc('font', size=25)
 plt.plot(x_axis, pred_y, color='red', label='Predicted RAO')
 plt.plot(x_axis, orig_y, color='blue', linestyle='-.', label='True RAO')
@@ -126,7 +150,7 @@ plt.text(mean(x_axis), (mean(orig_y)+mean(pred_y))/2, "Relative % diff: "+ str(y
 
 plt.grid()
 plt.legend()
-plt.show()
+# plt.show()
 # plt.rc('font', size=10)
 # plt.ylim([-0.5, 1.5])
 # plt.show()
