@@ -19,7 +19,8 @@ raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/dam
 # Pre-process data, split into train and test datasets
 print(raw_data.isna().sum())
 raw_data = raw_data.apply(pd.to_numeric)
-raw_data = raw_data.drop(index=list(range(362)))
+# raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
+raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
 raw_data.dropna(axis=0, inplace=True)
 print(raw_data.shape)
 column1 = raw_data['Length (m)']
@@ -201,7 +202,7 @@ plt.ylim(lims)
 _ = plt.plot(lims, lims)
 plt.show()
 
-dnn_model.save('multi_eq_0.6')
+dnn_model.save('multi_eq_0.7')
 
 
 # baseline = np.asarray(test_dataset.sample(n=1))[0]

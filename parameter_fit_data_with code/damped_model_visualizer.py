@@ -5,12 +5,13 @@ from math import e
 from statistics import mean
 import matplotlib.pyplot as plt
 
-load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/multi_eq_0.6/")
+load_model = tf.keras.models.load_model("C:/Users/jafri/Documents/GitHub/RAO-Research/parameter_fit_data_with code/multi_eq_0.7/")
 
 print(load_model.summary())
 raw_data = pd.read_csv("C:/Users/jafri/Documents/GitHub/RAO-Research/new_fit/damped/damped_results_all_dir.csv", sep=',')
 #print(raw_data.isna().sum())
-raw_data = raw_data.drop(index=list(range(362)))
+# raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
+raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
 print(raw_data.head())
 raw_data.dropna(axis=0, inplace=True)
 column1 = raw_data['Length (m)']
