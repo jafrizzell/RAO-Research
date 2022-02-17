@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, added todos in code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Symposium Files/~$AME-OS-2022-MS-11-Final_vjf2.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Symposium Files/~WRL0875.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Symposium Files/~$AME-OS-2022-MS-11-Final_vjf3.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645070975006</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Edited Paper, added todos in code">
+      <created>1645071743432</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1645071743433</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Edited Paper, added todos in code">
+      <created>1645071895107</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1645071895107</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
