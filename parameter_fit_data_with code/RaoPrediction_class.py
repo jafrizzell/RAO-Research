@@ -43,6 +43,7 @@ class RaoPrediction:
     def predict(self, length, beam, draft, heading):
         if heading > 0:
             heading = -1 * heading
+        self.model.summary()
         self.params = self.model.predict([[length, beam, draft, heading]])[0]
 
     def visualize(self, low, high, n):
@@ -68,7 +69,7 @@ class RaoPrediction:
         # plt.ylim([-0.5, 1.5])
         # plt.legend()
 
-        # plt.show()
+        #plt.show()
         plt.subplot(2, 3, 2)
         # plt.rc('font', size=25)
         plt.plot(self.x_points, self.sway, color='blue')
@@ -79,7 +80,7 @@ class RaoPrediction:
         # plt.legend()
         # plt.rc('font', size=10)
         # plt.ylim([-0.5, 1.5])
-        # plt.show()
+        #plt.show()
         plt.subplot(2, 3, 3)
         plt.plot(self.x_points, self.heave, color='blue')
         plt.title('Heave')
@@ -109,4 +110,4 @@ class RaoPrediction:
         plt.xlabel('Wave Frequency (rad/s)')
 
         # plt.get_current_fig_manager().full_screen_toggle()
-        # plt.show()
+        plt.show()
