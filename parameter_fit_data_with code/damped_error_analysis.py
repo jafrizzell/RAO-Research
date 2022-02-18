@@ -4,6 +4,7 @@ import tensorflow as tf
 from pathlib import Path
 import numpy as np
 from math import e
+from sklearn.metrics import mean_absolute_error
 from statistics import mean
 import matplotlib.pyplot as plt
 
@@ -95,7 +96,7 @@ avg_ry_err_raw = []
 avg_rz_err_raw = []
 
 
-model = '/multi_eq_0.9.h5'
+model = '/multi_eq_1.0.h5'
 base = os.getcwd()
 model_path = base+model
 load_model = tf.keras.models.load_model(model_path)
@@ -105,7 +106,7 @@ database = str(Path(os.getcwd()).parent)
 datatail = '/new_fit/damped/damped_results_all_dir.csv'
 raw_data = pd.read_csv(database+datatail, sep=',')
 # raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
-raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
+raw_data = raw_data[(raw_data['Length'] >= 2)]
 
 print(raw_data.head)
 raw_data.dropna(axis=0, inplace=True)
@@ -196,12 +197,12 @@ while count < 120:
     ry_err_rpd = abs(round(mean(200*np.subtract(orig_ry, pred_ry)/(np.add(np.absolute(orig_ry), np.absolute(pred_ry)))), 3))
     rz_err_rpd = abs(round(mean(200*np.subtract(orig_rz, pred_rz)/(np.add(np.absolute(orig_rz), np.absolute(pred_rz)))), 3))
 
-    x_err_raw = round(abs(mean(np.subtract(orig_x, pred_x))), 3)
-    y_err_raw = round(abs(mean(np.subtract(orig_y, pred_y))), 3)
-    z_err_raw = round(abs(mean(np.subtract(orig_z, pred_z))), 3)
-    rx_err_raw = round(abs(mean(np.subtract(orig_rx, pred_rx))), 3)
-    ry_err_raw = round(abs(mean(np.subtract(orig_ry, pred_ry))), 3)
-    rz_err_raw = round(abs(mean(np.subtract(orig_rz, pred_rz))), 3)
+    x_err_raw = round(mean_absolute_error(orig_x, pred_x), 3)
+    y_err_raw = round(mean_absolute_error(orig_y, pred_y), 3)
+    z_err_raw = round(mean_absolute_error(orig_z, pred_z), 3)
+    rx_err_raw = round(mean_absolute_error(orig_rx, pred_rx), 3)
+    ry_err_raw = round(mean_absolute_error(orig_ry, pred_ry), 3)
+    rz_err_raw = round(mean_absolute_error(orig_rz, pred_rz), 3)
 
     avg_x_err_rpd.append(x_err_rpd)
     avg_y_err_rpd.append(y_err_rpd)
@@ -309,7 +310,7 @@ plt.ylabel('Average RPD Error', fontsize=25)
 plt.legend(markerscale=2)
 # plt.colorbar().ax.set_ylabel('Wave Heading, degrees')
 # plt.clf()
-plt.show()
+# plt.show()
 plt.scatter(waterplanes, raw_errs, c=colors, cmap='rainbow')
 plt.title('Raw Error Variation with Waterplane Area')
 plt.xlabel('Waterplane Area ($m^2$)')
@@ -355,14 +356,14 @@ plt.rc('font', size=25)
 plt.xlabel('Wave Heading Angle, degrees', fontsize=25)
 plt.yticks(fontsize=25)
 # plt.ylabel('RPD Error', fontsize=25)
-plt.ylabel('Raw Error, deg/m', fontsize=25)
-# plt.title('RPD Error Variation for Degrees of Freedom with Wave Heading')
+plt.ylabel('MAE Error, m/m', fontsize=25)
+plt.title('MAE Variation for Degrees of Freedom with Wave Heading')
 
 
 plt.xlim(-20, 200)
 # plt.ylim(-20, 250)
 
-plt.title('RPD Error Variation for Degrees of Freedom and Wave Heading')
+# plt.title('RPD Error Variation for Degrees of Freedom and Wave Heading')
 plt.show()
 plt.clf()
 
@@ -373,12 +374,18 @@ plt.boxplot(rpd, labels=('x', 'y', 'z', 'rx', 'ry', 'rz'), showfliers=False)
 plt.xlabel('Degree of Freedom')
 plt.ylabel('RPD Error')
 plt.title('RPD Error Variation with Degree of Freedom')
-plt.show()
+# plt.show()
 plt.clf()
-plt.boxplot(raw[:3], labels=('rx', 'ry', 'rz'), showfliers=False, patch_artist=False)
+plt.boxplot(raw[:3], labels=('x', 'y', 'z'), showfliers=False, patch_artist=False)
 plt.xlabel('Degree of Freedom')
-plt.ylabel('Raw Error, deg/m')
-plt.title('Raw Error Variation with \n Angular Degrees of Freedom')
+plt.ylabel('MAE, m/m')
+plt.title('MAE Variation with \n Linear Degrees of Freedom')
+plt.tight_layout()
+plt.show()
+plt.boxplot(raw[3:], labels=('rx', 'ry', 'rz'), showfliers=False, patch_artist=False)
+plt.xlabel('Degree of Freedom')
+plt.ylabel('MAE, deg/m')
+plt.title('MAE Variation with \n Angular Degrees of Freedom')
 plt.tight_layout()
 plt.show()
 

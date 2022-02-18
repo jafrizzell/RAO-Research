@@ -7,9 +7,9 @@ from statistics import mean
 
 from sklearn.metrics import r2_score, mean_absolute_error
 
-base_path = 'D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/small_barge/'
+base_path = 'D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/large_barge/'
 
-output_file = pd.read_csv("D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/small_barge_data.csv", sep=',')
+output_file = pd.read_csv("D:/TAMU Work/TAMU 2021 FALL/OCEN 485/Analysis Data/large_size_barges.csv", sep=',')
 writer = []
 writer_data = pd.DataFrame()
 
@@ -47,7 +47,7 @@ for subdirs, dirs, files in os.walk(base_path):
             if "R.A.O.S-VARIATION WITH WAVE PERIOD/FREQUENCY" in filedata[i] and "VEL" not in filedata[i] and "ACC" not in filedata[i]:
                 data_holder.append(np.array(filedata[i+7:i+27]))
                 data_holder.append(np.array(filedata[i+28:i+48]))
-        for a in range(5):
+        for a in range(8):
             data_holder2 = []
             data_holder3 = list()
             try:
@@ -126,4 +126,4 @@ col = ['Length', 'Beam', 'Draft', 'Heading',
 
 
 writer_data.columns = col
-writer_data.to_csv(base_path+'small_data9.csv', index=False)
+writer_data.to_csv(base_path+'large_data10.csv', index=False)

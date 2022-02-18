@@ -8,7 +8,7 @@ from statistics import mean
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
 
-model = '/multi_eq_0.9.h5'
+model = '/multi_eq_1.0.h5'
 base = os.getcwd()
 model_path = base+model
 load_model = tf.keras.models.load_model(model_path)
@@ -19,12 +19,12 @@ datatail = '/new_fit/damped/damped_results_all_dir.csv'
 raw_data = pd.read_csv(database+datatail, sep=',')
 #print(raw_data.isna().sum())
 # raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
-raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
+raw_data = raw_data[(raw_data['Length'] >= 2)]
 print(raw_data.head())
 raw_data.dropna(axis=0, inplace=True)
-column1 = raw_data['Length (m)']
-column2 = raw_data['Beam (m)']
-column3 = raw_data['Draft (m)']
+column1 = raw_data['Length']
+column2 = raw_data['Beam']
+column3 = raw_data['Draft']
 column4 = raw_data['Heading']
 
 raw_data.pop('R2surge')
@@ -56,7 +56,7 @@ train_features = train_features.drop(train_features.columns[list(range(0,4))], a
 test_features = test_features.drop(test_features.columns[list(range(0,4))], axis=1, inplace=False)
 
 # baseline = np.asarray(raw_data.sample(n=1))[0]
-baseline = np.asarray(raw_data.loc[751])
+baseline = np.asarray(raw_data.loc[1400])
 # baseline = np.asarray(raw_data.loc[757])
 baseline_input = baseline[0:4]
 baseline_prediction = baseline[4:]

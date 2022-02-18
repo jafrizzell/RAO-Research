@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, added todos in code">
-      <change beforePath="$PROJECT_DIR$/.idea/RAO-Research.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_7_50_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_7_50_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vjf3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vjf3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_fit/damped/damped_results_all_dir.csv" beforeDir="false" afterPath="$PROJECT_DIR$/new_fit/damped/damped_results_all_dir.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/Parametric_space_study.csv" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/Parametric_space_study.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +46,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2155309" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
@@ -402,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645073136843</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Edited Paper, added todos in code">
+      <created>1645131326842</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1645131326842</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

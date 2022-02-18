@@ -11,6 +11,7 @@ from tensorflow.keras import layers
 from tensorflow.keras.layers.experimental import preprocessing
 import matplotlib.pyplot as plt
 import RegscorePy
+from scipy import stats
 from itertools import product
 
 # Import data
@@ -21,15 +22,20 @@ raw_data = pd.read_csv(base+tail, sep=',')
 # TODO: Correlation between independent variables
 
 # Pre-process data, split into train and test datasets
-print(raw_data.isna().sum())
+# print(raw_data.isna().sum())
 raw_data = raw_data.apply(pd.to_numeric)
-# raw_data = raw_data[(raw_data['Length (m)'] >= 2) | (raw_data['Heading'] != -90)]
-raw_data = raw_data[(raw_data['Length (m)'] >= 2)]
+# raw_data = raw_data[(raw_data['Length'] >= 2)]
+print('full csv', raw_data.shape)
+raw_data = raw_data[(raw_data['Length'] >= 2) & (raw_data['Cyaw'] <= 60)]
+print('med+large', raw_data.shape)
 raw_data.dropna(axis=0, inplace=True)
-print(raw_data.shape)
-column1 = raw_data['Length (m)']
-column2 = raw_data['Beam (m)']
-column3 = raw_data['Draft (m)']
+pd.set_option('max_columns', None)
+print(raw_data.describe())
+pd.reset_option('max_columns')
+print('no nans', raw_data.shape)
+column1 = raw_data['Length']
+column2 = raw_data['Beam']
+column3 = raw_data['Draft']
 column4 = raw_data['Heading']
 
 raw_data.pop('R2surge')
@@ -80,14 +86,20 @@ def fit_and_evaluate(norm, architecture, dof):
     dnn_model = build_and_compile_model(norm, architecture, dof)
     # dnn_model.summary()
 
-    history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=75)
+    history = dnn_model.fit(train_labels, train_features, validation_split=0.2, verbose=0, epochs=250)
     plot_loss(history)
 
     test_results = dnn_model.evaluate(test_labels, test_features, verbose=0)
-    # print(test_results)
     test_predictions = dnn_model.predict(test_labels).flatten()
-
-    r2 = r2_score(np.asarray(test_features).flatten(), test_predictions)
+    tf1 = []
+    tp1 = []
+    for i in range(len(test_predictions)):
+        if np.asarray(test_features).flatten()[i] <= 40 and test_predictions[i] <= 40:
+            tf1.append(np.asarray(test_features).flatten()[i])
+            tp1.append(test_predictions[i])
+    # r2 = r2_score(np.asarray(test_features).flatten(), test_predictions)
+    r2= r2_score(tf1, tp1)
+    # print(r2_score(tf1, tp1))
     mae = mean_absolute_error(np.asarray(test_features).flatten(), test_predictions)
     aic = RegscorePy.aic.aic(np.asarray(test_features, dtype=float).flatten(), np.asarray(test_predictions).astype(float), 4+2)
     rmse = sqrt(mean_squared_error(np.asarray(test_features).flatten(), test_predictions))
@@ -112,33 +124,34 @@ def build_and_compile_model(norm, arch, dof):
     if arch[1] == 0.0:
         norm_layer = layers.BatchNormalization()(inputs)
         dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
-        # dense2 = layers.Dense(arch[1], activation='elu')(inputs)
+        dense1 = layers.Dropout(rate=0.2)(dense1)
         dense3 = layers.Dense(arch[2], activation='relu')(dense1)
+        dense3 = layers.Dropout(rate=0.2)(dense3)
         outputs = layers.Dense(dof*(order))(dense3)
 
     elif arch[2] == 0.0:
         norm_layer = layers.BatchNormalization()(inputs)
         dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
-        dense2 = layers.Dense(arch[1], activation='elu')(dense1)
-        # dense3 = layers.Dense(arch[2], activation='relu')(dense1)
+        dense1 = layers.Dropout(rate=0.2)(dense1)
+        dense2 = layers.Dense(arch[1], activation='relu')(dense1)
+        dense2 = layers.Dropout(rate=0.2)(dense2)
         outputs = layers.Dense(dof*(order))(dense2)
 
     elif arch[1] == 0.0 and arch[2] == 0.0:
         norm_layer = layers.BatchNormalization()(inputs)
         dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
-        # dense2 = layers.Dense(arch[1], activation='elu')(inputs)
-        # dense3 = layers.Dense(arch[2], activation='relu')(dense1)
+        dense1 = layers.Dropout(rate=0.2)(dense1)
         outputs = layers.Dense(dof*(order))(dense1)
 
     else:
         norm_layer = layers.BatchNormalization()(inputs)
         dense1 = layers.Dense(arch[0], activation='relu')(norm_layer)
+        dense1 = layers.Dropout(rate=0.2)(dense1)
         dense2 = layers.Dense(arch[1], activation='relu')(dense1)
-        # norm_layer2 = layers.BatchNormalization()(dense2)
-        dense3 = layers.Dense(arch[2], activation='relu')(dense2)# TODO: Fix this
-        dense4 = layers.Dense(arch[3], activation='relu')(dense3)
-        dense5 = layers.Dense(arch[4], activation='relu')(dense4)
-        outputs = layers.Dense(dof*(order))(dense5)
+        dense2 = layers.Dropout(rate=0.2)(dense2)
+        dense3 = layers.Dense(arch[2], activation='relu')(dense2)
+        dense3 = layers.Dropout(rate=0.2)(dense3)
+        outputs = layers.Dense(dof*(order))(dense3)
 
     model = keras.Model(inputs=inputs, outputs=outputs)
 
@@ -168,7 +181,7 @@ l1 = np.linspace(32, 256, 8)
 l2 = np.linspace(0, 256, 9)
 l3 = np.linspace(0, 256, 9)
 # parametric_space = list(product(*[l1, l2, l3]))
-parametric_space = [[512, 512, 512, 512, 512]] # TODO: Fix this
+parametric_space = [[128, 256, 256]]
 print(parametric_space)
 start_t = time.time()
 c = 1
@@ -203,14 +216,13 @@ a = plt.axes(aspect='equal')
 plt.scatter(test_features, test_predictions, s=0.8)
 plt.xlabel('True Values')
 plt.ylabel('Predictions')
-lims = [0, 35]
+lims = [-1, 40]
 plt.xlim(lims)
 plt.ylim(lims)
 _ = plt.plot(lims, lims)
 plt.show()
 
-dnn_model.save('multi_eq_0.9.h5')
-
+# dnn_model.save('multi_eq_1.0.h5')
 
 # baseline = np.asarray(test_dataset.sample(n=1))[0]
 # baseline_input = baseline[0:4]
