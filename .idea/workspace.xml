@@ -1,87 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Cleaned up files, deleted old models.">
-      <change beforePath="$PROJECT_DIR$/.idea/RAO-Research.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Fixed the naming of a directory, added os.cwd optimization">
+      <change afterPath="$PROJECT_DIR$/Docs/Usage.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/ANALYSIS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/ANALYSIS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/Lab 2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/Lab 2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/Parametric_space_study.csv" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/Parametric_space_study.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/RaoPrediction_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_error_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_model_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_model_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_1dof/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_1dof/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_1dof/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_1dof/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_all_dir_parametric/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_all_dir_parametric/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_all_dir_parametric/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_all_dir_parametric/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave+pitch/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave+pitch/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave+pitch/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave+pitch/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_heave/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_pitch/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_pitch/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_pitch/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_pitch/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/file_grabber.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/file_grabber.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/model_trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/multi_eq_1.0.h5" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/multi_eq_1.0.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_angular_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_angular_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_angular_raw2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_angular_raw2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_angular_raw3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_angular_raw3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_linear_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_linear_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_linear_raw2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_linear_raw2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_linear_raw3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_linear_raw3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_rpd.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_rpd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/degree_of_freedom_rpd2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_rpd2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/hidden_layer_parametric.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/hidden_layer_parametric.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/loss_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/loss_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/loss_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/loss_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/loss_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/loss_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/r2_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/r2_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/r2_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/r2_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/r2_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/r2_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results1.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results4.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/results5.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/sample_raw_data.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/sample_raw_data.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/waterplane_area_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/waterplane_area_rpd.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/waterplane_area_rpd2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/waterplane_area_rpd3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/waterplane_area_rpd4.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_angular_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_angular_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_angular_raw2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_angular_raw2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_angular_raw3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_angular_raw3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_linear_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_linear_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_linear_raw2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_linear_raw2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_linear_raw3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_linear_raw3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_rpd.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_rpd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_rpd2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_rpd2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_enumerated_rpd3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_rpd3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_raw.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_raw.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_rpd.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_rpd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/wave_heading_rpd2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_rpd2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/x_results1.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/x_results1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/x_results2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/x_results2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/x_results3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/x_results3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/y_results1.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/y_results1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/y_results2.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/y_results2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/training_results/y_results3.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/y_results3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/ANALYSIS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/Lab 2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Lab 2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/Examples/MAIN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/Parametric_space_study.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/rao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_error_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_model_visualizer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_1dof/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_all_dir_parametric/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_extractor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave+pitch/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_heave/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/keras_metadata.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/variables/variables.data-00000-of-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/damped_spring_pitch/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/file_grabber.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/model_trainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/multi_eq_1.0.h5" beforeDir="false" afterPath="$PROJECT_DIR$/tensorflow_models/multi_eq_1.0.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_angular_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_angular_raw2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_angular_raw3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_linear_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_linear_raw2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_linear_raw3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_rpd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/degree_of_freedom_rpd2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/hidden_layer_parametric.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/loss_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/loss_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/loss_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/r2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/r2_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/r2_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/results5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/sample_raw_data.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_angular_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_angular_raw2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_angular_raw3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_linear_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_linear_raw2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_linear_raw3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_rpd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_rpd2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_enumerated_rpd3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_raw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_rpd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/wave_heading_rpd2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/x_results1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/x_results2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/x_results3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/y_results1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/y_results2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/y_results3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/validation.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="production" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -126,23 +137,27 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\parameter_fit_data_with code" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\tensorflow_models" />
+      <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\Scripts" />
+      <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\Examples" />
+      <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research" />
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.MAIN">
-    <configuration name="MAIN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.MAIN (1)">
+    <configuration name="MAIN (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\jafri\Documents\GitHub\RAO-Research\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with code" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examples" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examples/MAIN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,19 +272,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.MAIN" />
       <item itemvalue="Python.damped_error_analysis" />
       <item itemvalue="Python.damped_model_visualizer" />
       <item itemvalue="Python.damped_spring_extractor" />
       <item itemvalue="Python.model_trainer" />
+      <item itemvalue="Python.MAIN (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.MAIN" />
-        <item itemvalue="Python.damped_model_visualizer" />
+        <item itemvalue="Python.MAIN (1)" />
         <item itemvalue="Python.model_trainer" />
-        <item itemvalue="Python.damped_error_analysis" />
         <item itemvalue="Python.damped_spring_extractor" />
+        <item itemvalue="Python.damped_model_visualizer" />
+        <item itemvalue="Python.damped_error_analysis" />
       </list>
     </recent_temporary>
   </component>
@@ -520,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645240264000</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Fixed the naming of a directory, added os.cwd optimization">
+      <created>1645241211092</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1645241211092</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -547,7 +569,8 @@
     <MESSAGE value="Edited Paper, added todos in code" />
     <MESSAGE value="Completely remade model, fit curves to different equations vs. all being fit to damped spring eq.  Re-ran parameteric study and picked a new best model. Evaluated all error metrics and runtime.&#10;&#10;Edited paper" />
     <MESSAGE value="Cleaned up files, deleted old models." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up files, deleted old models." />
+    <MESSAGE value="Fixed the naming of a directory, added os.cwd optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the naming of a directory, added os.cwd optimization" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

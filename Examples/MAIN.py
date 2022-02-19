@@ -1,6 +1,5 @@
-from RaoPrediction_class import RaoPrediction
-import cProfile
-import timeit
+from Scripts.rao import RaoPredictor
+from pathlib import Path
 import os
 
 # Start inputs
@@ -10,8 +9,8 @@ beam = 12.5  # Barge beam
 draft = 0.78  # Barge draft
 heading = 160  # Wave heading, 0 degrees is head seas, 90 is beam
 
-model = '/multi_eq_1.0.h5'
-base = os.getcwd()
+model = '/tensorflow_models/multi_eq_1.0.h5'
+base = str(Path(os.getcwd()).parent)
 model_path = base+model  # path the the trained NN model directory  # path the the trained NN model directory
 
 low_freq = 0.1  # lowest wave frequency to predict the RAOs at
@@ -24,14 +23,11 @@ n_points = 25  # Number of points to predict the RAOs at, higher = more resoluti
 
 
 def main():
-    rao = RaoPrediction()
+    rao = RaoPredictor()
 
     rao.dnn(model_path)
     rao.predict(length, beam, draft, heading)
     rao.visualize(low_freq, high_freq, n_points)
 
 
-if __name__ == "__main__":
-    cProfile.run('main()')
-    # n = 100
-    # print(timeit.timeit(stmt=main, number=n)/n)
+main()

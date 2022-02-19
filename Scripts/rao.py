@@ -25,11 +25,11 @@ def arctan_func(x, a, b, c):
     return y
 
 
-class RaoPrediction:
+class RaoPredictor:
     def __init__(self):
         self.model = None
         self.params = [0, 0, 0]
-        self.x_points = []
+        self.f = []
         self.surge = []
         self.sway = []
         self.heave = []
@@ -47,9 +47,9 @@ class RaoPrediction:
         self.params = self.model.predict([[length, beam, draft, heading]])[0]
 
     def visualize(self, low, high, n):
-        self.x_points = np.linspace(low, high, n)
+        self.f = np.linspace(low, high, n)
         order = 3
-        for i in self.x_points:
+        for i in self.f:
             self.surge.append(damped_func(i, *self.params[0*order:0*order+order]))
             self.sway.append(damped_func(i, *self.params[1*order:1*order+order]))
             self.heave.append(arctan_func(i, *self.params[2*order:2*order+order]))
@@ -62,7 +62,7 @@ class RaoPrediction:
         # title = 'Barge Dimensions ' + str(baseline_input[0]) + ' m Length, ' + str(baseline_input[1]) + ' m Beam, ' + \
         # str(abs(baseline_input[2])) + ' m Draft  -  Waves Heading of: ' + str(baseline_input[3])
         # plt.suptitle(title)
-        plt.plot(self.x_points, self.surge, color='blue')
+        plt.plot(self.f, self.surge, color='blue')
         plt.title('Surge')
         plt.ylabel('Response (m/m)')
         plt.grid()
@@ -72,7 +72,7 @@ class RaoPrediction:
         #plt.show()
         plt.subplot(2, 3, 2)
         # plt.rc('font', size=25)
-        plt.plot(self.x_points, self.sway, color='blue')
+        plt.plot(self.f, self.sway, color='blue')
         plt.title('Sway')
 
 
@@ -82,13 +82,13 @@ class RaoPrediction:
         # plt.ylim([-0.5, 1.5])
         #plt.show()
         plt.subplot(2, 3, 3)
-        plt.plot(self.x_points, self.heave, color='blue')
+        plt.plot(self.f, self.heave, color='blue')
         plt.title('Heave')
         plt.grid()
         # plt.ylim([-0.5, 1.5])
 
         plt.subplot(2, 3, 4)
-        plt.plot(self.x_points, self.roll, color='blue')
+        plt.plot(self.f, self.roll, color='blue')
         plt.title('Roll')
         # plt.ylim([-0.5, 1.5])
         plt.ylabel('Response (Deg/m)')
@@ -96,14 +96,14 @@ class RaoPrediction:
         plt.grid()
 
         plt.subplot(2, 3, 5)
-        plt.plot(self.x_points, self.pitch, color='blue')
+        plt.plot(self.f, self.pitch, color='blue')
         plt.title('Pitch')
         # plt.ylim([-0.5, 50])
         plt.grid()
         plt.xlabel('Wave Frequency (rad/s)')
 
         plt.subplot(2, 3, 6)
-        plt.plot(self.x_points, self.yaw, color='blue')
+        plt.plot(self.f, self.yaw, color='blue')
         plt.title('Yaw')
         # plt.ylim([-0.5, 1.5])
         plt.grid()

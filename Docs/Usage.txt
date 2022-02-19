@@ -1,0 +1,19 @@
+How to use this package:
+
+1) Create and instance of an RaoPredictor
+2) Assign a model from /tensorflow_models (default is multi_eq_1.0)
+3) Pass the predictor 4 arguments
+    - Vessel length (1 - 30 meters)
+    - Vessel beam (0.5 - 20 meters)
+    - Vessel draft (0.075 - 2 meters)
+    - Wave direction (-180 -  180 degrees)
+
+4) Run the code to predict the RAOs
+    - Optionally, call the visualization method to generate plots of the 6 degrees of freedom
+
+------------------------------------------------------------------------------------------------------------------------
+
+To extract the raw data that the model predicts, call the model.[DoF], replace the DoF with any of
+    - surge, sway, heave, roll, pitch, yaw
+
+Call model.f to gather the frequency values that the RAOs were predicted at
