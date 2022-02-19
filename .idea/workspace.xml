@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Cleaned up files, deleted old models.">
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited paper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vjf3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Symposium Files/SNAME-OS-2022-MS-11-Final_vjf3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd4.png" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/training_results/waterplane_area_rpd4.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645240264000</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Edited paper">
+      <created>1645286224124</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1645286224124</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -481,7 +489,8 @@
     <MESSAGE value="Edited Paper, added todos in code" />
     <MESSAGE value="Completely remade model, fit curves to different equations vs. all being fit to damped spring eq.  Re-ran parameteric study and picked a new best model. Evaluated all error metrics and runtime.&#10;&#10;Edited paper" />
     <MESSAGE value="Cleaned up files, deleted old models." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up files, deleted old models." />
+    <MESSAGE value="Edited paper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited paper" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
