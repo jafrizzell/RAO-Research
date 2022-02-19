@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, added todos in code">
+    <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Cleaned up files, deleted old models.">
       <change beforePath="$PROJECT_DIR$/.idea/RAO-Research.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_2_48_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_2_48_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_7_50_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_17_2022_7_50_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1zNf8BUvHOhdkzZ4LLecD7AVEih" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,7 +39,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2155309" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
@@ -53,7 +52,7 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.MAIN">
+  <component name="RunManager" selected="Python.damped_model_visualizer">
     <configuration name="MAIN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,9 +60,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Jordan Blechman\AppData\Local\Microsoft\WindowsApps\python3.8.exe" />
+      <option name="SDK_HOME" value="C:\Users\jafri\Documents\GitHub\RAO-Research\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with code" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parameter_fit_data_with code/MAIN.py" />
@@ -75,7 +74,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="RaoPrediction_class" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="damped_error_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,27 +86,6 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parameter_fit_data_with code/RaoPrediction_class.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="damped_error_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\jafri\Documents\GitHub\RAO-Research\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with code" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parameter_fit_data_with code/damped_error_analysis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -159,6 +137,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="damped_spring_extractor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RAO-Research" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parameter_fit_data_with code/damped_spring_extractor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="model_trainer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,18 +181,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.MAIN" />
-      <item itemvalue="Python.RaoPrediction_class" />
       <item itemvalue="Python.damped_error_analysis" />
       <item itemvalue="Python.damped_model_visualizer" />
+      <item itemvalue="Python.damped_spring_extractor" />
       <item itemvalue="Python.model_trainer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.MAIN" />
         <item itemvalue="Python.damped_model_visualizer" />
-        <item itemvalue="Python.RaoPrediction_class" />
-        <item itemvalue="Python.damped_error_analysis" />
+        <item itemvalue="Python.MAIN" />
         <item itemvalue="Python.model_trainer" />
+        <item itemvalue="Python.damped_error_analysis" />
+        <item itemvalue="Python.damped_spring_extractor" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +352,91 @@
       <option name="project" value="LOCAL" />
       <updated>1644870478114</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Edited Paper, added todos in code">
+      <created>1644936500511</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1644936500511</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Edited Paper, added todos in code">
+      <created>1645049630880</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1645049630880</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Edited Paper, added todos in code">
+      <created>1645070975006</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1645070975006</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Edited Paper, added todos in code">
+      <created>1645071743432</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1645071743433</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Edited Paper, added todos in code">
+      <created>1645071895107</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1645071895107</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Edited Paper, added todos in code">
+      <created>1645073066225</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1645073066225</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Edited Paper, added todos in code">
+      <created>1645073136843</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1645073136843</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Edited Paper, added todos in code">
+      <created>1645131326842</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1645131326842</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Completely remade model, fit curves to different equations vs. all being fit to damped spring eq.  Re-ran parameteric study and picked a new best model. Evaluated all error metrics and runtime.&#10;&#10;Edited paper">
+      <created>1645146994249</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1645146994249</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Cleaned up files, deleted old models.">
+      <created>1645147188325</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1645147188325</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Cleaned up files, deleted old models.">
+      <created>1645148460585</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1645148460585</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Cleaned up files, deleted old models.">
+      <created>1645148471487</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1645148471487</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -378,7 +461,9 @@
     <MESSAGE value="Edited Paper" />
     <MESSAGE value="Edited Paper and Presentation" />
     <MESSAGE value="Edited Paper, added todos in code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited Paper, added todos in code" />
+    <MESSAGE value="Completely remade model, fit curves to different equations vs. all being fit to damped spring eq.  Re-ran parameteric study and picked a new best model. Evaluated all error metrics and runtime.&#10;&#10;Edited paper" />
+    <MESSAGE value="Cleaned up files, deleted old models." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up files, deleted old models." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
