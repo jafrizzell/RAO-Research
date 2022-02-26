@@ -110,4 +110,4 @@ class RaoPrediction:
         plt.xlabel('Wave Frequency (rad/s)')
 
         # plt.get_current_fig_manager().full_screen_toggle()
-        plt.show()
+        # plt.show()

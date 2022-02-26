@@ -32,6 +32,6 @@ def main():
 
 
 if __name__ == "__main__":
-    cProfile.run('main()')
-    # n = 100
-    # print(timeit.timeit(stmt=main, number=n)/n)
+    # cProfile.run('main()')
+    n = 100
+    print(timeit.timeit(stmt=main, number=n)/n)
