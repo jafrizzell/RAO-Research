@@ -29,7 +29,7 @@ print('full csv', raw_data.shape)
 raw_data = raw_data[(raw_data['Length'] >= 2) & (raw_data['Cyaw'] <= 60)]
 print('med+large', raw_data.shape)
 raw_data.dropna(axis=0, inplace=True)
-pd.set_option('max_columns', None)
+pd.set_option('display.max_columns', None)
 print(raw_data.describe())
 pd.reset_option('max_columns')
 print('no nans', raw_data.shape)

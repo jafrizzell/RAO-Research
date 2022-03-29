@@ -5,14 +5,14 @@ import os
 
 # Start inputs
 
-length = 23.8  # Barge length
-beam = 12.5  # Barge beam
-draft = 0.78  # Barge draft
-heading = 160  # Wave heading, 0 degrees is head seas, 90 is beam
+length = 7.2  # Barge length
+beam = 3.34  # Barge beam
+draft = 1  # Barge draft
+heading = 180  # Wave heading, 0 degrees is head seas, 90 is beam
 
 model = '/multi_eq_1.0.h5'
 base = os.getcwd()
-model_path = base+model  # path the the trained NN model directory  # path the the trained NN model directory
+model_path = base+model  # path to the trained NN model directory  # path to the trained NN model directory
 
 low_freq = 0.1  # lowest wave frequency to predict the RAOs at
 high_freq = 2.5  # highest wave frequency to predict the RAOs at
@@ -32,6 +32,8 @@ def main():
 
 
 if __name__ == "__main__":
-    # cProfile.run('main()')
-    n = 100
+    #cProfile.run('main()')
+    n = 1
     print(timeit.timeit(stmt=main, number=n)/n)
+
+
