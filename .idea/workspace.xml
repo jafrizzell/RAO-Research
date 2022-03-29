@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a20d7f1-1bd5-4daa-b756-d22a19d5a851" name="Changes" comment="Edited Paper, added todos in code">
-      <change afterPath="$PROJECT_DIR$/Cannyexperiment/cannystillframe.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cannyexperiment/cannystillframe_Moment.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cannyexperiment/edgedetecction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RAO-Research.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RAO-Research.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_2022_9_04_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2_18_2022_9_04_PM__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cannyexperiment/canny test1.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/RaoPrediction_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/RaoPrediction_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parameter_fit_data_with_code/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/parameter_fit_data_with_code/model_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cannyexperiment/edgedetecction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cannyexperiment/edgedetecction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +60,7 @@
       <recent name="C:\Users\jafri\Documents\GitHub\RAO-Research\code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.edgedetecction">
+  <component name="RunManager" selected="Python.edgedetecction (1)">
     <configuration name="Lab3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,6 +124,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="edgedetecction (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RAO-Research" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Cannyexperiment" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cannyexperiment/edgedetecction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="edgedetecction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAO-Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,41 +166,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="model_trainer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="RAO-Research" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parameter_fit_data_with_code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parameter_fit_data_with_code/model_trainer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.damped_spring_extractor" />
-      <item itemvalue="Python.model_trainer" />
       <item itemvalue="Python.Lab3" />
       <item itemvalue="Python.RaoPrediction_class" />
       <item itemvalue="Python.edgedetecction" />
+      <item itemvalue="Python.edgedetecction (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.edgedetecction (1)" />
         <item itemvalue="Python.edgedetecction" />
         <item itemvalue="Python.Lab3" />
         <item itemvalue="Python.RaoPrediction_class" />
         <item itemvalue="Python.damped_spring_extractor" />
-        <item itemvalue="Python.model_trainer" />
       </list>
     </recent_temporary>
   </component>
@@ -459,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645290857421</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Edited Paper, added todos in code">
+      <created>1648568580369</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1648568580369</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Edited Paper, added todos in code">
+      <created>1648568866763</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1648568866763</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
