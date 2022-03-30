@@ -1,94 +1,90 @@
-import numpy as np
-import cv2
-from skimage import data, filters
-from matplotlib import pyplot as plt
+from __future__ import print_function
+import cv2 as cv
 
-# Open Video
-cap = cv2.VideoCapture('canny test1.mp4')
+#backSub = cv.createBackgroundSubtractorMOG2()
+backSub = cv.createBackgroundSubtractorKNN()
 
-# Randomly select 25 frames
-frameIds = cap.get(cv2.CAP_PROP_FRAME_COUNT) * np.random.uniform(size=25)
+capture = cv.VideoCapture('canny test2_trim.mp4')
 
-# Store selected frames in an array
-frames = []
-for fid in frameIds:
-    cap.set(cv2.CAP_PROP_POS_FRAMES, fid)
-    ret, frame = cap.read()
-    frames.append(frame)
+if not capture.isOpened():
+    print('Unable to open: ')
+    exit(0)
 
-# Calculate the median along the time axis
-medianFrame = np.median(frames, axis=0).astype(dtype=np.uint8)
-
-''''# Display median frame
-cv2.imshow('frame', medianFrame)
-cv2.waitKey(0)'''
-
-# Reset frame number to 0
-cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
-
-# Convert background to grayscale
-grayMedianFrame = cv2.cvtColor(medianFrame, cv2.COLOR_BGR2GRAY)
-
-# Loop over all frames
-ret = True
-while(ret):
-
-    # Read frame
-    ret, frame = cap.read()
-    # Convert current frame to grayscale
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    # Calculate absolute difference of current frame and
-    # the median frame
-    dframe = cv2.absdiff(frame, grayMedianFrame)
-    # Treshold to binarize
-    th, dframe = cv2.threshold(dframe, 30, 255, cv2.THRESH_BINARY)
-    # Display image
-    cv2.imshow('frame', dframe)
-    cv2.waitKey(20)
-
-# Release video object
-cap.release()
-
-# Destroy all windows
-cv2.destroyAllWindows()
-
-'''if (Vid.isOpened() == False):
-    print('Error vid closed')
-else:
-    fps = int(Vid.get(5))
-    print("Frame Rate : ",fps,"frames per second")
-    frame_count = Vid.get(7)
-    print("Frame count : ", frame_count)
 # Obtain frame size information using get() method
-frame_width = int(Vid.get(3))
-frame_height = int(Vid.get(4))
+frame_width = int(capture.get(3))
+frame_height = int(capture.get(4))
 frame_size = (frame_width,frame_height)
+fps = int(capture.get(5))
 
-while(Vid.isOpened()):
-    # vCapture.read() methods returns a tuple, first element is a bool
-    # and the second is frame
 
-    ret, frame = Vid.read()
-    if ret == True:
-        cv.imshow('Frame',frame)
-        k = cv.waitKey(fps)
-        # 113 is ASCII code for q key
-        if k == 113:
-            break
-    else:
-        break
 # Initialize video writer object
-output = cv.VideoWriter('Resources/output_video_from_file.avi', cv.VideoWriter_fourcc('M','J','P','G'), fps, frame_size)
+output = cv.VideoWriter('Resources/output_video_from_file.avi', cv.VideoWriter_fourcc('M','J','P','G'), 20, frame_size)
 
-while(Vid.isOpened()):
-    ret, frame = Vid.read()
-    if ret == True:
-        # Write the frame to the output files
-        output.write(frame)
-    else:
-        print('Stream disconnected')
+while capture.isOpened():
+    ret, frame = capture.read()
+    if frame is None:
         break
 
-# Release the objects
-Vid.release()
-output.release()'''
+    fgMask = backSub.apply(frame)
+
+
+    cv.rectangle(frame, (10, 2), (100,20), (255,255,255), -1)
+    cv.putText(frame, str(capture.get(cv.CAP_PROP_POS_FRAMES)), (15, 15),
+               cv.FONT_HERSHEY_SIMPLEX, 0.5 , (0,0,0))
+
+
+    cv.imshow('Frame', frame)
+    cv.imshow('FG Mask', fgMask)
+
+    ret, thresh = cv.threshold(fgMask, 150, 255, cv.THRESH_BINARY)
+    # detect the contours on the binary image using cv2.ChAIN_APPROX_SIMPLE
+    contours1, hierarchy1 = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+    # draw contours on the original image for `CHAIN_APPROX_SIMPLE`
+    image_copy1 = frame.copy()
+    cv.drawContours(image_copy1, contours1, -1, (0, 255, 0), 2, cv.LINE_AA)
+    # see the results
+    cv.imshow('Simple approximation', image_copy1)
+
+    keyboard = cv.waitKey(30)
+    if keyboard == 'q' or keyboard == 27:
+        break
+
+'''# read image
+img = cv.imread('cannystillframe_Moment.jpg')
+
+# convert the image to grayscale format
+img_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+# apply binary thresholding
+ret, thresh = cv.threshold(img_gray, 150, 255, cv.THRESH_BINARY)
+# visualize the binary image
+cv.imshow('Binary image', thresh)
+cv.waitKey(0)
+cv.imwrite('image_thres1.jpg', thresh)
+cv.destroyAllWindows()
+
+# detect the contours on the binary image using cv2.CHAIN_APPROX_NONE
+contours, hierarchy = cv.findContours(image=thresh, mode=cv.RETR_TREE, method=cv.CHAIN_APPROX_NONE)
+
+# draw contours on the original image
+image_copy = img.copy()
+cv.drawContours(image=image_copy, contours=contours, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv.LINE_AA)
+
+# see the results
+cv.imshow('None approximation', image_copy)
+cv.waitKey(0)
+cv.imwrite('contours_none_image1.jpg', image_copy)
+cv.destroyAllWindows()
+"""
+Now let's try with `cv2.CHAIN_APPROX_SIMPLE`
+"""
+# detect the contours on the binary image using cv2.ChAIN_APPROX_SIMPLE
+contours1, hierarchy1 = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
+# draw contours on the original image for `CHAIN_APPROX_SIMPLE`
+image_copy1 = img.copy()
+cv.drawContours(image_copy1, contours1, -1, (0, 255, 0), 2, cv.LINE_AA)
+# see the results
+cv.imshow('Simple approximation', image_copy1)
+cv.waitKey(0)
+cv.imwrite('contours_simple_image1.jpg', image_copy1)
+cv.destroyAllWindows()'''
